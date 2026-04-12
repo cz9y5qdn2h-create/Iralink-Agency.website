@@ -14,17 +14,11 @@ export const metadata: Metadata = {
     "réseau de franchise",
   ],
   openGraph: {
-    title: "DIP Pilot — Votre DIP toujours à jour",
+    title: "DIP Pilot — Votre DIP toujours conforme",
     description:
       "Automatisez la conformité DIP de votre réseau. Surveillance continue, mises à jour automatiques, audit trail certifié.",
     type: "website",
     locale: "fr_FR",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "DIP Pilot — Conformité DIP automatisée",
-    description:
-      "Automatisez la conformité DIP de votre réseau de franchise. Zéro risque juridique.",
   },
 };
 
@@ -37,17 +31,13 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-dark text-text antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

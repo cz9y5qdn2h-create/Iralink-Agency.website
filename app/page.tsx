@@ -6,12 +6,16 @@ import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import WhyUs from "@/components/WhyUs";
-import FinalCTA from "@/components/FinalCTA";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   return (
     <>
+      <CustomCursor />
+      <ScrollReveal />
       <Nav />
       <main>
         <Hero />
@@ -21,7 +25,7 @@ export default function Home() {
         <Features />
         <Pricing />
         <WhyUs />
-        <FinalCTA />
+        <Contact />
       </main>
       <Footer />
     </>

@@ -2,156 +2,175 @@ const plans = [
   {
     name: "Audit de conformité",
     price: "Gratuit",
-    period: "— 30 minutes",
-    description:
-      "Analyse complète de votre DIP actuel, identification des manques, et démo live de l'outil.",
-    highlight: false,
-    cta: "Réserver mon audit",
-    ctaHref: "#audit",
-    features: [
-      "Analyse du DIP existant section par section",
+    period: "30 minutes",
+    body: "Analyse complète de votre DIP actuel, identification des risques, démo live de l'outil.",
+    featured: false,
+    cta: "Réserver l'audit",
+    items: [
+      "Analyse du DIP section par section",
       "Identification des risques de non-conformité",
       "Rapport des manques détectés",
       "Démo personnalisée de DIP Pilot",
-      "Recommandations prioritaires",
     ],
-    note: null,
   },
   {
     name: "Abonnement",
-    price: "500€",
-    period: "– 1 000€ / mois",
-    description:
-      "Surveillance continue, mises à jour automatiques, notifications, audit trail. Le DIP de votre réseau est toujours à jour.",
-    highlight: true,
+    price: "500 — 1 000 €",
+    period: "par mois",
+    body: "Surveillance continue, mises à jour automatiques, notifications, audit trail. Le DIP de votre réseau est toujours à jour.",
+    featured: true,
     cta: "Démarrer",
-    ctaHref: "#audit",
-    features: [
+    items: [
       "Surveillance hebdomadaire de toutes les sources",
       "Détection automatique des changements",
       "Génération IA des mises à jour",
-      "Notifications et validation en 1 clic",
+      "Validation en 1 clic",
       "Distribution automatique aux franchisés",
-      "Audit trail horodaté et certifié",
+      "Audit trail horodaté certifié",
       "Support prioritaire",
     ],
-    note: "Prix selon taille du réseau",
   },
   {
     name: "Setup & intégration",
-    price: "1 500€",
-    period: "– 3 000€ (one-time)",
-    description:
-      "Configuration complète de l'outil, intégration de vos sources de données, formation de votre équipe.",
-    highlight: false,
+    price: "1 500 — 3 000 €",
+    period: "one-time",
+    body: "Configuration complète, intégration de vos sources, formation de votre équipe.",
+    featured: false,
     cta: "En savoir plus",
-    ctaHref: "#audit",
-    features: [
+    items: [
       "Audit du DIP actuel",
       "Extraction et structuration du DIP",
-      "Intégration de vos sources (Drive, CRM…)",
+      "Intégration de vos sources",
       "Configuration des workflows",
       "Formation de l'équipe",
-      "Documentation complète",
     ],
-    note: "Généralement couplé à l'abonnement",
   },
 ];
 
 export default function Pricing() {
   return (
-    <section className="py-24 md:py-32 bg-dark-surface" id="tarifs">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="section" style={{ background: "var(--grey-light)" }} id="tarifs">
+      <div className="section-inner">
+
+        {/* Tag */}
+        <div className="section-tag reveal">
+          <span className="line" />
+          <span className="label">Tarifs</span>
+        </div>
+
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-xs text-gold uppercase tracking-widest font-semibold mb-4">
-            Tarifs
-          </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight mb-6">
-            Un investissement{" "}
-            <span className="text-gold-gradient">négligeable</span>
-            <br />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            gap: "40px",
+            flexWrap: "wrap",
+            marginBottom: "80px",
+          }}
+        >
+          <h2 className="t-h2 reveal reveal-delay-1" style={{ maxWidth: "520px" }}>
+            Un investissement négligeable<br />
             face au risque.
           </h2>
-          <p className="text-text-muted text-lg leading-relaxed">
-            Un contrat de franchise annulé pour DIP non conforme peut coûter des dizaines
-            de milliers d&apos;euros en frais juridiques et remboursements. L&apos;abonnement mensuel,
-            lui, coûte moins que la préparation d&apos;un seul acte notarié.
+          <p className="t-body reveal reveal-delay-2" style={{ maxWidth: "360px" }}>
+            Un litige sur DIP non conforme coûte en moyenne 15 000 à 50 000€
+            en frais d&apos;avocat. L&apos;abonnement annuel DIP Pilot : 6 000 à 12 000€.
           </p>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid md:grid-cols-3 gap-6 items-stretch">
+        {/* Cards */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "2px",
+            alignItems: "stretch",
+          }}
+        >
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`relative rounded-2xl flex flex-col p-6 md:p-8 ${
-                plan.highlight
-                  ? "bg-dark border border-gold/40 gold-glow"
-                  : "card-hover bg-dark"
-              }`}
+              className={`reveal reveal-delay-${i + 1}`}
+              style={{
+                background: "var(--black)",
+                padding: "48px 40px",
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                border: plan.featured ? "1px solid var(--border)" : "none",
+              }}
             >
-              {/* Popular badge */}
-              {plan.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="btn-gold text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
-                    Recommandé
-                  </span>
+              {/* Featured label */}
+              {plan.featured && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-1px",
+                    right: "40px",
+                    background: "var(--gold)",
+                    color: "var(--black)",
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "9px",
+                    fontWeight: 400,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    padding: "4px 12px",
+                  }}
+                >
+                  Recommandé
                 </div>
               )}
 
-              <div className="mb-6">
-                <p className="text-text-muted text-xs font-semibold uppercase tracking-wider mb-3">
-                  {plan.name}
-                </p>
-                <div className="flex items-baseline gap-1 mb-3">
-                  <span
-                    className={`text-3xl font-black ${
-                      plan.highlight ? "text-gold-gradient" : "text-white"
-                    }`}
-                  >
-                    {plan.price}
-                  </span>
-                  <span className="text-text-muted text-sm">{plan.period}</span>
-                </div>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {plan.description}
-                </p>
-              </div>
+              {/* Plan name */}
+              <span
+                className="t-mono-sm"
+                style={{ display: "block", marginBottom: "24px" }}
+              >
+                {plan.name}
+              </span>
 
-              {/* Features */}
-              <ul className="flex flex-col gap-3 flex-1 mb-8">
-                {plan.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-2.5 text-sm">
-                    <svg
-                      className="text-gold flex-shrink-0 mt-0.5"
-                      width="14"
-                      height="14"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span className="text-text-muted">{feature}</span>
-                  </li>
+              {/* Price */}
+              <div style={{ marginBottom: "8px" }}>
+                <span className="t-price">{plan.price}</span>
+              </div>
+              <span
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "11px",
+                  fontWeight: 300,
+                  color: "var(--grey)",
+                  letterSpacing: "0.08em",
+                  display: "block",
+                  marginBottom: "24px",
+                }}
+              >
+                {plan.period}
+              </span>
+
+              {/* Divider */}
+              <div className="section-divider" style={{ marginBottom: "24px" }} />
+
+              {/* Body */}
+              <p className="t-body" style={{ fontSize: "14px", marginBottom: "32px" }}>
+                {plan.body}
+              </p>
+
+              {/* Items */}
+              <ul
+                className="bullet-list"
+                style={{ listStyle: "none", padding: 0, marginBottom: "40px", flex: 1, display: "flex", flexDirection: "column", gap: "12px" }}
+              >
+                {plan.items.map((item, j) => (
+                  <li key={j}>{item}</li>
                 ))}
               </ul>
 
-              {/* Note */}
-              {plan.note && (
-                <p className="text-xs text-text-faint mb-4 italic">{plan.note}</p>
-              )}
-
               {/* CTA */}
               <a
-                href={plan.ctaHref}
-                className={`w-full text-center text-sm font-bold px-6 py-3 rounded-xl transition-all ${
-                  plan.highlight
-                    ? "btn-gold"
-                    : "btn-outline-gold"
-                }`}
+                href="#contact"
+                className={plan.featured ? "btn-primary" : "btn-outline"}
+                style={{ alignSelf: "flex-start" }}
               >
                 {plan.cta}
               </a>
@@ -159,12 +178,19 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* ROI note */}
-        <p className="text-center text-text-muted text-sm mt-10">
-          Tarifs HT. Engagement mensuel sans durée minimale après le setup.{" "}
-          <span className="text-text">
-            Prix ajustés selon la taille du réseau et le nombre de franchisés.
-          </span>
+        {/* Note */}
+        <p
+          className="reveal"
+          style={{
+            marginTop: "32px",
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "12px",
+            fontWeight: 300,
+            color: "var(--grey)",
+            textAlign: "center",
+          }}
+        >
+          Tarifs HT · Prix ajustés selon la taille du réseau · Sans durée minimale d&apos;engagement
         </p>
       </div>
     </section>

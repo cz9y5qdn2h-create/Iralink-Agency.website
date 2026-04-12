@@ -1,102 +1,228 @@
 export default function Footer() {
+  const year = new Date().getFullYear();
+
+  const productLinks = [
+    { label: "Comment ça marche", href: "#comment-ca-marche" },
+    { label: "Fonctionnalités", href: "#fonctionnalites" },
+    { label: "Tarifs", href: "#tarifs" },
+    { label: "Audit gratuit", href: "#contact" },
+  ];
+
   return (
-    <footer className="border-t border-dark-border bg-dark-surface py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-10">
+    <footer
+      style={{
+        background: "var(--black)",
+        borderTop: "1px solid var(--border-dim)",
+        padding: "80px 60px 48px",
+      }}
+    >
+      <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
+
+        {/* Top */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "2fr 1fr 1fr",
+            gap: "80px",
+            marginBottom: "80px",
+          }}
+          className="footer-grid"
+        >
           {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold">
-                <span className="text-white">Ira</span>
-                <span className="text-gold-gradient">link</span>
-              </span>
-              <span className="text-xs text-text-muted border border-dark-border2 rounded px-1.5 py-0.5">
-                DIP Pilot
-              </span>
-            </div>
-            <p className="text-text-muted text-sm leading-relaxed max-w-xs">
+          <div>
+            <a href="#" className="logo" style={{ textDecoration: "none", display: "inline-flex", marginBottom: "20px" }}>
+              <span className="logo-i">I</span>
+              <span className="logo-ralink">RALINK</span>
+              <span className="logo-agency">agency</span>
+            </a>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "14px",
+                fontWeight: 300,
+                color: "var(--grey)",
+                lineHeight: 1.75,
+                maxWidth: "300px",
+                marginBottom: "24px",
+              }}
+            >
               On automatise la conformité DIP des réseaux de franchise.
               Votre DIP est toujours à jour. Votre risque juridique est à zéro.
             </p>
-            <p className="text-text-faint text-xs mt-4">
-              Fondé par Théo Coutard — Paris, France
+            <p
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "10px",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+              }}
+            >
+              Paris, France — {year}
             </p>
           </div>
 
-          {/* Product */}
+          {/* Product links */}
           <div>
-            <p className="text-white font-semibold text-sm mb-4">Produit</p>
-            <ul className="flex flex-col gap-2.5">
-              {[
-                { label: "Comment ça marche", href: "#comment-ca-marche" },
-                { label: "Fonctionnalités", href: "#fonctionnalites" },
-                { label: "Tarifs", href: "#tarifs" },
-                { label: "Audit gratuit", href: "#audit" },
-              ].map((link) => (
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "10px",
+                fontWeight: 400,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                marginBottom: "24px",
+              }}
+            >
+              Produit
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
+              {productLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-text-muted text-sm hover:text-text transition-colors"
+                    className="link-grey"
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "13px",
+                      fontWeight: 300,
+                    }}
                   >
-                    {link.label}
+                    — {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal & contact */}
+          {/* Contact */}
           <div>
-            <p className="text-white font-semibold text-sm mb-4">Contact</p>
-            <ul className="flex flex-col gap-2.5">
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "10px",
+                fontWeight: 400,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                marginBottom: "24px",
+              }}
+            >
+              Contact
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
               <li>
                 <a
                   href="mailto:theo@iralink-agency.com"
-                  className="text-text-muted text-sm hover:text-text transition-colors"
+                  className="link-grey-gold"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "13px",
+                    fontWeight: 300,
+                  }}
                 >
-                  theo@iralink-agency.com
+                  — theo@iralink-agency.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/th%C3%A9o-coutard"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted text-sm hover:text-text transition-colors"
+                  className="link-grey"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "13px",
+                    fontWeight: 300,
+                  }}
                 >
-                  LinkedIn
+                  — LinkedIn
                 </a>
               </li>
             </ul>
-            <p className="text-white font-semibold text-sm mt-6 mb-4">Ressources</p>
-            <ul className="flex flex-col gap-2.5">
-              <li>
-                <span className="text-text-muted text-sm">
-                  Art. L.330-3 Code de commerce
-                </span>
-              </li>
-              <li>
-                <span className="text-text-muted text-sm">
-                  Loi Doubin (31 déc. 1989)
-                </span>
-              </li>
-            </ul>
+
+            {/* Refs juridiques */}
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "10px",
+                fontWeight: 400,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                marginTop: "40px",
+                marginBottom: "14px",
+              }}
+            >
+              Référence légale
+            </p>
+            <p
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "10px",
+                letterSpacing: "0.06em",
+                color: "var(--grey)",
+                lineHeight: 1.8,
+              }}
+            >
+              Art. L.330-3<br />
+              Code de commerce<br />
+              Loi Doubin, 31 déc. 1989
+            </p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="section-divider mb-6" />
+        <div className="section-divider" />
 
         {/* Bottom */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-text-faint">
-          <p>© {new Date().getFullYear()} Iralink — Tous droits réservés</p>
-          <div className="flex gap-6">
-            <span>Mentions légales</span>
-            <span>CGU</span>
-            <span>Politique de confidentialité</span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "16px",
+            paddingTop: "24px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "11px",
+              fontWeight: 300,
+              color: "var(--grey)",
+              letterSpacing: "0.05em",
+            }}
+          >
+            © {year} Iralink Agency — Tous droits réservés
+          </p>
+          <div style={{ display: "flex", gap: "32px" }}>
+            {["Mentions légales", "CGU", "Confidentialité"].map((label) => (
+              <span
+                key={label}
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "11px",
+                  fontWeight: 300,
+                  color: "var(--grey)",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                {label}
+              </span>
+            ))}
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          footer { padding: 60px 28px 40px !important; }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+        }
+      `}</style>
     </footer>
   );
 }

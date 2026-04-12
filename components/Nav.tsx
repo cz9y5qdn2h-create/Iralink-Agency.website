@@ -7,109 +7,119 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const links = [
+    { label: "Comment ça marche", href: "#comment-ca-marche" },
+    { label: "Tarifs", href: "#tarifs" },
+    { label: "Pourquoi nous", href: "#pourquoi-nous" },
+  ];
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-dark/90 backdrop-blur-md border-b border-dark-border"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="text-xl font-bold tracking-tight">
-            <span className="text-white">Ira</span>
-            <span className="text-gold-gradient">link</span>
-          </span>
-          <span className="text-xs text-text-muted font-medium border border-dark-border2 rounded px-1.5 py-0.5 group-hover:border-gold/30 transition-colors">
-            DIP Pilot
-          </span>
+    <header className={`nav-root ${scrolled ? "scrolled" : ""}`}>
+      {/* Logo */}
+      <a href="#" className="logo" style={{ textDecoration: "none" }}>
+        <span className="logo-i">I</span>
+        <span className="logo-ralink">RALINK</span>
+        <span className="logo-agency">agency</span>
+      </a>
+
+      {/* Desktop nav */}
+      <nav
+        className="hidden md:flex items-center"
+        style={{ gap: "40px" }}
+      >
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "12px",
+              fontWeight: 400,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--grey)",
+              textDecoration: "none",
+              transition: "color 0.3s ease",
+            }}
+            onMouseEnter={(e) =>
+              ((e.target as HTMLElement).style.color = "var(--white)")
+            }
+            onMouseLeave={(e) =>
+              ((e.target as HTMLElement).style.color = "var(--grey)")
+            }
+          >
+            {link.label}
+          </a>
+        ))}
+        <a href="#contact" className="btn-outline">
+          Audit gratuit
         </a>
-
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          <a
-            href="#comment-ca-marche"
-            className="text-sm text-text-muted hover:text-text transition-colors"
-          >
-            Comment ça marche
-          </a>
-          <a
-            href="#tarifs"
-            className="text-sm text-text-muted hover:text-text transition-colors"
-          >
-            Tarifs
-          </a>
-          <a
-            href="#pourquoi-nous"
-            className="text-sm text-text-muted hover:text-text transition-colors"
-          >
-            Pourquoi nous
-          </a>
-        </div>
-
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#audit"
-            className="btn-gold text-sm px-4 py-2 rounded-lg"
-          >
-            Audit gratuit
-          </a>
-        </div>
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden text-text-muted hover:text-text"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          {menuOpen ? (
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
       </nav>
+
+      {/* Mobile burger */}
+      <button
+        className="md:hidden"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Menu"
+        style={{
+          background: "none",
+          border: "none",
+          color: "var(--grey)",
+          cursor: "pointer",
+        }}
+      >
+        {menuOpen ? (
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          </svg>
+        )}
+      </button>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-dark-surface border-b border-dark-border px-6 py-4 flex flex-col gap-4">
+        <div
+          className="md:hidden absolute top-full left-0 right-0"
+          style={{
+            background: "rgba(8,8,8,0.96)",
+            backdropFilter: "blur(20px)",
+            borderBottom: "1px solid var(--border-dim)",
+            padding: "24px 28px 32px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "12px",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                textDecoration: "none",
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
           <a
-            href="#comment-ca-marche"
-            className="text-sm text-text-muted hover:text-text"
+            href="#contact"
+            className="btn-primary"
             onClick={() => setMenuOpen(false)}
-          >
-            Comment ça marche
-          </a>
-          <a
-            href="#tarifs"
-            className="text-sm text-text-muted hover:text-text"
-            onClick={() => setMenuOpen(false)}
-          >
-            Tarifs
-          </a>
-          <a
-            href="#pourquoi-nous"
-            className="text-sm text-text-muted hover:text-text"
-            onClick={() => setMenuOpen(false)}
-          >
-            Pourquoi nous
-          </a>
-          <a
-            href="#audit"
-            className="btn-gold text-sm px-4 py-2 rounded-lg text-center"
-            onClick={() => setMenuOpen(false)}
+            style={{ alignSelf: "flex-start" }}
           >
             Audit gratuit
           </a>

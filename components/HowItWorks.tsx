@@ -1,129 +1,127 @@
 const steps = [
   {
-    number: "01",
-    title: "Connexion des sources",
-    description:
-      "Connectez vos sources de données existantes : emails, Google Drive, CRM, logiciel comptable. Pas de migration, pas de refonte — on se branche sur ce que vous utilisez déjà.",
+    num: "01",
     tag: "Intégration",
+    title: "Connexion des sources",
+    body: "Connectez vos sources de données existantes : emails, Google Drive, CRM, logiciel comptable. Pas de migration, pas de refonte — on se branche sur ce que vous utilisez déjà.",
   },
   {
-    number: "02",
-    title: "Surveillance hebdomadaire",
-    description:
-      "Chaque semaine, l'IA analyse vos données et les compare avec votre DIP en cours. Nouveau franchisé, litige, changement de dirigeant, mise à jour des comptes — rien ne passe entre les mailles.",
+    num: "02",
     tag: "Automatique",
+    title: "Surveillance hebdomadaire",
+    body: "Chaque semaine, l'IA analyse vos données et les compare avec votre DIP en cours. Nouveau franchisé, litige, changement de dirigeant — rien ne passe entre les mailles.",
   },
   {
-    number: "03",
-    title: "Détection des écarts",
-    description:
-      "Si une information du DIP a changé, l'outil identifie précisément la section concernée et la nature du changement. Pas de faux positifs — uniquement les mises à jour qui comptent réellement.",
+    num: "03",
     tag: "IA",
+    title: "Détection des écarts",
+    body: "Si une information du DIP a changé, l'outil identifie précisément la section concernée et la nature du changement. Uniquement les mises à jour qui comptent réellement.",
   },
   {
-    number: "04",
-    title: "Génération de la mise à jour",
-    description:
-      "L'IA rédige automatiquement la version mise à jour de la section concernée, en respectant le format légal du DIP. Vous recevez le diff complet : avant / après, avec les sources citées.",
+    num: "04",
     tag: "Génération",
+    title: "Rédaction de la mise à jour",
+    body: "L'IA rédige automatiquement la version mise à jour en respectant le format légal du DIP. Vous recevez le diff complet : avant / après, avec les sources citées.",
   },
   {
-    number: "05",
-    title: "Validation en 1 clic",
-    description:
-      "Vous recevez une notification avec le résumé des modifications. Vous validez (ou ajustez) en un clic. Aucune mise à jour n'est publiée sans votre accord explicite.",
+    num: "05",
     tag: "Contrôle",
+    title: "Validation en 1 clic",
+    body: "Vous recevez une notification avec le résumé des modifications. Vous validez ou ajustez en un clic. Aucune mise à jour n'est publiée sans votre accord explicite.",
   },
   {
-    number: "06",
-    title: "Distribution et archivage",
-    description:
-      "La version validée est envoyée automatiquement aux franchisés concernés et archivée avec horodatage. Audit trail complet, valeur probatoire en cas de litige.",
-    tag: "Preuve juridique",
+    num: "06",
+    tag: "Preuve",
+    title: "Distribution & archivage",
+    body: "La version validée est envoyée automatiquement aux franchisés concernés et archivée avec horodatage. Audit trail complet, valeur probatoire en cas de litige.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 md:py-32 bg-dark-surface" id="comment-ca-marche">
-      <div className="max-w-6xl mx-auto px-6">
+    <section
+      className="section"
+      style={{ background: "var(--grey-light)" }}
+      id="comment-ca-marche"
+    >
+      <div className="section-inner">
+
+        {/* Tag */}
+        <div className="section-tag reveal">
+          <span className="line" />
+          <span className="label">Comment ça marche</span>
+        </div>
+
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-xs text-gold uppercase tracking-widest font-semibold mb-4">
-            Comment ça marche
-          </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight mb-6">
-            6 étapes. Entièrement{" "}
-            <span className="text-gold-gradient">automatisées.</span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            gap: "40px",
+            flexWrap: "wrap",
+            marginBottom: "80px",
+          }}
+        >
+          <h2 className="t-h2 reveal reveal-delay-1" style={{ maxWidth: "520px" }}>
+            6 étapes. Entièrement<br />
+            automatisées.
           </h2>
-          <p className="text-text-muted text-lg leading-relaxed">
+          <p
+            className="t-body reveal reveal-delay-2"
+            style={{ maxWidth: "360px" }}
+          >
             Une fois configuré, DIP Pilot tourne sans intervention de votre part.
-            Vous n&apos;intervenez que pour valider les mises à jour — le reste est géré automatiquement.
+            Vous n&apos;intervenez que pour valider les mises à jour.
           </p>
         </div>
 
         {/* Steps grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "2px",
+          }}
+        >
           {steps.map((step, i) => (
-            <div
-              key={i}
-              className="card-hover rounded-2xl bg-dark p-6 flex flex-col gap-4 group"
-            >
+            <div key={i} className={`card-step reveal reveal-delay-${(i % 3) + 1}`}>
               {/* Number + tag */}
-              <div className="flex items-center justify-between">
-                <div className="step-number">{step.number}</div>
-                <span className="text-xs text-text-faint border border-dark-border2 rounded-full px-2.5 py-1 group-hover:border-gold/30 group-hover:text-gold/60 transition-colors">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "32px",
+                }}
+              >
+                <span className="t-mono">{step.num}</span>
+                <span
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "9px",
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "var(--grey)",
+                    border: "1px solid var(--border-dim)",
+                    padding: "4px 10px",
+                  }}
+                >
                   {step.tag}
                 </span>
               </div>
 
-              <h3 className="text-white font-bold text-base leading-snug">
+              {/* Title */}
+              <h3 className="t-step-title" style={{ marginBottom: "16px" }}>
                 {step.title}
               </h3>
 
-              <p className="text-text-muted text-sm leading-relaxed flex-1">
-                {step.description}
-              </p>
+              {/* Body */}
+              <p className="t-body">{step.body}</p>
             </div>
           ))}
         </div>
 
-        {/* Flow visual */}
-        <div className="mt-12 rounded-2xl border border-dark-border bg-dark p-6 md:p-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {["Vos données", "Surveillance", "Détection", "Validation", "DIP à jour"].map(
-              (label, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="flex flex-col items-center gap-1">
-                    <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center text-xs font-bold border transition-colors ${
-                        i === 4
-                          ? "bg-gold text-dark border-gold"
-                          : "bg-dark-surface2 text-text-muted border-dark-border2"
-                      }`}
-                    >
-                      {i + 1}
-                    </div>
-                    <span className="text-xs text-text-muted whitespace-nowrap">{label}</span>
-                  </div>
-                  {i < 4 && (
-                    <svg
-                      className="text-dark-border2 -mt-5 hidden md:block"
-                      width="20"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  )}
-                </div>
-              )
-            )}
-          </div>
-        </div>
       </div>
     </section>
   );
