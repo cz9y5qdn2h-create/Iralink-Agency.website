@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8D080;
+  --gold-dark: #9A7A2A;
+  --bg: #080808;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080808;
+  color: #F0F0F0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8D080 50%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer effect for gold text */
+.text-gold-shimmer {
+  background: linear-gradient(90deg, #C9A84C 0%, #E8D080 30%, #F5E9A8 50%, #E8D080 70%, #C9A84C 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Hero dot grid background */
+.hero-grid {
+  background-image: radial-gradient(rgba(201, 168, 76, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Gold border glow */
+.gold-glow {
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.1), 0 0 60px rgba(201, 168, 76, 0.05);
+}
+
+.gold-glow-sm {
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.08);
+}
+
+/* Card with gold border on hover */
+.card-hover {
+  border: 1px solid #252525;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.06);
+}
+
+/* Gold button */
+.btn-gold {
+  background: linear-gradient(135deg, #C9A84C, #E8D080);
+  color: #080808;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #E8D080, #F5E9A8);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+}
+
+/* Outline gold button */
+.btn-outline-gold {
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  color: #C9A84C;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-gold:hover {
+  border-color: #C9A84C;
+  background: rgba(201, 168, 76, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.2), transparent);
+}
+
+/* Number badge */
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A84C;
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* Fade in animation utility */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A84C;
+}
