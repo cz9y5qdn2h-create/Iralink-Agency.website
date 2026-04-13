@@ -13,39 +13,43 @@ const initialData: FormData = { nom: "", email: "", reseau: "", franchises: "" }
 
 export default function Contact() {
   const [data, setData] = useState<FormData>(initialData);
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const set = (key: keyof FormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => setData((prev) => ({ ...prev, [key]: e.target.value }));
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setStatus("loading");
+    setErrorMsg("");
 
-    const subject = `Demande d'audit DIP — ${data.reseau || "Nouveau réseau"}`;
-    const body = [
-      `Nom : ${data.nom}`,
-      `Email : ${data.email}`,
-      `Réseau / Entreprise : ${data.reseau}`,
-      `Nombre de franchisés : ${data.franchises}`,
-      ``,
-      `Message envoyé depuis iralink-agency.com`,
-    ].join("\n");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    window.location.href = `mailto:theo@iralink-agency.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const json = await res.json();
 
-    setTimeout(() => {
-      setSubmitted(true);
-      setLoading(false);
-    }, 600);
+      if (!res.ok) {
+        setErrorMsg(json.error || "Une erreur est survenue.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setErrorMsg("Erreur réseau. Vérifie ta connexion et réessaie.");
+      setStatus("error");
+    }
   };
 
   return (
     <section className="section" style={{ background: "var(--grey-light)" }} id="contact">
       <div className="section-inner">
-
         <div
           style={{
             display: "grid",
@@ -74,10 +78,15 @@ export default function Contact() {
               Aucun engagement, aucun frais.
             </p>
 
-            {/* What you get */}
             <ul
               className="bullet-list reveal reveal-delay-3"
-              style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "12px" }}
+              style={{
+                listStyle: "none",
+                padding: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+              }}
             >
               <li>Analyse section par section de votre DIP existant</li>
               <li>Rapport des risques de non-conformité détectés</li>
@@ -88,7 +97,7 @@ export default function Contact() {
 
           {/* Right — form */}
           <div className="reveal reveal-delay-2">
-            {submitted ? (
+            {status === "success" ? (
               <div
                 style={{
                   background: "var(--black)",
@@ -121,13 +130,13 @@ export default function Contact() {
                     marginBottom: "16px",
                   }}
                 >
-                  Message envoyé.
+                  Demande envoyée.
                 </h3>
                 <p className="t-body" style={{ fontSize: "14px", marginBottom: "32px" }}>
-                  Votre demande a été transmise à Théo. Réponse garantie sous 24h.
+                  Théo reviendra vers toi sous 24h.
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setData(initialData); }}
+                  onClick={() => { setStatus("idle"); setData(initialData); }}
                   className="btn-ghost"
                   style={{ margin: "0 auto" }}
                 >
@@ -145,9 +154,8 @@ export default function Contact() {
                   gap: "24px",
                 }}
               >
-                {/* Nom */}
                 <div className="form-group">
-                  <label htmlFor="nom" className="form-label">Prénom & Nom *</label>
+                  <label htmlFor="nom" className="form-label">Prénom &amp; Nom *</label>
                   <input
                     id="nom"
                     type="text"
@@ -160,14 +168,13 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Email */}
                 <div className="form-group">
                   <label htmlFor="email" className="form-label">Email professionnel *</label>
                   <input
                     id="email"
                     type="email"
                     className="form-input"
-                    placeholder="theo@iralink-agency.com"
+                    placeholder="theo@monreseau.com"
                     value={data.email}
                     onChange={set("email")}
                     required
@@ -175,7 +182,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Réseau */}
                 <div className="form-group">
                   <label htmlFor="reseau" className="form-label">Réseau / Entreprise *</label>
                   <input
@@ -190,7 +196,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Franchisés */}
                 <div className="form-group">
                   <label htmlFor="franchises" className="form-label">Nombre de franchisés *</label>
                   <select
@@ -209,14 +214,26 @@ export default function Contact() {
                   </select>
                 </div>
 
-                {/* Submit */}
+                {status === "error" && (
+                  <p
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "12px",
+                      color: "#e05c5c",
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    {errorMsg}
+                  </p>
+                )}
+
                 <button
                   type="submit"
                   className="btn-primary"
-                  disabled={loading}
+                  disabled={status === "loading"}
                   style={{ alignSelf: "flex-start", marginTop: "8px" }}
                 >
-                  {loading ? "Envoi en cours..." : "Réserver mon audit gratuit"}
+                  {status === "loading" ? "Envoi en cours..." : "Réserver mon audit gratuit"}
                 </button>
 
                 <p
