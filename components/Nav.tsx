@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,8 +15,8 @@ export default function Nav() {
 
   const links = [
     { label: "Comment ça marche", href: "#comment-ca-marche" },
-    { label: "Tarifs", href: "#tarifs" },
-    { label: "Pourquoi nous", href: "#pourquoi-nous" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -25,40 +26,77 @@ export default function Nav() {
         <span className="logo-i">I</span>
         <span className="logo-ralink">RALINK</span>
         <span className="logo-agency">agency</span>
+        <span
+          style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "9px",
+            fontWeight: 400,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--gold)",
+            marginLeft: "10px",
+            opacity: 0.75,
+            alignSelf: "center",
+          }}
+        >
+          DIP Pilot
+        </span>
       </a>
 
       {/* Desktop nav */}
-      <nav
-        className="hidden md:flex items-center"
-        style={{ gap: "40px" }}
-      >
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "12px",
-              fontWeight: 400,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "var(--grey)",
-              textDecoration: "none",
-              transition: "color 0.3s ease",
-            }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--white)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--grey)")
-            }
-          >
-            {link.label}
-          </a>
-        ))}
-        <a href="#contact" className="btn-outline">
+      <nav className="hidden md:flex items-center" style={{ gap: "40px" }}>
+        {links.map((link) =>
+          link.href.startsWith("#") ? (
+            <a
+              key={link.href}
+              href={link.href}
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "12px",
+                fontWeight: 400,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                textDecoration: "none",
+                transition: "color 0.3s ease",
+              }}
+              onMouseEnter={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--white)")
+              }
+              onMouseLeave={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--grey)")
+              }
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "12px",
+                fontWeight: 400,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                textDecoration: "none",
+                transition: "color 0.3s ease",
+              }}
+              onMouseEnter={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--white)")
+              }
+              onMouseLeave={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--grey)")
+              }
+            >
+              {link.label}
+            </Link>
+          )
+        )}
+        <Link href="/contact" className="btn-outline">
           Audit gratuit
-        </a>
+        </Link>
       </nav>
 
       {/* Mobile burger */}
@@ -74,12 +112,34 @@ export default function Nav() {
         }}
       >
         {menuOpen ? (
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+            />
           </svg>
         )}
       </button>
@@ -98,31 +158,49 @@ export default function Nav() {
             gap: "20px",
           }}
         >
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "12px",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "var(--grey)",
-                textDecoration: "none",
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
+          {links.map((link) =>
+            link.href.startsWith("#") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "12px",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--grey)",
+                  textDecoration: "none",
+                }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "12px",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--grey)",
+                  textDecoration: "none",
+                }}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+          <Link
+            href="/contact"
             className="btn-primary"
             onClick={() => setMenuOpen(false)}
             style={{ alignSelf: "flex-start" }}
           >
             Audit gratuit
-          </a>
+          </Link>
         </div>
       )}
     </header>

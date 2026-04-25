@@ -6,6 +6,8 @@ export default function Footer() {
     { label: "Fonctionnalités", href: "#fonctionnalites" },
     { label: "Tarifs", href: "#tarifs" },
     { label: "Audit gratuit", href: "#contact" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
