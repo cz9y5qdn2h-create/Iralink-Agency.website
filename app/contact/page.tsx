@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CustomCursor from "@/components/CustomCursor";
-import Contact from "@/components/Contact";
+import CalWidget from "@/components/CalWidget";
 
 export const metadata: Metadata = {
   title: "Contact — Théo Coutard | Iralink Agency",
@@ -36,7 +36,7 @@ export default function ContactPage() {
       <ScrollReveal />
       <Nav />
       <main>
-        {/* ── Hero ── */}
+        {/* Hero */}
         <section
           className="section"
           style={{
@@ -74,10 +74,10 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* ── Contact columns ── */}
+        {/* Two columns */}
         <section
           className="section"
-          style={{ paddingTop: "80px", paddingBottom: "0" }}
+          style={{ paddingTop: "80px", paddingBottom: "80px" }}
         >
           <div className="section-inner">
             <div
@@ -89,13 +89,9 @@ export default function ContactPage() {
                 alignItems: "start",
               }}
             >
-              {/* ── Left: contact info ── */}
+              {/* Left: contact info */}
               <div>
-                {/* Name & title */}
-                <div
-                  className="reveal"
-                  style={{ marginBottom: "40px" }}
-                >
+                <div className="reveal" style={{ marginBottom: "40px" }}>
                   <h2
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
@@ -109,29 +105,17 @@ export default function ContactPage() {
                   >
                     Théo Coutard
                   </h2>
-                  <span
-                    className="t-mono-sm"
-                    style={{ display: "block" }}
-                  >
+                  <span className="t-mono-sm" style={{ display: "block" }}>
                     DIP Pilot · Iralink Agency
                   </span>
                 </div>
 
-                {/* Gold separator */}
                 <div
                   className="reveal reveal-delay-1"
-                  style={{
-                    height: "1px",
-                    background: "var(--border)",
-                    marginBottom: "32px",
-                  }}
+                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
                 />
 
-                {/* Email */}
-                <div
-                  className="reveal reveal-delay-1"
-                  style={{ marginBottom: "32px" }}
-                >
+                <div className="reveal reveal-delay-1" style={{ marginBottom: "32px" }}>
                   <p
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
@@ -148,31 +132,18 @@ export default function ContactPage() {
                   <a
                     href="mailto:theo@iralink-agency.com"
                     className="link-grey-gold"
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 300,
-                    }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
                   >
                     theo@iralink-agency.com
                   </a>
                 </div>
 
-                {/* Gold separator */}
                 <div
                   className="reveal reveal-delay-2"
-                  style={{
-                    height: "1px",
-                    background: "var(--border)",
-                    marginBottom: "32px",
-                  }}
+                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
                 />
 
-                {/* LinkedIn */}
-                <div
-                  className="reveal reveal-delay-2"
-                  style={{ marginBottom: "32px" }}
-                >
+                <div className="reveal reveal-delay-2" style={{ marginBottom: "32px" }}>
                   <p
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
@@ -191,31 +162,18 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="link-grey-gold"
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 300,
-                    }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
                   >
                     Théo Coutard
                   </a>
                 </div>
 
-                {/* Gold separator */}
                 <div
                   className="reveal reveal-delay-3"
-                  style={{
-                    height: "1px",
-                    background: "var(--border)",
-                    marginBottom: "32px",
-                  }}
+                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
                 />
 
-                {/* Location */}
-                <div
-                  className="reveal reveal-delay-3"
-                  style={{ marginBottom: "40px" }}
-                >
+                <div className="reveal reveal-delay-3" style={{ marginBottom: "40px" }}>
                   <p
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
@@ -241,17 +199,11 @@ export default function ContactPage() {
                   </span>
                 </div>
 
-                {/* Gold separator */}
                 <div
                   className="reveal reveal-delay-4"
-                  style={{
-                    height: "1px",
-                    background: "var(--border)",
-                    marginBottom: "32px",
-                  }}
+                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
                 />
 
-                {/* Response time note */}
                 <div className="reveal reveal-delay-4">
                   <p
                     style={{
@@ -263,17 +215,15 @@ export default function ContactPage() {
                       lineHeight: 1.8,
                     }}
                   >
-                    Réponse garantie<br />
-                    sous 24h ouvrées
+                    Réservez un créneau<br />
+                    directement dans l&apos;agenda
                   </p>
                 </div>
               </div>
 
-              {/* ── Right: contact form ── */}
+              {/* Right: Cal.com calendar */}
               <div className="reveal reveal-delay-2">
-                {/* We render the Contact component which includes its own section wrapper.
-                    We override its outer section padding via a scoped style below. */}
-                <Contact />
+                <CalWidget />
               </div>
             </div>
           </div>
@@ -283,34 +233,10 @@ export default function ContactPage() {
       <Footer />
 
       <style>{`
-        /* Strip the section wrapper padding/bg from the embedded Contact component
-           so it sits flush inside the two-column layout */
-        .contact-page-grid > div:last-child > section {
-          padding: 0 !important;
-          background: transparent !important;
-        }
-        .contact-page-grid > div:last-child > section > .section-inner {
-          max-width: unset !important;
-          margin: 0 !important;
-        }
-        /* Remove the left column inside Contact (already shown in our left col) */
-        .contact-page-grid .contact-grid > div:first-child {
-          display: none !important;
-        }
-        .contact-page-grid .contact-grid {
-          grid-template-columns: 1fr !important;
-          gap: 0 !important;
-        }
-
         @media (max-width: 900px) {
           .contact-page-grid {
             grid-template-columns: 1fr !important;
             gap: 48px !important;
-          }
-        }
-        @media (max-width: 640px) {
-          .contact-page-grid > div:last-child > section {
-            padding: 0 !important;
           }
         }
       `}</style>

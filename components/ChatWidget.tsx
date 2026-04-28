@@ -79,7 +79,9 @@ export default function ChatWidget() {
       if (!res.ok || !res.body) {
         const errData = await res.json().catch(() => null);
         const errText =
-          errData?.error ?? "Une erreur est survenue. Veuillez réessayer.";
+          res.status === 503
+            ? "L'assistant est temporairement indisponible. Contactez-nous directement à theo@iralink-agency.com."
+            : (errData?.error ?? "Une erreur est survenue. Veuillez réessayer.");
         setMessages((prev) => {
           const updated = [...prev];
           updated[updated.length - 1] = {
