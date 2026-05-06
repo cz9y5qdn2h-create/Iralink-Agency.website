@@ -12,10 +12,10 @@
   --grey-light: #141414;
   --border: rgba(200, 169, 110, 0.18);
   --border-dim: rgba(244, 242, 238, 0.06);
-  --nav-h: 72px;
+  --nav-h: 80px;
 }
 @media (max-width: 768px) {
-  :root { --nav-h: 64px; }
+  :root { --nav-h: 60px; }
 }
 
 /* ─── BASE ─── */
@@ -36,10 +36,7 @@ body {
 
 /* ─── SECTION WRAPPER ─── */
 .section {
-  padding: 120px 60px;
-}
-@media (max-width: 1024px) {
-  .section { padding: 100px 40px; }
+  padding: 140px 60px;
 }
 @media (max-width: 768px) {
   .section { padding: 72px 24px; }
@@ -378,18 +375,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 60px;
+  padding: 28px 60px;
   transition: padding 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
 }
 .nav-root.scrolled {
-  padding: 14px 60px;
+  padding: 16px 60px;
   background: rgba(8, 8, 8, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-}
-@media (max-width: 1024px) {
-  .nav-root { padding: 20px 40px; }
-  .nav-root.scrolled { padding: 14px 40px; }
 }
 @media (max-width: 768px) {
   .nav-root { padding: 16px 24px; }
@@ -403,11 +396,8 @@ body {
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
-  padding: 0 60px 120px;
+  padding: 0 60px 140px;
   overflow: hidden;
-}
-@media (max-width: 1024px) {
-  .hero-section { padding: 0 40px 100px; }
 }
 @media (max-width: 768px) {
   .hero-section { padding: 0 24px 80px; }
