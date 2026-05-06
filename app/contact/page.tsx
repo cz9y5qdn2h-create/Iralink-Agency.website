@@ -49,23 +49,20 @@ export default function ContactPage() {
         >
           <div className="hero-grid-bg" />
           <div className="hero-glow" />
-
           <div className="section-inner" style={{ position: "relative" }}>
             <div className="section-tag reveal">
               <span className="line" />
               <span className="label">— Contact</span>
             </div>
-
             <h1
               className="t-h2 reveal reveal-delay-1"
               style={{ maxWidth: "640px", marginBottom: "24px" }}
             >
               Parlons de votre réseau.
             </h1>
-
             <p
               className="t-body reveal reveal-delay-2"
-              style={{ maxWidth: "520px", marginBottom: "0" }}
+              style={{ maxWidth: "520px" }}
             >
               En 30 minutes, on analyse votre DIP, identifie les risques de
               non-conformité et vous montre comment DIP Pilot les résout.
@@ -75,20 +72,10 @@ export default function ContactPage() {
         </section>
 
         {/* Two columns */}
-        <section
-          className="section"
-          style={{ paddingTop: "80px", paddingBottom: "80px" }}
-        >
+        <section className="section" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
           <div className="section-inner">
-            <div
-              className="contact-page-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 2fr",
-                gap: "80px",
-                alignItems: "start",
-              }}
-            >
+            <div className="contact-page-grid">
+
               {/* Left: contact info */}
               <div>
                 <div className="reveal" style={{ marginBottom: "40px" }}>
@@ -110,100 +97,72 @@ export default function ContactPage() {
                   </span>
                 </div>
 
-                <div
-                  className="reveal reveal-delay-1"
-                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
-                />
-
-                <div className="reveal reveal-delay-1" style={{ marginBottom: "32px" }}>
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "10px",
-                      fontWeight: 400,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      color: "var(--grey)",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    Email
-                  </p>
-                  <a
-                    href="mailto:theo@iralink-agency.com"
-                    className="link-grey-gold"
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
-                  >
-                    theo@iralink-agency.com
-                  </a>
-                </div>
-
-                <div
-                  className="reveal reveal-delay-2"
-                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
-                />
-
-                <div className="reveal reveal-delay-2" style={{ marginBottom: "32px" }}>
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "10px",
-                      fontWeight: 400,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      color: "var(--grey)",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    LinkedIn
-                  </p>
-                  <a
-                    href="https://www.linkedin.com/in/th%C3%A9o-coutard"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-grey-gold"
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
-                  >
-                    Théo Coutard
-                  </a>
-                </div>
-
-                <div
-                  className="reveal reveal-delay-3"
-                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
-                />
-
-                <div className="reveal reveal-delay-3" style={{ marginBottom: "40px" }}>
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "10px",
-                      fontWeight: 400,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      color: "var(--grey)",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    Localisation
-                  </p>
-                  <span
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 300,
-                      color: "var(--grey)",
-                    }}
-                  >
-                    Paris, France
-                  </span>
-                </div>
+                {[
+                  {
+                    label: "Email",
+                    content: (
+                      <a
+                        href="mailto:theo@iralink-agency.com"
+                        className="link-grey-gold"
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
+                      >
+                        theo@iralink-agency.com
+                      </a>
+                    ),
+                  },
+                  {
+                    label: "LinkedIn",
+                    content: (
+                      <a
+                        href="https://www.linkedin.com/in/th%C3%A9o-coutard"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-grey-gold"
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
+                      >
+                        Théo Coutard
+                      </a>
+                    ),
+                  },
+                  {
+                    label: "Localisation",
+                    content: (
+                      <span
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300, color: "var(--grey)" }}
+                      >
+                        Paris, France
+                      </span>
+                    ),
+                  },
+                ].map(({ label, content }, i) => (
+                  <div key={label}>
+                    <div
+                      className={`reveal reveal-delay-${i + 1}`}
+                      style={{ height: "1px", background: "var(--border)", marginBottom: "28px" }}
+                    />
+                    <div className={`reveal reveal-delay-${i + 1}`} style={{ marginBottom: "28px" }}>
+                      <p
+                        style={{
+                          fontFamily: "'DM Sans', sans-serif",
+                          fontSize: "10px",
+                          fontWeight: 400,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "var(--grey)",
+                          marginBottom: "8px",
+                        }}
+                      >
+                        {label}
+                      </p>
+                      {content}
+                    </div>
+                  </div>
+                ))}
 
                 <div
                   className="reveal reveal-delay-4"
-                  style={{ height: "1px", background: "var(--border)", marginBottom: "32px" }}
+                  style={{ height: "1px", background: "var(--border)", marginBottom: "28px" }}
                 />
-
                 <div className="reveal reveal-delay-4">
                   <p
                     style={{
@@ -221,7 +180,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Right: Cal.com calendar */}
+              {/* Right: Cal.com */}
               <div className="reveal reveal-delay-2">
                 <CalWidget />
               </div>
@@ -233,10 +192,22 @@ export default function ContactPage() {
       <Footer />
 
       <style>{`
-        @media (max-width: 900px) {
+        .contact-page-grid {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: 80px;
+          align-items: start;
+        }
+        @media (max-width: 1024px) {
           .contact-page-grid {
-            grid-template-columns: 1fr !important;
-            gap: 48px !important;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 48px;
+          }
+        }
+        @media (max-width: 768px) {
+          .contact-page-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
           }
         }
       `}</style>

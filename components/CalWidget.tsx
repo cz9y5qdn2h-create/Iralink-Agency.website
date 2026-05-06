@@ -55,36 +55,60 @@ export default function CalWidget() {
       layout: "month_view",
       cssVarsPerTheme: {
         dark: {
-          "cal-brand": "#C8A96E",
-          "cal-brand-emphasis": "#b8975e",
-          "cal-brand-text": "#080808",
-          "cal-text": "#f0ece4",
-          "cal-text-subtle": "#8a8a8a",
-          "cal-border": "#1E1E1E",
-          "cal-border-subtle": "#151515",
-          "cal-bg": "#080808",
-          "cal-bg-subtle": "#111111",
-          "cal-bg-emphasis": "#1a1a1a",
+          "cal-brand":           "#C8A96E",
+          "cal-brand-emphasis":  "#b8975e",
+          "cal-brand-text":      "#080808",
+          "cal-text":            "#F4F2EE",
+          "cal-text-subtle":     "#5A5A5A",
+          "cal-border":          "rgba(200,169,110,0.18)",
+          "cal-border-subtle":   "rgba(244,242,238,0.06)",
+          "cal-bg":              "#080808",
+          "cal-bg-subtle":       "#111111",
+          "cal-bg-emphasis":     "#1a1a1a",
         },
       },
     });
   }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "700px",
-        background: "var(--black)",
-        border: "1px solid var(--border)",
-        borderRadius: "2px",
-        overflow: "hidden",
-      }}
-    >
-      <div
-        id="cal-booking-inline"
-        style={{ width: "100%", height: "100%", minHeight: "700px" }}
-      />
-    </div>
+    <>
+      <style>{`
+        .cal-wrapper {
+          width: 100%;
+          background: var(--black);
+          border: 1px solid var(--border);
+          border-radius: 2px;
+          overflow: hidden;
+          min-height: 700px;
+        }
+        #cal-booking-inline {
+          width: 100%;
+          min-height: 700px;
+          overflow: scroll;
+        }
+        @media (max-width: 768px) {
+          .cal-wrapper {
+            min-height: 580px;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+          }
+          #cal-booking-inline {
+            min-height: 580px;
+          }
+        }
+        @media (max-width: 480px) {
+          .cal-wrapper {
+            min-height: 520px;
+          }
+          #cal-booking-inline {
+            min-height: 520px;
+          }
+        }
+      `}</style>
+      <div className="cal-wrapper">
+        <div id="cal-booking-inline" />
+      </div>
+    </>
   );
 }
