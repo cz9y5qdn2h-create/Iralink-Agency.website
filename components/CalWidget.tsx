@@ -2,58 +2,89 @@
 
 import { useEffect } from "react";
 
-declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    Cal: any;
-  }
-}
-
 export default function CalWidget() {
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    /* eslint-disable */
+    (function (C: any, A: string, L: string) {
+      const p = (a: any, ar: any) => a.q.push(ar);
+      const d = C.document;
+      C.Cal =
+        C.Cal ||
+        function () {
+          const ar = arguments;
+          const cal = C.Cal;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            const s = d.createElement("script");
+            s.src = A;
+            d.head.appendChild(s);
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api: any = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else {
+              p(cal, ar);
+            }
+            return;
+          }
+          p(cal, ar);
+        };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    /* eslint-enable */
 
-    const scriptId = "cal-embed-script";
-    if (document.getElementById(scriptId)) {
-      initCal();
-      return;
-    }
+    const Cal = (window as any).Cal;
 
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.src = "https://app.cal.com/embed/embed.js";
-    script.async = true;
-    script.onload = initCal;
-    document.head.appendChild(script);
+    Cal("init", "presentation-dippro", { origin: "https://cal.com" });
 
-    function initCal() {
-      if (!window.Cal) return;
-      window.Cal("init", "presentation-dippro", { origin: "https://cal.com" });
-      window.Cal.ns["presentation-dippro"]("inline", {
-        elementOrSelector: "#cal-inline-embed",
-        config: { layout: "month_view" },
-        calLink: "theo-coutard-mhdsix/presentation-dippro",
-      });
-      window.Cal.ns["presentation-dippro"]("ui", {
-        hideEventTypeDetails: false,
-        layout: "month_view",
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#C8A96E" },
-          dark: { "cal-brand": "#C8A96E" },
+    Cal.ns["presentation-dippro"]("inline", {
+      elementOrSelector: "#cal-booking-inline",
+      config: { layout: "month_view" },
+      calLink: "theo-coutard-mhdsix/presentation-dippro",
+    });
+
+    Cal.ns["presentation-dippro"]("ui", {
+      theme: "dark",
+      hideEventTypeDetails: false,
+      layout: "month_view",
+      cssVarsPerTheme: {
+        dark: {
+          "cal-brand": "#C8A96E",
+          "cal-brand-emphasis": "#b8975e",
+          "cal-brand-text": "#080808",
+          "cal-text": "#f0ece4",
+          "cal-text-subtle": "#8a8a8a",
+          "cal-border": "#1E1E1E",
+          "cal-border-subtle": "#151515",
+          "cal-bg": "#080808",
+          "cal-bg-subtle": "#111111",
+          "cal-bg-emphasis": "#1a1a1a",
         },
-      });
-    }
+      },
+    });
   }, []);
 
   return (
     <div
-      id="cal-inline-embed"
       style={{
         width: "100%",
-        minHeight: "600px",
-        overflow: "hidden",
+        minHeight: "700px",
+        background: "var(--black)",
+        border: "1px solid var(--border)",
         borderRadius: "2px",
+        overflow: "hidden",
       }}
-    />
+    >
+      <div
+        id="cal-booking-inline"
+        style={{ width: "100%", height: "100%", minHeight: "700px" }}
+      />
+    </div>
   );
 }
