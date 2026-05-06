@@ -47,9 +47,8 @@ export default function BlogPage() {
       <main>
         {/* ── Hero ── */}
         <section
-          className="section"
+          className="section page-hero"
           style={{
-            paddingTop: "160px",
             borderBottom: "1px solid var(--border)",
             position: "relative",
             overflow: "hidden",
@@ -86,14 +85,7 @@ export default function BlogPage() {
         {/* ── Article grid ── */}
         <section className="section">
           <div className="section-inner">
-            <div
-              className="blog-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
-                gap: "2px",
-              }}
-            >
+            <div className="blog-grid">
               {articles.map((article, i) => (
                 <Link
                   key={article.slug}
@@ -216,6 +208,11 @@ export default function BlogPage() {
       <Footer />
 
       <style>{`
+        .blog-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 2px;
+        }
         .blog-card:hover { background: #1A1A1A !important; }
         @media (max-width: 640px) {
           .blog-grid { grid-template-columns: 1fr !important; }

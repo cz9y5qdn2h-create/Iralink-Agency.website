@@ -28,14 +28,8 @@ export default function WhyUs() {
 
         {/* Top: tag + h2 + market stat */}
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
-            alignItems: "start",
-            marginBottom: "100px",
-          }}
           className="responsive-2col"
+          style={{ alignItems: "start", marginBottom: "80px" }}
         >
           <div>
             <div className="section-tag reveal">
@@ -177,11 +171,6 @@ export default function WhyUs() {
 
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .responsive-2col { grid-template-columns: 1fr !important; gap: 40px !important; }
-        }
-      `}</style>
     </section>
   );
 }

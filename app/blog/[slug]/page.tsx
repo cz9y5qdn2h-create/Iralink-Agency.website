@@ -269,9 +269,8 @@ export default async function ArticlePage({
       <main>
         {/* ── Article header ── */}
         <section
-          className="section"
+          className="section page-hero"
           style={{
-            paddingTop: "160px",
             paddingBottom: "80px",
             borderBottom: "1px solid var(--border)",
             position: "relative",
@@ -438,15 +437,7 @@ export default async function ArticlePage({
           className="section"
           style={{ paddingTop: "80px", paddingBottom: "80px" }}
         >
-          <div
-            className="section-inner"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 320px",
-              gap: "80px",
-              alignItems: "start",
-            }}
-          >
+          <div className="section-inner article-grid">
             {/* Main content */}
             <div className="article-content">
               {article.content.map((block, i) => renderBlock(block, i))}
@@ -515,17 +506,10 @@ export default async function ArticlePage({
         </section>
 
         {/* ── Back to blog ── */}
-        <section
-          style={{
-            padding: "0 60px 100px",
-            borderTop: "1px solid var(--border)",
-          }}
-        >
+        <section className="section" style={{ borderTop: "1px solid var(--border)", paddingTop: "60px", paddingBottom: "80px" }}>
           <div
+            className="section-inner"
             style={{
-              maxWidth: "1160px",
-              margin: "0 auto",
-              paddingTop: "60px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -546,16 +530,7 @@ export default async function ArticlePage({
 
       <Footer />
 
-      <style>{`
-        @media (max-width: 900px) {
-          .article-content,
-          .section-inner { grid-template-columns: 1fr !important; }
-          .article-sidebar { display: none; }
-        }
-        @media (max-width: 640px) {
-          [style*="padding: 0 60px 100px"] { padding: 0 28px 80px !important; }
-        }
-      `}</style>
+      <style>{``}</style>
     </>
   );
 }

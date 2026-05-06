@@ -38,9 +38,8 @@ export default function ContactPage() {
       <main>
         {/* Hero */}
         <section
-          className="section"
+          className="section page-hero"
           style={{
-            paddingTop: "160px",
             paddingBottom: "80px",
             borderBottom: "1px solid var(--border)",
             position: "relative",

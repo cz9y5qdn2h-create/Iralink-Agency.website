@@ -1,26 +1,17 @@
 export default function Hero() {
   return (
-    <section
-      style={{
-        position: "relative",
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "flex-end",
-        padding: "0 60px 140px",
-        overflow: "hidden",
-      }}
-    >
+    <section className="hero-section">
       {/* Grid background */}
       <div className="hero-grid-bg" />
 
-      {/* Radial glow — top right */}
+      {/* Radial glow */}
       <div className="hero-glow" />
 
       {/* Watermark */}
       <div className="hero-watermark" aria-hidden="true">IA</div>
 
       {/* Content — bottom left */}
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "860px" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: "860px", width: "100%" }}>
 
         {/* Section tag */}
         <div className="section-tag reveal">
@@ -29,10 +20,7 @@ export default function Hero() {
         </div>
 
         {/* H1 */}
-        <h1
-          className="t-h1 reveal reveal-delay-1"
-          style={{ marginBottom: "32px" }}
-        >
+        <h1 className="t-h1 reveal reveal-delay-1" style={{ marginBottom: "28px" }}>
           Votre DIP<br />
           toujours conforme.
         </h1>
@@ -40,7 +28,7 @@ export default function Hero() {
         {/* Subtext */}
         <p
           className="t-body reveal reveal-delay-2"
-          style={{ maxWidth: "520px", marginBottom: "48px" }}
+          style={{ maxWidth: "520px", marginBottom: "40px" }}
         >
           DIP Pilot surveille vos données en continu, détecte chaque changement,
           et met à jour votre Document d&apos;Information Précontractuelle automatiquement.{" "}
@@ -55,7 +43,7 @@ export default function Hero() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "40px",
+            gap: "32px",
             flexWrap: "wrap",
           }}
         >
@@ -72,7 +60,7 @@ export default function Hero() {
         <p
           className="reveal reveal-delay-4"
           style={{
-            marginTop: "32px",
+            marginTop: "28px",
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "12px",
             fontWeight: 300,
@@ -83,13 +71,6 @@ export default function Hero() {
           Audit 100% gratuit · 30 minutes · Sans engagement
         </p>
       </div>
-
-      {/* Responsive mobile padding fix */}
-      <style>{`
-        @media (max-width: 768px) {
-          section { padding: 0 28px 90px !important; min-height: 100svh !important; }
-        }
-      `}</style>
     </section>
   );
 }
