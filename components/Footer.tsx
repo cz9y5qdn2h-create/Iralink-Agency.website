@@ -2,12 +2,13 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const productLinks = [
-    { label: "Comment ça marche", href: "#comment-ca-marche" },
-    { label: "Fonctionnalités", href: "#fonctionnalites" },
-    { label: "Tarifs", href: "#tarifs" },
-    { label: "Audit gratuit", href: "#contact" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "Comment ça marche", href: "#comment-ca-marche", external: false },
+    { label: "Fonctionnalités", href: "#fonctionnalites", external: false },
+    { label: "Tarifs", href: "#tarifs", external: false },
+    { label: "Audit gratuit", href: "#contact", external: false },
+    { label: "Blog", href: "/blog", external: false },
+    { label: "Contact", href: "/contact", external: false },
+    { label: "Connexion à l'app", href: "https://iralink-agency.dippro.business/login", external: true },
   ];
 
   return (
@@ -84,11 +85,13 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="link-grey"
+                    className={link.external ? "link-grey-gold" : "link-grey"}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "13px",
-                      fontWeight: 300,
+                      fontWeight: link.external ? 400 : 300,
                     }}
                   >
                     — {link.label}
