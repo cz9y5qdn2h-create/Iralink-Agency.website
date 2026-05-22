@@ -21,6 +21,17 @@ export default function Nav() {
     { label: "Contact", href: "/contact" },
   ];
 
+  const waitlistLinkStyle = {
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: "12px",
+    fontWeight: 400,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase" as const,
+    color: "var(--gold)",
+    textDecoration: "none",
+    transition: "opacity 0.3s ease",
+  };
+
   const navLinkStyle = {
     fontFamily: "'DM Sans', sans-serif",
     fontSize: "12px",
@@ -90,6 +101,16 @@ export default function Nav() {
             </Link>
           )
         )}
+
+        {/* Waitlist link */}
+        <Link
+          href="/waitlist"
+          style={waitlistLinkStyle}
+          onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.7")}
+          onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
+        >
+          Accès anticipé
+        </Link>
 
         {/* App login link */}
         <a
@@ -161,6 +182,15 @@ export default function Nav() {
               </Link>
             )
           )}
+
+          {/* Waitlist */}
+          <Link
+            href="/waitlist"
+            onClick={() => setMenuOpen(false)}
+            style={{ ...mobileLinkStyle, color: "var(--gold)" }}
+          >
+            Accès anticipé
+          </Link>
 
           {/* App login */}
           <a
