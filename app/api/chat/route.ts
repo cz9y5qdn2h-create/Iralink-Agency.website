@@ -5,11 +5,36 @@ export const runtime = "nodejs";
 
 const SYSTEM_PROMPT = `Tu es l'assistant de DIP Pilot, la solution d'automatisation DIP pour les réseaux de franchise. Tu réponds aux questions sur le DIP, la loi Doubin, la conformité franchise, et le produit DIP Pilot. Sois direct, concis, expert. Si quelqu'un veut parler à Théo, dis-leur d'envoyer un message via le formulaire ou à theo@iralink-agency.com. Réponds toujours en français. Maximum 3 paragraphes par réponse.`;
 
+// In-memory rate limiter (per serverless instance; protects against burst abuse)
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + 60_000 });
+    return false;
+  }
+  if (entry.count >= 20) return true;
+  entry.count++;
+  return false;
+}
+
 export async function POST(req: Request) {
   if (!process.env.ANTHROPIC_API_KEY) {
     return NextResponse.json(
       { error: "Chat non disponible pour le moment." },
       { status: 503 }
+    );
+  }
+
+  // Rate limiting
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Trop de requêtes. Réessayez dans une minute." },
+      { status: 429 }
     );
   }
 
@@ -22,6 +47,34 @@ export async function POST(req: Request) {
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json(
         { error: "Messages manquants ou invalides." },
+        { status: 400 }
+      );
+    }
+
+    // Hard limits to prevent token abuse
+    if (messages.length > 20) {
+      return NextResponse.json(
+        { error: "Trop de messages dans la conversation." },
+        { status: 400 }
+      );
+    }
+
+    const totalLength = messages.reduce(
+      (acc, m) => acc + String(m.content ?? "").length,
+      0
+    );
+    if (totalLength > 16_000) {
+      return NextResponse.json(
+        { error: "Contenu trop long." },
+        { status: 400 }
+      );
+    }
+
+    // Validate role values
+    const validRoles = new Set(["user", "assistant"]);
+    if (messages.some((m) => !validRoles.has(m.role))) {
+      return NextResponse.json(
+        { error: "Format de message invalide." },
         { status: 400 }
       );
     }
@@ -43,7 +96,7 @@ export async function POST(req: Request) {
           system: SYSTEM_PROMPT,
           messages: messages.map((m) => ({
             role: m.role as "user" | "assistant",
-            content: m.content,
+            content: String(m.content).slice(0, 4000),
           })),
         });
 

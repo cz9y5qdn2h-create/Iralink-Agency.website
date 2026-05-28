@@ -117,6 +117,7 @@ export default function WaitlistForm() {
           placeholder="Nom complet *"
           value={form.nom}
           onChange={handle}
+          maxLength={300}
           required
         />
         <input
@@ -126,6 +127,7 @@ export default function WaitlistForm() {
           placeholder="Email professionnel *"
           value={form.email}
           onChange={handle}
+          maxLength={254}
           required
         />
       </div>
@@ -137,6 +139,7 @@ export default function WaitlistForm() {
         placeholder="Nom de votre réseau de franchise *"
         value={form.reseau}
         onChange={handle}
+        maxLength={300}
         required
       />
 

@@ -115,7 +115,6 @@ export default function RootLayout({
           src="https://taap.it/scripts/tracker.js"
           data-project="pk_f636d7ac7232d2f7a5e64df3b44b9e5d"
           data-track-outbound="true"
-          data-track-forms="true"
           strategy="afterInteractive"
         />
       </body>
