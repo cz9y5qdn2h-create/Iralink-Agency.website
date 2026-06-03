@@ -125,7 +125,7 @@ export default function WaitlistPage() {
                       color: "var(--gold)",
                     }}
                   >
-                    Lancement prévu — Q3 2025
+                    Lancement prévu — Q3 2026
                   </span>
                 </div>
               </div>
