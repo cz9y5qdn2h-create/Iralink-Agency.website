@@ -20,7 +20,7 @@ export default function Contact() {
 
             <p className="t-body reveal reveal-delay-2" style={{ marginBottom: "40px" }}>
               En 30 minutes, on analyse votre DIP actuel, on identifie les sections
-              à risque, et on vous montre exactement comment DIP Pilot les maintient
+              à risque, et on vous montre exactement comment DIPpro les maintient
               à jour automatiquement. Aucun engagement, aucun frais.
             </p>
 
@@ -37,7 +37,7 @@ export default function Contact() {
               {[
                 "Analyse section par section de votre DIP existant",
                 "Rapport des risques de non-conformité détectés",
-                "Démo live de DIP Pilot sur votre cas",
+                "Démo live de DIPpro sur votre cas",
                 "Recommandations prioritaires sans engagement",
               ].map((item) => (
                 <li

@@ -1,10 +1,40 @@
 const steps = [
-  { num: "01", tag: "Intégration", title: "Connexion des sources", body: "Google Drive, emails, CRM, comptabilité — on se branche sur vos outils existants." },
-  { num: "02", tag: "Automatique", title: "Surveillance continue", body: "L'IA analyse vos données chaque semaine et les compare avec votre DIP en cours." },
-  { num: "03", tag: "IA", title: "Détection des écarts", body: "Chaque section à mettre à jour est identifiée précisément avec la nature du changement." },
-  { num: "04", tag: "Génération", title: "Rédaction automatique", body: "La nouvelle version est rédigée par l'IA dans le format légal du DIP, diff inclus." },
-  { num: "05", tag: "Contrôle", title: "Validation en 1 clic", body: "Vous recevez un résumé des modifications. Aucune mise à jour sans votre accord." },
-  { num: "06", tag: "Preuve", title: "Distribution & archivage", body: "Version envoyée aux franchisés + horodatage certifié. Valeur probatoire garantie." },
+  {
+    num: "01",
+    tag: "Intégration",
+    title: "Connexion",
+    body: "On se branche sur vos outils : Drive, CRM, comptabilité.",
+  },
+  {
+    num: "02",
+    tag: "Automatique",
+    title: "Surveillance",
+    body: "L'IA analyse vos données chaque semaine et compare avec votre DIP.",
+  },
+  {
+    num: "03",
+    tag: "IA",
+    title: "Détection",
+    body: "Chaque section à mettre à jour est identifiée avec la nature du changement.",
+  },
+  {
+    num: "04",
+    tag: "Génération",
+    title: "Rédaction",
+    body: "La nouvelle version est rédigée par l'IA dans le format légal du DIP.",
+  },
+  {
+    num: "05",
+    tag: "Contrôle",
+    title: "Validation",
+    body: "Vous recevez un résumé. Aucune mise à jour sans votre accord.",
+  },
+  {
+    num: "06",
+    tag: "Preuve",
+    title: "Archivage",
+    body: "Version distribuée aux franchisés + horodatage certifié.",
+  },
 ];
 
 export default function HowItWorks() {
@@ -30,8 +60,8 @@ export default function HowItWorks() {
           <h2 className="t-h2 reveal reveal-delay-1" style={{ maxWidth: "480px" }}>
             6 étapes.<br />Entièrement automatisées.
           </h2>
-          <p className="t-body reveal reveal-delay-2" style={{ maxWidth: "340px", fontSize: "14px" }}>
-            Configuré une fois, DIP Pilot tourne seul. Vous n&apos;intervenez que pour valider.
+          <p className="t-body reveal reveal-delay-2" style={{ maxWidth: "300px", fontSize: "14px" }}>
+            Configuré une fois, DIPpro tourne seul. Vous n&apos;intervenez que pour valider.
           </p>
         </div>
 
@@ -60,7 +90,7 @@ export default function HowItWorks() {
                   {step.tag}
                 </span>
               </div>
-              <h3 className="t-step-title" style={{ marginBottom: "14px" }}>{step.title}</h3>
+              <h3 className="t-step-title" style={{ marginBottom: "12px" }}>{step.title}</h3>
               <p className="t-body" style={{ fontSize: "14px" }}>{step.body}</p>
             </div>
           ))}

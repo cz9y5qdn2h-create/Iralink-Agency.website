@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import DIPproProduct from "@/components/DIPproProduct";
 import StatsBar from "@/components/StatsBar";
 import Problem from "@/components/Problem";
+import WhyNow from "@/components/WhyNow";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
@@ -23,6 +24,7 @@ export default function Home() {
         <DIPproProduct />
         <StatsBar />
         <Problem />
+        <WhyNow />
         <HowItWorks />
         <Features />
         <Pricing />

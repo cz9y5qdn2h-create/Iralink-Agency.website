@@ -7,19 +7,19 @@ import CustomCursor from "@/components/CustomCursor";
 import { articles } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Blog — Conformité DIP & Franchise | Iralink Agency",
+  title: "Blog — Conformité DIP & Franchise | DIPpro",
   description:
-    "Ressources, analyses et guides pratiques sur la conformité DIP, la loi Doubin et la gestion juridique des réseaux de franchise. Par Théo Coutard, Iralink Agency.",
+    "Ressources, analyses et guides pratiques sur la conformité DIP, la loi Doubin et la gestion juridique des réseaux de franchise. Par Théo Coutard, DIPpro.",
   keywords: [
     "blog DIP franchise",
     "conformité DIP",
     "loi Doubin",
     "Document Information Précontractuelle",
     "réseau franchise",
-    "Iralink Agency",
+    "DIPpro",
   ],
   openGraph: {
-    title: "Blog — Conformité DIP & Franchise | Iralink Agency",
+    title: "Blog — Conformité DIP & Franchise | DIPpro",
     description:
       "Ressources, analyses et guides pratiques sur la conformité DIP et la gestion juridique des réseaux de franchise.",
     type: "website",

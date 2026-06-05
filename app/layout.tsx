@@ -4,26 +4,23 @@ import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
-  title:
-    "DIP Pilot by Théo Coutard — Conformité DIP automatisée pour les franchiseurs",
+  title: "DIPpro — Conformité DIP automatisée pour les franchiseurs",
   description:
-    "DIP Pilot, créé par Théo Coutard (Iralink Agency), surveille vos données en continu et met à jour votre Document d'Information Précontractuelle automatiquement. Zéro risque juridique, zéro oubli.",
+    "DIPpro surveille votre réseau et met à jour votre Document d'Information Précontractuelle automatiquement. Zéro risque juridique, zéro oubli.",
   keywords: [
-    "Théo Coutard",
-    "Iralink",
-    "Iralink Agency",
-    "DIP Pilot",
+    "DIPpro",
     "DIP franchise",
     "Document Information Précontractuelle",
     "conformité franchise",
     "loi Doubin",
     "automatisation DIP",
     "réseau de franchise",
+    "Théo Coutard",
   ],
   openGraph: {
-    title: "DIP Pilot by Théo Coutard — Votre DIP toujours conforme",
+    title: "DIPpro — Votre DIP toujours conforme",
     description:
-      "Automatisez la conformité DIP de votre réseau. Surveillance continue, mises à jour automatiques, audit trail certifié. Par Théo Coutard, Iralink Agency.",
+      "Automatisez la conformité DIP de votre réseau. Surveillance continue, mises à jour automatiques, audit trail certifié.",
     type: "website",
     locale: "fr_FR",
   },
@@ -40,35 +37,11 @@ const jsonLd = {
       email: "theo@iralink-agency.com",
       url: "https://iralink-agency.com",
       sameAs: ["https://www.linkedin.com/in/th%C3%A9o-coutard"],
-      worksFor: {
-        "@id": "https://iralink-agency.com/#organization",
-      },
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://iralink-agency.com/#organization",
-      name: "Iralink Agency",
-      url: "https://iralink-agency.com",
-      founder: {
-        "@id": "https://iralink-agency.com/#theo-coutard",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: "theo@iralink-agency.com",
-        contactType: "customer support",
-        availableLanguage: "fr",
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "FR",
-        addressLocality: "Paris",
-      },
-      description:
-        "Iralink Agency automatise la conformité DIP des réseaux de franchise avec DIP Pilot, fondée par Théo Coutard.",
     },
     {
       "@type": "SoftwareApplication",
-      name: "DIP Pilot",
+      "@id": "https://iralink-agency.com/#dippro",
+      name: "DIPpro",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       offers: {

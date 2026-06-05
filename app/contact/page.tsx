@@ -6,21 +6,21 @@ import CustomCursor from "@/components/CustomCursor";
 import CalWidget from "@/components/CalWidget";
 
 export const metadata: Metadata = {
-  title: "Contact — Théo Coutard | Iralink Agency",
+  title: "Contact — Théo Coutard | DIPpro",
   description:
-    "Contactez Théo Coutard, fondateur d'Iralink Agency et créateur de DIP Pilot. Audit gratuit de votre conformité DIP, conseil en automatisation pour réseaux de franchise. Paris, France.",
+    "Contactez Théo Coutard, fondateur d'DIPpro et créateur de DIPpro. Audit gratuit de votre conformité DIP, conseil en automatisation pour réseaux de franchise. Paris, France.",
   keywords: [
     "Théo Coutard",
-    "contact Iralink Agency",
+    "contact DIPpro",
     "audit DIP gratuit",
     "conformité franchise contact",
-    "DIP Pilot",
+    "DIPpro",
     "Paris",
   ],
   openGraph: {
-    title: "Contact Théo Coutard — Iralink Agency",
+    title: "Contact Théo Coutard — DIPpro",
     description:
-      "Prenez contact avec Théo Coutard pour un audit gratuit de votre conformité DIP et une démonstration de DIP Pilot.",
+      "Prenez contact avec Théo Coutard pour un audit gratuit de votre conformité DIP et une démonstration de DIPpro.",
     type: "website",
     locale: "fr_FR",
   },
@@ -64,7 +64,7 @@ export default function ContactPage() {
               style={{ maxWidth: "520px" }}
             >
               En 30 minutes, on analyse votre DIP, identifie les risques de
-              non-conformité et vous montre comment DIP Pilot les résout.
+              non-conformité et vous montre comment DIPpro les résout.
               Sans engagement, sans frais.
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                     Théo Coutard
                   </h2>
                   <span className="t-mono-sm" style={{ display: "block" }}>
-                    DIP Pilot · Iralink Agency
+                    DIPpro · DIPpro
                   </span>
                 </div>
 

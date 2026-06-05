@@ -97,7 +97,7 @@ export default function Problem() {
           >
             La loi ne distingue pas l&apos;oubli de la négligence.{" "}
             <span style={{ color: "#A0A0A0", fontWeight: 300 }}>
-              DIP Pilot supprime ce risque à sa source.
+              DIPpro supprime ce risque à sa source.
             </span>
           </p>
         </div>

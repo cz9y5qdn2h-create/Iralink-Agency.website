@@ -6,7 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import WaitlistForm from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Liste d'attente DIPpro — Accès anticipé | Iralink Agency",
+  title: "Liste d'attente DIPpro — Accès anticipé | DIPpro",
   description:
     "DIPpro est le premier outil qui automatise intégralement la conformité DIP des réseaux de franchise. Inscrivez-vous pour un accès prioritaire dès l'ouverture.",
   keywords: [
@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     "automatisation DIP franchise",
     "conformité DIP",
     "loi Doubin",
-    "Iralink Agency",
+    "DIPpro",
     "Théo Coutard",
   ],
   openGraph: {
-    title: "DIPpro arrive — Accès anticipé | Iralink Agency",
+    title: "DIPpro arrive — Accès anticipé | DIPpro",
     description:
       "Soyez parmi les premiers à accéder à DIPpro, l'outil qui automatise la conformité DIP de votre réseau de franchise.",
     type: "website",

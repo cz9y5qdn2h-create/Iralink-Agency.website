@@ -1,6 +1,5 @@
 import LiveMonitor from "@/components/LiveMonitor";
-
-const DIPPRO_URL = "https://iralink-agency.dippro.business";
+import WaitlistCount from "@/components/WaitlistCount";
 
 export default function Hero() {
   return (
@@ -26,35 +25,37 @@ export default function Hero() {
         <div>
           <div className="section-tag reveal">
             <span className="line" />
-            <span className="label">Paris, France — Automatisation IA</span>
+            <span className="label">SaaS B2B · Conformité DIP · France</span>
           </div>
 
           <h1 className="t-h1 reveal reveal-delay-1" style={{ marginBottom: "24px" }}>
-            Iralink Agency
+            Votre DIP toujours<br />conforme. Automatiquement.
           </h1>
 
           <p
             className="t-body reveal reveal-delay-2"
-            style={{ maxWidth: "480px", marginBottom: "48px", fontSize: "18px", lineHeight: 1.65 }}
+            style={{ maxWidth: "440px", marginBottom: "48px", fontSize: "18px", lineHeight: 1.6 }}
           >
-            On construit DIPpro — la conformité DIP automatisée pour les franchiseurs.
+            DIPpro surveille votre réseau et met à jour votre DIP en temps réel.
           </p>
 
           <div
             className="reveal reveal-delay-3"
-            style={{ display: "flex", alignItems: "center", gap: "28px", flexWrap: "wrap" }}
+            style={{ display: "flex", alignItems: "center", gap: "24px", flexWrap: "wrap" }}
           >
-            <a href={DIPPRO_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Découvrir DIPpro
+            <a href="#contact" className="btn-primary">
+              Demander une démo gratuite
             </a>
-            <a href="mailto:theo@iralink-agency.com" className="btn-ghost">
-              Nous contacter
+            <a href="#comment-ca-marche" className="btn-ghost">
+              Voir comment ça marche
               <span className="arrow">→</span>
             </a>
           </div>
+
+          <WaitlistCount />
         </div>
 
-        {/* Right: animated monitor */}
+        {/* Right: animated dashboard mockup */}
         <div className="hero-monitor reveal reveal-delay-2">
           <LiveMonitor />
         </div>

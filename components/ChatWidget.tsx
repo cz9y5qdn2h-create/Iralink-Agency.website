@@ -10,7 +10,7 @@ interface Message {
 const SUGGESTED_QUESTIONS = [
   "Qu'est-ce que le DIP ?",
   "Quels sont les risques juridiques ?",
-  "Comment fonctionne DIP Pilot ?",
+  "Comment fonctionne DIPpro ?",
 ];
 
 function LoadingDots() {
@@ -222,7 +222,7 @@ export default function ChatWidget() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Assistant DIP Pilot
+                  Assistant DIPpro
                 </span>
               </div>
               <button
@@ -293,7 +293,7 @@ export default function ChatWidget() {
                     }}
                   >
                     Bonjour, posez-moi vos questions sur le DIP, la loi Doubin
-                    et DIP Pilot.
+                    et DIPpro.
                   </p>
                   <div
                     style={{
@@ -361,7 +361,7 @@ export default function ChatWidget() {
                         color: isUser ? "#3A3A3A" : "var(--gold)",
                       }}
                     >
-                      {isUser ? "Vous" : "DIP Pilot"}
+                      {isUser ? "Vous" : "DIPpro"}
                     </span>
                     <div
                       style={{
@@ -494,7 +494,7 @@ export default function ChatWidget() {
         {/* Toggle button */}
         <button
           onClick={() => setOpen((prev) => !prev)}
-          aria-label={open ? "Fermer l'assistant" : "Ouvrir l'assistant DIP Pilot"}
+          aria-label={open ? "Fermer l'assistant" : "Ouvrir l'assistant DIPpro"}
           style={{
             width: "56px",
             height: "56px",

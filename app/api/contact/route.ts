@@ -51,10 +51,10 @@ export async function POST(req: Request) {
     const eFranchises = escapeHtml(franchises);
 
     const { error } = await resend.emails.send({
-      from: "DIP Pilot <onboarding@resend.dev>",
+      from: "DIPpro <onboarding@resend.dev>",
       to: ["consultin@iralink-agency.com"],
       replyTo: email,
-      subject: `[DIP Pilot] Demande d'audit — ${nom} — ${reseau}`,
+      subject: `[DIPpro] Demande d'audit — ${nom} — ${reseau}`,
       text: [
         "Nouvelle demande d'audit DIP",
         "─────────────────────────────",
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
       ].join("\n"),
       html: `
         <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#080808;color:#F4F2EE;padding:48px 40px;border:1px solid rgba(200,169,110,0.18);">
-          <p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#C8A96E;margin:0 0 24px 0;">DIP Pilot — Demande d'audit</p>
+          <p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#C8A96E;margin:0 0 24px 0;">DIPpro — Demande d'audit</p>
           <h1 style="font-family:Georgia,serif;font-size:26px;font-weight:300;color:#F4F2EE;margin:0 0 32px 0;line-height:1.2;">${eReseau}</h1>
           <table style="width:100%;border-collapse:collapse;">
             <tr><td style="padding:12px 0;border-bottom:1px solid rgba(244,242,238,0.06);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5A5A;width:38%;">Nom</td><td style="padding:12px 0;border-bottom:1px solid rgba(244,242,238,0.06);font-size:14px;font-weight:300;color:#F4F2EE;">${eNom}</td></tr>

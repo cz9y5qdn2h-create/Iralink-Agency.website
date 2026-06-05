@@ -23,19 +23,19 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: "Article introuvable | Iralink Agency",
+      title: "Article introuvable | DIPpro",
     };
   }
 
   return {
-    title: `${article.title} | Iralink Agency`,
+    title: `${article.title} | DIPpro`,
     description: article.description,
     keywords: [
       article.category,
       "DIP franchise",
       "conformité DIP",
       "loi Doubin",
-      "Iralink Agency",
+      "DIPpro",
       "Théo Coutard",
     ],
     authors: [{ name: article.author }],
@@ -246,7 +246,7 @@ export default async function ArticlePage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Iralink Agency",
+      name: "DIPpro",
       url: "https://iralink-agency.com",
     },
     mainEntityOfPage: {
@@ -384,7 +384,7 @@ export default async function ArticlePage({
                     className="t-mono-sm"
                     style={{ fontSize: "9px", letterSpacing: "0.12em" }}
                   >
-                    Iralink Agency
+                    DIPpro
                   </span>
                 </div>
               </div>
@@ -459,7 +459,7 @@ export default async function ArticlePage({
                   className="t-mono-sm"
                   style={{ display: "block", marginBottom: "16px" }}
                 >
-                  DIP Pilot
+                  DIPpro
                 </span>
                 <h3
                   style={{

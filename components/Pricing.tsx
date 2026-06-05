@@ -10,7 +10,7 @@ const plans = [
       "Analyse du DIP section par section",
       "Identification des risques de non-conformité",
       "Rapport des manques détectés",
-      "Démo personnalisée de DIP Pilot",
+      "Démo personnalisée de DIPpro",
     ],
   },
   {
@@ -75,7 +75,7 @@ export default function Pricing() {
           </h2>
           <p className="t-body reveal reveal-delay-2" style={{ maxWidth: "360px" }}>
             Un litige sur DIP non conforme coûte en moyenne 15 000 à 50 000€
-            en frais d&apos;avocat. L&apos;abonnement annuel DIP Pilot : 6 000 à 12 000€.
+            en frais d&apos;avocat. L&apos;abonnement annuel DIPpro : 6 000 à 12 000€.
           </p>
         </div>
 
