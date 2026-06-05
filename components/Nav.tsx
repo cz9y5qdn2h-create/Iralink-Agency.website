@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const APP_URL = "https://iralink-agency.dippro.business/login";
+const APP_URL = "https://iralink-agency.dippro.business";
+const DIPPRO_URL = "https://iralink-agency.dippro.business";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,17 +21,6 @@ export default function Nav() {
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ];
-
-  const waitlistLinkStyle = {
-    fontFamily: "'DM Sans', sans-serif",
-    fontSize: "12px",
-    fontWeight: 400,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase" as const,
-    color: "var(--gold)",
-    textDecoration: "none",
-    transition: "opacity 0.3s ease",
-  };
 
   const navLinkStyle = {
     fontFamily: "'DM Sans', sans-serif",
@@ -55,25 +45,10 @@ export default function Nav() {
   return (
     <header className={`nav-root ${scrolled ? "scrolled" : ""}`}>
       {/* Logo */}
-      <a href="#" className="logo" style={{ textDecoration: "none" }}>
+      <a href="/" className="logo" style={{ textDecoration: "none" }}>
         <span className="logo-i">I</span>
         <span className="logo-ralink">RALINK</span>
         <span className="logo-agency">agency</span>
-        <span
-          style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "9px",
-            fontWeight: 400,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color: "var(--gold)",
-            marginLeft: "10px",
-            opacity: 0.75,
-            alignSelf: "center",
-          }}
-        >
-          DIP Pilot
-        </span>
       </a>
 
       {/* Desktop nav */}
@@ -102,17 +77,22 @@ export default function Nav() {
           )
         )}
 
-        {/* Waitlist link */}
-        <Link
-          href="/waitlist"
-          style={waitlistLinkStyle}
+        {/* DIPpro link */}
+        <a
+          href={DIPPRO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            ...navLinkStyle,
+            color: "var(--gold)",
+          }}
           onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.7")}
           onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
         >
-          Accès anticipé
-        </Link>
+          DIPpro
+        </a>
 
-        {/* App login link */}
+        {/* Connexion */}
         <a
           href={APP_URL}
           target="_blank"
@@ -124,9 +104,9 @@ export default function Nav() {
           Connexion
         </a>
 
-        <Link href="/contact" className="btn-outline">
-          Audit gratuit
-        </Link>
+        <a href={DIPPRO_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+          Essayer DIPpro
+        </a>
       </nav>
 
       {/* Mobile burger */}
@@ -163,36 +143,26 @@ export default function Nav() {
         >
           {links.map((link) =>
             link.href.startsWith("#") ? (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                style={mobileLinkStyle}
-              >
+              <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={mobileLinkStyle}>
                 {link.label}
               </a>
             ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                style={mobileLinkStyle}
-              >
+              <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={mobileLinkStyle}>
                 {link.label}
               </Link>
             )
           )}
 
-          {/* Waitlist */}
-          <Link
-            href="/waitlist"
+          <a
+            href={DIPPRO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             style={{ ...mobileLinkStyle, color: "var(--gold)" }}
           >
-            Accès anticipé
-          </Link>
+            DIPpro
+          </a>
 
-          {/* App login */}
           <a
             href={APP_URL}
             target="_blank"
@@ -203,14 +173,16 @@ export default function Nav() {
             Connexion
           </a>
 
-          <Link
-            href="/contact"
+          <a
+            href={DIPPRO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
             onClick={() => setMenuOpen(false)}
             style={{ alignSelf: "flex-start" }}
           >
-            Audit gratuit
-          </Link>
+            Essayer DIPpro
+          </a>
         </div>
       )}
     </header>

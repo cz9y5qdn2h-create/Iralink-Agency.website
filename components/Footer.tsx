@@ -2,8 +2,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const productLinks = [
+    { label: "DIPpro", href: "https://iralink-agency.dippro.business", external: true },
     { label: "Comment ça marche", href: "#comment-ca-marche", external: false },
-    { label: "Fonctionnalités", href: "#fonctionnalites", external: false },
     { label: "Tarifs", href: "#tarifs", external: false },
     { label: "Audit gratuit", href: "#contact", external: false },
     { label: "Blog", href: "/blog", external: false },

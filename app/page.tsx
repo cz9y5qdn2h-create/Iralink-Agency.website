@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import DIPproProduct from "@/components/DIPproProduct";
 import StatsBar from "@/components/StatsBar";
 import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
@@ -19,6 +20,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <DIPproProduct />
         <StatsBar />
         <Problem />
         <HowItWorks />
