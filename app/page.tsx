@@ -2,9 +2,11 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import DIPproProduct from "@/components/DIPproProduct";
 import StatsBar from "@/components/StatsBar";
+import IntegrationsRow from "@/components/IntegrationsRow";
 import Problem from "@/components/Problem";
 import WhyNow from "@/components/WhyNow";
 import HowItWorks from "@/components/HowItWorks";
+import ProductShowcase from "@/components/ProductShowcase";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import WhyUs from "@/components/WhyUs";
@@ -23,9 +25,11 @@ export default function Home() {
         <Hero />
         <DIPproProduct />
         <StatsBar />
+        <IntegrationsRow />
         <Problem />
         <WhyNow />
         <HowItWorks />
+        <ProductShowcase />
         <Features />
         <Pricing />
         <WhyUs />

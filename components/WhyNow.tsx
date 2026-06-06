@@ -1,3 +1,5 @@
+import CountUp from "@/components/CountUp";
+
 export default function WhyNow() {
   return (
     <section className="section" style={{ background: "var(--black)" }} id="pourquoi-maintenant">
@@ -111,7 +113,7 @@ export default function WhyNow() {
                 letterSpacing: "-0.02em",
               }}
             >
-              200 000€
+              <CountUp to={200000} suffix="€" duration={1600} />
             </div>
             <p
               style={{

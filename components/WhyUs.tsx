@@ -1,3 +1,5 @@
+import CountUp from "@/components/CountUp";
+
 const points = [
   {
     num: "01",
@@ -53,7 +55,7 @@ export default function WhyUs() {
                   marginBottom: "8px",
                 }}
               >
-                2 035
+                <CountUp to={2035} duration={1400} />
               </div>
               <p className="t-body" style={{ fontSize: "13px" }}>
                 réseaux de franchise en France.{" "}
