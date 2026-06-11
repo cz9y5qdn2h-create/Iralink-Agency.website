@@ -43,8 +43,8 @@ export default function Hero() {
             className="reveal reveal-delay-3"
             style={{ display: "flex", alignItems: "center", gap: "24px", flexWrap: "wrap" }}
           >
-            <a href="#contact" className="btn-primary">
-              Demander une démo gratuite
+            <a href="#liste-attente" className="btn-primary">
+              Rejoindre la liste d&apos;attente
             </a>
             <a href="#comment-ca-marche" className="btn-ghost">
               Voir comment ça marche

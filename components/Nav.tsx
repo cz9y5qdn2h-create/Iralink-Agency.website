@@ -21,6 +21,17 @@ export default function Nav() {
     { label: "Blog", href: "/blog" },
   ];
 
+  const waitlistStyle = {
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: "12px",
+    fontWeight: 400 as const,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase" as const,
+    color: "var(--gold)",
+    textDecoration: "none",
+    transition: "opacity 0.3s ease",
+  };
+
   const navLinkStyle = {
     fontFamily: "'DM Sans', sans-serif",
     fontSize: "12px",
@@ -98,6 +109,15 @@ export default function Nav() {
         )}
 
         <a
+          href="#liste-attente"
+          style={waitlistStyle}
+          onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.7")}
+          onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
+        >
+          Accès anticipé
+        </a>
+
+        <a
           href={APP_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -108,8 +128,8 @@ export default function Nav() {
           Connexion
         </a>
 
-        <a href="#contact" className="btn-primary">
-          Démo gratuite
+        <a href="#liste-attente" className="btn-primary">
+          Rejoindre la liste
         </a>
       </nav>
 
@@ -158,6 +178,14 @@ export default function Nav() {
           )}
 
           <a
+            href="#liste-attente"
+            onClick={() => setMenuOpen(false)}
+            style={{ ...mobileLinkStyle, color: "var(--gold)" }}
+          >
+            Accès anticipé
+          </a>
+
+          <a
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -168,12 +196,12 @@ export default function Nav() {
           </a>
 
           <a
-            href="#contact"
+            href="#liste-attente"
             className="btn-primary"
             onClick={() => setMenuOpen(false)}
             style={{ alignSelf: "flex-start" }}
           >
-            Démo gratuite
+            Rejoindre la liste
           </a>
         </div>
       )}
