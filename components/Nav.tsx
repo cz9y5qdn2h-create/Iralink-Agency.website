@@ -2,12 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const DIPPRO_URL = "https://iralink-agency.dippro.business";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const resolve = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -62,7 +67,7 @@ export default function Nav() {
           link.href.startsWith("#") ? (
             <a
               key={link.href}
-              href={link.href}
+              href={resolve(link.href)}
               style={navLinkStyle}
               onMouseEnter={(e) =>
                 ((e.target as HTMLElement).style.color = "var(--white)")
@@ -91,7 +96,7 @@ export default function Nav() {
         )}
 
         <a
-          href="#contact"
+          href={resolve("#contact")}
           style={{
             ...navLinkStyle,
             color: "var(--gold)",
@@ -179,7 +184,7 @@ export default function Nav() {
             link.href.startsWith("#") ? (
               <a
                 key={link.href}
-                href={link.href}
+                href={resolve(link.href)}
                 onClick={() => setMenuOpen(false)}
                 style={mobileLinkStyle}
               >
@@ -198,7 +203,7 @@ export default function Nav() {
           )}
 
           <a
-            href="#contact"
+            href={resolve("#contact")}
             onClick={() => setMenuOpen(false)}
             style={{ ...mobileLinkStyle, color: "var(--gold)" }}
           >

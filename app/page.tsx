@@ -3,6 +3,7 @@ import AgencyHero from "@/components/AgencyHero";
 import StatsBar from "@/components/StatsBar";
 import ProductsSection from "@/components/ProductsSection";
 import SimulateursSection from "@/components/SimulateursSection";
+import ConversionSection from "@/components/ConversionSection";
 import WhyNow from "@/components/WhyNow";
 import AgencyAbout from "@/components/AgencyAbout";
 import Contact from "@/components/Contact";
@@ -21,6 +22,7 @@ export default function Home() {
         <StatsBar />
         <ProductsSection />
         <SimulateursSection />
+        <ConversionSection />
         <WhyNow />
         <AgencyAbout />
         <Contact />
