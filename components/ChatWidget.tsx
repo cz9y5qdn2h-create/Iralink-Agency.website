@@ -8,8 +8,8 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
-  "Qu'est-ce que le DIP ?",
-  "Quels sont les risques juridiques ?",
+  "Qu'est-ce que le DIP franchise ?",
+  "Quels sont les risques d'un DIP non conforme ?",
   "Comment fonctionne DIPpro ?",
 ];
 
@@ -222,7 +222,7 @@ export default function ChatWidget() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Assistant DIPpro
+                  Assistant Iralink
                 </span>
               </div>
               <button
@@ -292,8 +292,7 @@ export default function ChatWidget() {
                       lineHeight: 1.6,
                     }}
                   >
-                    Bonjour, posez-moi vos questions sur le DIP, la loi Doubin
-                    et DIPpro.
+                    Bonjour, posez-moi vos questions sur la franchise, le DIP, la loi Doubin et les produits Iralink.
                   </p>
                   <div
                     style={{
@@ -361,7 +360,7 @@ export default function ChatWidget() {
                         color: isUser ? "#3A3A3A" : "var(--gold)",
                       }}
                     >
-                      {isUser ? "Vous" : "DIPpro"}
+                      {isUser ? "Vous" : "Iralink"}
                     </span>
                     <div
                       style={{

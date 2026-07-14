@@ -1,11 +1,11 @@
 const items = [
   "2 035 réseaux de franchise en France",
-  "Loi Doubin — Art. L.330-3",
-  "20 jours délai légal minimum",
+  "72 milliards € de chiffre d'affaires",
+  "80 000 franchisés en activité",
+  "Loi Doubin — obligation légale permanente",
   "0 outil automatisé sur le marché",
-  "Surveillance hebdomadaire automatique",
-  "Audit trail juridiquement certifié",
-  "Zéro risque de nullité contractuelle",
+  "Iralink Agency — SaaS pour la franchise",
+  "DIPpro — conformité DIP automatisée",
   "Opérationnel en 48h",
 ];
 

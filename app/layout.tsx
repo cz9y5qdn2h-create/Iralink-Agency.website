@@ -4,23 +4,25 @@ import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
-  title: "DIPpro — Conformité DIP automatisée pour les franchiseurs",
+  title: "Iralink Agency — L'agence SaaS pour les franchiseurs",
   description:
-    "DIPpro surveille votre réseau et met à jour votre Document d'Information Précontractuelle automatiquement. Zéro risque juridique, zéro oubli.",
+    "Iralink Agency conçoit des outils SaaS qui automatisent les obligations permanentes des réseaux de franchise. DIPpro, notre premier produit, automatise la conformité DIP.",
   keywords: [
+    "Iralink Agency",
+    "SaaS franchise",
     "DIPpro",
     "DIP franchise",
     "Document Information Précontractuelle",
     "conformité franchise",
     "loi Doubin",
-    "automatisation DIP",
+    "automatisation franchise",
     "réseau de franchise",
     "Théo Coutard",
   ],
   openGraph: {
-    title: "DIPpro — Votre DIP toujours conforme",
+    title: "Iralink Agency — L'agence SaaS pour les franchiseurs",
     description:
-      "Automatisez la conformité DIP de votre réseau. Surveillance continue, mises à jour automatiques, audit trail certifié.",
+      "Outils SaaS pour automatiser les obligations permanentes des réseaux de franchise. DIPpro : conformité DIP automatisée.",
     type: "website",
     locale: "fr_FR",
   },
@@ -29,6 +31,17 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://iralink-agency.com/#iralink",
+      name: "Iralink Agency",
+      url: "https://iralink-agency.com",
+      description:
+        "Agence SaaS spécialisée dans l'automatisation des obligations légales des réseaux de franchise.",
+      founder: {
+        "@id": "https://iralink-agency.com/#theo-coutard",
+      },
+    },
     {
       "@type": "Person",
       "@id": "https://iralink-agency.com/#theo-coutard",
@@ -50,7 +63,7 @@ const jsonLd = {
         priceCurrency: "EUR",
       },
       author: {
-        "@id": "https://iralink-agency.com/#theo-coutard",
+        "@id": "https://iralink-agency.com/#iralink",
       },
       description:
         "Solution d'automatisation du Document d'Information Précontractuelle (DIP) pour les réseaux de franchise. Conformité loi Doubin en continu.",
