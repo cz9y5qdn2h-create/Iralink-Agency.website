@@ -185,7 +185,7 @@ export default function ProductsSection() {
                   textTransform: "uppercase",
                 }}
               >
-                À partir de 500 €/mois
+                850 €/mois · 1 350 € installation
               </span>
             </div>
           </div>

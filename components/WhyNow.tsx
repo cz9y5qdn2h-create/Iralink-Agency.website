@@ -142,7 +142,7 @@ export default function WhyNow() {
                   color: "var(--gold)",
                 }}
               >
-                DIPpro : à partir de 500€/mois
+                DIPpro : 850 €/mois · 1 350 € installation
               </p>
             </div>
           </div>

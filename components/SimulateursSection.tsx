@@ -3,7 +3,9 @@
 import { useState } from "react";
 
 const DIPPRO_URL = "https://iralink-agency.dippro.business";
-const DIPPRO_ANNUAL = 6000;
+const DIPPRO_MONTHLY = 850;
+const DIPPRO_INSTALL = 1350;
+const DIPPRO_ANNUAL = DIPPRO_MONTHLY * 12;
 const LITIGATION_COST = 50000;
 
 const RISK_RATES: Record<string, number> = {
@@ -319,7 +321,7 @@ function DIPSimulator() {
                 color: "var(--grey)",
               }}
             >
-              DIPpro (abonnement annuel)
+              DIPpro — 850 €/mois
             </span>
             <span
               style={{
@@ -329,7 +331,7 @@ function DIPSimulator() {
                 color: "#4CAF80",
               }}
             >
-              À partir de {fmt(DIPPRO_ANNUAL)}/an
+              {fmt(DIPPRO_ANNUAL)}/an + {fmt(DIPPRO_INSTALL)} installation
             </span>
           </div>
         </div>
