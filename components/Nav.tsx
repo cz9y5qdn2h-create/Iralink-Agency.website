@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const DIPPRO_URL = "https://iralink-agency.dippro.business";
+const DIPPRO_URL = "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=nav";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);

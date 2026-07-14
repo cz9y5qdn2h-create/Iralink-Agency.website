@@ -13,6 +13,17 @@ export default function ConversionSection() {
   const [form, setForm] = useState({ nom: "", email: "", reseau: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
+  const dippro_url = () => {
+    const params = new URLSearchParams({
+      email: form.email,
+      nom: form.nom,
+      reseau: form.reseau,
+      utm_source: "iralink-agency.com",
+      utm_medium: "waitlist-registration",
+    });
+    return `https://iralink-agency.dippro.business?${params.toString()}`;
+  };
+
   const handle = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
@@ -91,9 +102,30 @@ export default function ConversionSection() {
             </h3>
             <p
               className="t-body"
-              style={{ maxWidth: "360px", margin: "0 auto", fontSize: "14px" }}
+              style={{ maxWidth: "360px", margin: "0 auto 28px", fontSize: "14px" }}
             >
-              Nous vous contacterons en priorité dès l&apos;ouverture de DIPpro.
+              Nous vous contacterons en priorité dès l&apos;ouverture de DIPpro. En attendant, accédez directement à la plateforme.
+            </p>
+            <a
+              href={dippro_url()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ display: "inline-block" }}
+            >
+              Accéder à DIPpro →
+            </a>
+            <p
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "9px",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--grey)",
+                marginTop: "12px",
+              }}
+            >
+              Vos informations sont pré-remplies dans DIPpro
             </p>
           </div>
         ) : (

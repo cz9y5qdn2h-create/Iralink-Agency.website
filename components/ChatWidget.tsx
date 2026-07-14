@@ -239,7 +239,7 @@ export default function ChatWidget() {
               <div style={{ display: "flex", alignItems: "center", gap: "4px", flexShrink: 0 }}>
                 {/* DIPpro quick link */}
                 <a
-                  href="https://iralink-agency.dippro.business"
+                  href="https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=chat-widget"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

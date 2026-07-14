@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const DIPPRO_URL = "https://iralink-agency.dippro.business";
+const DIPPRO_URL = "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=hero";
 
 function EcosystemCard() {
   const [tick, setTick] = useState(0);

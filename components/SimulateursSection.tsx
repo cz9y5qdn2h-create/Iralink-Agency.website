@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const DIPPRO_URL = "https://iralink-agency.dippro.business";
+const DIPPRO_URL = "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=simulateur";
 const DIPPRO_MONTHLY = 850;
 const DIPPRO_INSTALL = 1350;
 const DIPPRO_ANNUAL = DIPPRO_MONTHLY * 12;
