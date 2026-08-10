@@ -429,13 +429,16 @@ export default function ProductShowcase() {
           </div>
 
           {/* Content */}
-          <div style={{ minHeight: "300px" }}>{renderContent()}</div>
+          <div className="showcase-content" style={{ minHeight: "300px" }}>{renderContent()}</div>
         </div>
 
         <style>{`
           @keyframes showcasePulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.2; }
+          }
+          @media (max-width: 480px) {
+            .showcase-content > div { padding: 16px !important; }
           }
         `}</style>
       </div>

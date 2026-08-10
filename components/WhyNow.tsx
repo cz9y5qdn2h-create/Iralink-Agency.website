@@ -25,11 +25,10 @@ export default function WhyNow() {
         >
           {/* Red ruling block */}
           <div
-            className="reveal reveal-delay-1"
+            className="reveal reveal-delay-1 why-now-ruling"
             style={{
               background: "#1A0808",
               border: "1px solid #5A1A1A",
-              padding: "48px 52px",
             }}
           >
             <div
@@ -93,10 +92,9 @@ export default function WhyNow() {
 
           {/* Stat block */}
           <div
-            className="reveal reveal-delay-2"
+            className="reveal reveal-delay-2 why-now-stat"
             style={{
               background: "var(--grey-light)",
-              padding: "48px 40px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -149,8 +147,12 @@ export default function WhyNow() {
         </div>
 
         <style>{`
+          .why-now-ruling { padding: 48px 52px; }
+          .why-now-stat { padding: 48px 40px; }
           @media (max-width: 768px) {
             .why-now-grid { grid-template-columns: 1fr !important; }
+            .why-now-ruling { padding: 32px 24px; }
+            .why-now-stat { padding: 32px 24px; }
           }
         `}</style>
       </div>

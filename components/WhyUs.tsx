@@ -39,7 +39,7 @@ export default function WhyUs() {
             </h2>
           </div>
 
-          <div className="reveal reveal-delay-2" style={{ paddingTop: "60px" }}>
+          <div className="reveal reveal-delay-2 why-us-right">
             <p className="t-body" style={{ marginBottom: "40px", maxWidth: "400px", fontSize: "14px" }}>
               Iralink est spécialisé sur un seul sujet : l&apos;automatisation de la conformité DIP.
               Un produit. Un problème résolu.
@@ -132,7 +132,7 @@ export default function WhyUs() {
               n&apos;existait pour répondre à cette obligation légale permanente.
             </p>
           </div>
-          <div style={{ flex: "1 1 200px", paddingTop: "52px" }}>
+          <div className="why-us-founder-links" style={{ flex: "1 1 200px" }}>
             <a
               href="https://www.linkedin.com/in/th%C3%A9o-coutard"
               target="_blank"
@@ -149,6 +149,17 @@ export default function WhyUs() {
         </div>
 
       </div>
+
+      <style>{`
+        .why-us-right { padding-top: 60px; }
+        .why-us-founder-links { padding-top: 52px; }
+        @media (max-width: 768px) {
+          .why-us-right { padding-top: 0; }
+        }
+        @media (max-width: 600px) {
+          .why-us-founder-links { padding-top: 0; }
+        }
+      `}</style>
     </section>
   );
 }

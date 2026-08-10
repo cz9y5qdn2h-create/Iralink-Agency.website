@@ -119,11 +119,11 @@ export default function WaitlistSection() {
           {/* Right — form */}
           <div className="reveal reveal-delay-2">
             <div
+              className="wl-form-box"
               style={{
                 background: "var(--grey-light)",
                 border: "1px solid var(--border-dim)",
                 borderTop: "2px solid var(--gold)",
-                padding: "40px 40px 36px",
               }}
             >
               <p
@@ -153,8 +153,12 @@ export default function WaitlistSection() {
           gap: 80px;
           align-items: start;
         }
+        .wl-form-box { padding: 40px 40px 36px; }
         @media (max-width: 900px) {
           .waitlist-grid { grid-template-columns: 1fr; gap: 48px; }
+        }
+        @media (max-width: 480px) {
+          .wl-form-box { padding: 24px 20px 20px; }
         }
       `}</style>
     </section>
