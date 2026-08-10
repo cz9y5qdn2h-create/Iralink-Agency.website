@@ -81,7 +81,7 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "La conformité DIP n'est pas un événement ponctuel mais un processus continu. Les données du réseau évoluent en permanence — fermetures, ouvertures, renouvellements, résiliations — et le DIP doit refléter cette réalité au moment de chaque remise. C'est précisément ce que DIP Pilot automatise.",
+        text: "La conformité DIP n'est pas un événement ponctuel mais un processus continu. Les données du réseau évoluent en permanence — fermetures, ouvertures, renouvellements, résiliations — et le DIP doit refléter cette réalité au moment de chaque remise. C'est précisément ce que DIPpro automatise.",
       },
     ],
   },
@@ -199,7 +199,7 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "DIP Pilot surveille en continu les données qui alimentent votre DIP. Dès qu'un événement déclencheur est détecté, le système met à jour la section concernée et génère une alerte pour validation humaine. Le temps de latence passe de plusieurs semaines à moins de 24 heures.",
+        text: "DIPpro surveille en continu les données qui alimentent votre DIP. Dès qu'un événement déclencheur est détecté, le système met à jour la section concernée et génère une alerte pour validation humaine. Le temps de latence passe de plusieurs semaines à moins de 24 heures.",
       },
       {
         type: "blockquote",
@@ -226,16 +226,16 @@ export const articles: Article[] = [
   {
     slug: "dip-pilot-fonctionnalites",
     category: "Produit",
-    title: "DIP Pilot : comment fonctionne la surveillance continue de votre conformité",
+    title: "DIPpro : comment fonctionne la surveillance continue de votre conformité",
     description:
-      "Tour d'horizon des fonctionnalités de DIP Pilot : surveillance des données, mise à jour automatique, génération de DIP, audit trail et alertes temps réel.",
+      "Tour d'horizon des fonctionnalités de DIPpro : surveillance des données, mise à jour automatique, génération de DIP, audit trail et alertes temps réel.",
     date: "2025-02-27",
     readTime: "4 min",
     author: "Théo Coutard",
     content: [
       {
         type: "p",
-        text: "DIP Pilot est conçu pour résoudre un problème précis : maintenir en permanence la conformité du Document d'Information Précontractuelle d'un réseau de franchise, sans mobiliser de ressources humaines pour les tâches de surveillance.",
+        text: "DIPpro est conçu pour résoudre un problème précis : maintenir en permanence la conformité du Document d'Information Précontractuelle d'un réseau de franchise, sans mobiliser de ressources humaines pour les tâches de surveillance.",
       },
       {
         type: "h2",

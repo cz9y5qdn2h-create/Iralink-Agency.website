@@ -62,6 +62,7 @@ export default function CTABanner() {
             href={DIPPRO_URL}
             target="_blank"
             rel="noopener noreferrer"
+            className="cta-banner-primary"
             style={{
               display: "inline-block",
               background: "var(--black)",
@@ -76,17 +77,12 @@ export default function CTABanner() {
               whiteSpace: "nowrap",
               transition: "opacity 0.2s",
             }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.85")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")
-            }
           >
             Accéder à DIPpro →
           </a>
           <a
             href="#liste-attente"
+            className="cta-banner-ghost"
             style={{
               display: "inline-block",
               textAlign: "center",
@@ -98,19 +94,16 @@ export default function CTABanner() {
               textDecoration: "none",
               transition: "color 0.2s",
             }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.color =
-                "var(--black)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.color =
-                "rgba(8,8,8,0.6)")
-            }
           >
             Ou rejoindre la liste d&apos;attente
           </a>
         </div>
       </div>
+
+      <style>{`
+        .cta-banner-primary:hover { opacity: 0.85; }
+        .cta-banner-ghost:hover { color: var(--black) !important; }
+      `}</style>
     </section>
   );
 }

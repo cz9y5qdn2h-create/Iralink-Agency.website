@@ -4,11 +4,12 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CustomCursor from "@/components/CustomCursor";
 import CalWidget from "@/components/CalWidget";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact — Théo Coutard | DIPpro",
   description:
-    "Contactez Théo Coutard, fondateur d'DIPpro et créateur de DIPpro. Audit gratuit de votre conformité DIP, conseil en automatisation pour réseaux de franchise. Paris, France.",
+    "Contactez Théo Coutard, fondateur d'Iralink Agency et créateur de DIPpro. Audit gratuit de votre conformité DIP, conseil en automatisation pour réseaux de franchise. Paris, France.",
   keywords: [
     "Théo Coutard",
     "contact DIPpro",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
   },
   alternates: {
-    canonical: "https://iralink-agency.com/contact",
+    canonical: `${SITE_URL}/contact`,
   },
 };
 
@@ -92,7 +93,7 @@ export default function ContactPage() {
                     Théo Coutard
                   </h2>
                   <span className="t-mono-sm" style={{ display: "block" }}>
-                    DIPpro · DIPpro
+                    Fondateur, Iralink Agency
                   </span>
                 </div>
 

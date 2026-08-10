@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CustomCursor from "@/components/CustomCursor";
 import { articles } from "@/lib/articles";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Blog — Conformité DIP & Franchise | DIPpro",
@@ -26,8 +27,17 @@ export const metadata: Metadata = {
     locale: "fr_FR",
   },
   alternates: {
-    canonical: "https://iralink-agency.com/blog",
+    canonical: `${SITE_URL}/blog`,
   },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+  ],
 };
 
 function formatDate(iso: string): string {
@@ -43,6 +53,10 @@ export default function BlogPage() {
     <>
       <CustomCursor />
       <ScrollReveal />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Nav />
       <main>
         {/* ── Hero ── */}

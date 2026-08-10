@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CustomCursor from "@/components/CustomCursor";
 import { articles, getArticle, type ContentBlock } from "@/lib/articles";
+import { SITE_URL } from "@/lib/seo";
 
 /* ─── Static params ─── */
 export function generateStaticParams(): { slug: string }[] {
@@ -45,11 +46,12 @@ export async function generateMetadata({
       type: "article",
       locale: "fr_FR",
       publishedTime: article.date,
+      modifiedTime: article.date,
       authors: [article.author],
       tags: [article.category, "DIP franchise", "conformité DIP"],
     },
     alternates: {
-      canonical: `https://iralink-agency.com/blog/${article.slug}`,
+      canonical: `${SITE_URL}/blog/${article.slug}`,
     },
   };
 }
@@ -232,27 +234,40 @@ export default async function ArticlePage({
     notFound();
   }
 
-  /* JSON-LD Article schema */
+  /* JSON-LD Article + BreadcrumbList schema */
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title,
-    description: article.description,
-    datePublished: article.date,
-    author: {
-      "@type": "Person",
-      name: article.author,
-      url: "https://iralink-agency.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "DIPpro",
-      url: "https://iralink-agency.com",
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://iralink-agency.com/blog/${article.slug}`,
-    },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: article.title,
+        description: article.description,
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+          "@type": "Person",
+          name: article.author,
+          url: SITE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Iralink Agency",
+          url: SITE_URL,
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/blog/${article.slug}`,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+          { "@type": "ListItem", position: 3, name: article.title, item: `${SITE_URL}/blog/${article.slug}` },
+        ],
+      },
+    ],
   };
 
   return (

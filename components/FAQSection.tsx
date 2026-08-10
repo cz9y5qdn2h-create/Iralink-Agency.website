@@ -45,11 +45,28 @@ const FAQS = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section className="section" id="faq" style={{ background: "var(--grey-light)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="section-inner">
         <div className="section-tag reveal">
           <span className="line" />
