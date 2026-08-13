@@ -1,38 +1,39 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
+import { SITE_URL } from "@/lib/seo";
 
-const BASE_URL = "https://iralink-agency.com";
+const LAST_MODIFIED = new Date("2026-08-10");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: "daily",
+      url: SITE_URL,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/blog`,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/contact`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/contact`,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/waitlist`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/waitlist`,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.9,
     },
   ];
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `${BASE_URL}/blog/${article.slug}`,
+    url: `${SITE_URL}/blog/${article.slug}`,
     lastModified: new Date(article.date),
     changeFrequency: "weekly" as const,
     priority: 0.6,

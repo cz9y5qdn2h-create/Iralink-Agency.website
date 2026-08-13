@@ -2,12 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { getDipproUrl } from "@/lib/dippro";
 
-const APP_URL = "https://iralink-agency.dippro.business";
+const DIPPRO_URL = getDipproUrl("nav");
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const resolve = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -16,21 +22,11 @@ export default function Nav() {
   }, []);
 
   const links = [
-    { label: "Comment ça marche", href: "#comment-ca-marche" },
-    { label: "Tarifs", href: "#tarifs" },
+    { label: "Produits", href: "#produits" },
+    { label: "Simulateurs", href: "#simulateurs" },
+    { label: "À propos", href: "#a-propos" },
     { label: "Blog", href: "/blog" },
   ];
-
-  const waitlistStyle = {
-    fontFamily: "'DM Sans', sans-serif",
-    fontSize: "12px",
-    fontWeight: 400 as const,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase" as const,
-    color: "var(--gold)",
-    textDecoration: "none",
-    transition: "opacity 0.3s ease",
-  };
 
   const navLinkStyle = {
     fontFamily: "'DM Sans', sans-serif",
@@ -55,43 +51,31 @@ export default function Nav() {
   return (
     <header className={`nav-root ${scrolled ? "scrolled" : ""}`}>
       {/* Logo */}
-      <a href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "baseline", gap: "2px" }}>
-        <span
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "22px",
-            fontWeight: 300,
-            letterSpacing: "-0.02em",
-            color: "var(--white)",
-            lineHeight: 1,
-          }}
-        >
-          DIP
-        </span>
-        <span
-          style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "13px",
-            fontWeight: 400,
-            letterSpacing: "0.04em",
-            color: "var(--gold)",
-            lineHeight: 1,
-          }}
-        >
-          pro
+      <a
+        href="/"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="logo">
+          <span className="logo-i">I</span>
+          <span className="logo-ralink">RALINK</span>
+          <span className="logo-agency">Agency</span>
         </span>
       </a>
 
       {/* Desktop nav */}
-      <nav className="hidden md:flex items-center" style={{ gap: "36px" }}>
+      <nav className="hidden md:flex items-center" style={{ gap: "32px" }}>
         {links.map((link) =>
           link.href.startsWith("#") ? (
             <a
               key={link.href}
-              href={link.href}
+              href={resolve(link.href)}
               style={navLinkStyle}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--white)")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--grey)")}
+              onMouseEnter={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--white)")
+              }
+              onMouseLeave={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--grey)")
+              }
             >
               {link.label}
             </a>
@@ -100,8 +84,12 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               style={navLinkStyle}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--white)")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--grey)")}
+              onMouseEnter={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--white)")
+              }
+              onMouseLeave={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--grey)")
+              }
             >
               {link.label}
             </Link>
@@ -109,27 +97,28 @@ export default function Nav() {
         )}
 
         <a
-          href="#liste-attente"
-          style={waitlistStyle}
-          onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.7")}
-          onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
+          href={resolve("#contact")}
+          style={{
+            ...navLinkStyle,
+            color: "var(--gold)",
+          }}
+          onMouseEnter={(e) =>
+            ((e.target as HTMLElement).style.opacity = "0.7")
+          }
+          onMouseLeave={(e) =>
+            ((e.target as HTMLElement).style.opacity = "1")
+          }
         >
-          Accès anticipé
+          Contact
         </a>
 
         <a
-          href={APP_URL}
+          href={DIPPRO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          style={navLinkStyle}
-          onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--white)")}
-          onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--grey)")}
+          className="btn-primary"
         >
-          Connexion
-        </a>
-
-        <a href="#liste-attente" className="btn-primary">
-          Rejoindre la liste
+          DIPpro →
         </a>
       </nav>
 
@@ -138,15 +127,42 @@ export default function Nav() {
         className="md:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menu"
-        style={{ background: "none", border: "none", color: "var(--grey)", cursor: "pointer" }}
+        style={{
+          background: "none",
+          border: "none",
+          color: "var(--grey)",
+          cursor: "pointer",
+        }}
       >
         {menuOpen ? (
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+            />
           </svg>
         )}
       </button>
@@ -167,41 +183,43 @@ export default function Nav() {
         >
           {links.map((link) =>
             link.href.startsWith("#") ? (
-              <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={mobileLinkStyle}>
+              <a
+                key={link.href}
+                href={resolve(link.href)}
+                onClick={() => setMenuOpen(false)}
+                style={mobileLinkStyle}
+              >
                 {link.label}
               </a>
             ) : (
-              <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} style={mobileLinkStyle}>
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={mobileLinkStyle}
+              >
                 {link.label}
               </Link>
             )
           )}
 
           <a
-            href="#liste-attente"
+            href={resolve("#contact")}
             onClick={() => setMenuOpen(false)}
             style={{ ...mobileLinkStyle, color: "var(--gold)" }}
           >
-            Accès anticipé
+            Contact
           </a>
 
           <a
-            href={APP_URL}
+            href={DIPPRO_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            style={mobileLinkStyle}
-          >
-            Connexion
-          </a>
-
-          <a
-            href="#liste-attente"
             className="btn-primary"
-            onClick={() => setMenuOpen(false)}
             style={{ alignSelf: "flex-start" }}
           >
-            Rejoindre la liste
+            DIPpro →
           </a>
         </div>
       )}

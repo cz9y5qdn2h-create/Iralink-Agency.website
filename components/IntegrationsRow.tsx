@@ -14,11 +14,11 @@ const TOOLS = [
 export default function IntegrationsRow() {
   return (
     <div
+      className="integrations-outer"
       style={{
         background: "var(--black)",
         borderTop: "1px solid var(--border-dim)",
         borderBottom: "1px solid var(--border-dim)",
-        padding: "32px 60px",
       }}
     >
       <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
@@ -98,6 +98,9 @@ export default function IntegrationsRow() {
       </div>
 
       <style>{`
+        .integrations-outer { padding: 32px 60px; }
+        @media (max-width: 768px) { .integrations-outer { padding: 20px 24px; } }
+        @media (max-width: 480px) { .integrations-outer { padding: 16px 20px; } }
         .integration-badge:hover { border-color: #2A2A2A !important; }
         @media (max-width: 640px) {
           .integration-badge span { font-size: 10px; }

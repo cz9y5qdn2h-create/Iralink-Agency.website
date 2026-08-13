@@ -1,4 +1,6 @@
-const DIPPRO_URL = "https://iralink-agency.dippro.business";
+import { getDipproUrl } from "@/lib/dippro";
+
+const DIPPRO_URL = getDipproUrl("product-card");
 
 const pipelineNodes = [
   {
@@ -47,7 +49,6 @@ export default function DIPproProduct() {
           style={{
             background: "#141414",
             border: "1px solid var(--gold)",
-            padding: "48px 52px",
             display: "grid",
             gridTemplateColumns: "1fr auto",
             gap: "48px",
@@ -114,11 +115,10 @@ export default function DIPproProduct() {
 
         {/* Animated pipeline */}
         <div
-          className="reveal reveal-delay-2"
+          className="reveal reveal-delay-2 pipeline-wrapper"
           style={{
             background: "var(--black)",
             marginTop: "2px",
-            padding: "32px 52px",
           }}
         >
           <p
@@ -240,6 +240,8 @@ export default function DIPproProduct() {
         </div>
 
         <style>{`
+          .dippro-card { padding: 48px 52px; }
+          .pipeline-wrapper { padding: 32px 52px; }
           .pipeline-row {
             display: flex;
             align-items: stretch;
@@ -280,8 +282,9 @@ export default function DIPproProduct() {
             100% { transform: translateX(320%); }
           }
           @media (max-width: 768px) {
-            .dippro-card { grid-template-columns: 1fr !important; gap: 28px !important; }
+            .dippro-card { grid-template-columns: 1fr !important; gap: 28px !important; padding: 28px 24px; }
             .dippro-stats { grid-template-columns: 1fr !important; }
+            .pipeline-wrapper { padding: 24px 20px; }
           }
         `}</style>
       </div>

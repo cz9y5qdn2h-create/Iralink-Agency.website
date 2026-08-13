@@ -1,16 +1,18 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { getDipproUrl } from "@/lib/dippro";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
 
-const SUGGESTED_QUESTIONS = [
-  "Qu'est-ce que le DIP ?",
-  "Quels sont les risques juridiques ?",
-  "Comment fonctionne DIPpro ?",
+const TOPICS = [
+  { label: "Conformité DIP", q: "Qu'est-ce que le DIP et quelles sont les obligations légales ?" },
+  { label: "Risques juridiques", q: "Quels sont les risques si mon DIP n'est pas conforme ?" },
+  { label: "DIPpro", q: "Comment fonctionne DIPpro et combien ça coûte ?" },
+  { label: "Croissance réseau", q: "Comment accélérer le développement de mon réseau de franchise ?" },
 ];
 
 function LoadingDots() {
@@ -133,6 +135,13 @@ export default function ChatWidget() {
     }
   }
 
+  function clearChat() {
+    abortRef.current?.abort();
+    setMessages([]);
+    setInput("");
+    setStreaming(false);
+  }
+
   const showSuggestions = messages.length === 0 && !streaming;
 
   return (
@@ -180,8 +189,8 @@ export default function ChatWidget() {
           <div
             className="chat-panel"
             style={{
-              width: "360px",
-              height: "480px",
+              width: "400px",
+              height: "520px",
               background: "var(--black)",
               border: "1px solid var(--border)",
               borderRadius: "2px",
@@ -194,77 +203,126 @@ export default function ChatWidget() {
             {/* Header */}
             <div
               style={{
-                padding: "16px 20px",
+                padding: "12px 16px",
                 borderBottom: "1px solid var(--border-dim)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
                 flexShrink: 0,
+                gap: "8px",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", minWidth: 0 }}>
                 <span
                   style={{
-                    width: "8px",
-                    height: "8px",
+                    width: "7px",
+                    height: "7px",
                     borderRadius: "50%",
                     background: "var(--gold)",
                     flexShrink: 0,
-                    boxShadow: "0 0 6px rgba(200,169,110,0.6)",
+                    boxShadow: "0 0 5px rgba(200,169,110,0.5)",
                   }}
                 />
                 <span
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "13px",
+                    fontSize: "12px",
                     fontWeight: 500,
                     color: "var(--white)",
                     letterSpacing: "0.04em",
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  Assistant DIPpro
+                  Assistant Iralink
                 </span>
               </div>
-              <button
-                onClick={() => {
-                  abortRef.current?.abort();
-                  setOpen(false);
-                }}
-                aria-label="Fermer"
-                style={{
-                  background: "none",
-                  border: "none",
-                  color: "var(--grey)",
-                  cursor: "pointer",
-                  padding: "4px",
-                  display: "flex",
-                  alignItems: "center",
-                  transition: "color 0.2s ease",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLButtonElement).style.color =
-                    "var(--white)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLButtonElement).style.color =
-                    "var(--grey)")
-                }
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
+
+              <div style={{ display: "flex", alignItems: "center", gap: "4px", flexShrink: 0 }}>
+                {/* DIPpro quick link */}
+                <a
+                  href={getDipproUrl("chat-widget")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "8px",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "var(--gold)",
+                    textDecoration: "none",
+                    border: "1px solid rgba(200,169,110,0.3)",
+                    padding: "3px 8px",
+                    transition: "background 0.2s",
+                    whiteSpace: "nowrap",
+                  }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,169,110,0.06)")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLAnchorElement).style.background = "transparent")
+                  }
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+                  DIPpro →
+                </a>
+
+                {/* Clear button — visible when there are messages */}
+                {messages.length > 0 && (
+                  <button
+                    onClick={clearChat}
+                    aria-label="Effacer la conversation"
+                    title="Effacer"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      color: "var(--grey)",
+                      cursor: "pointer",
+                      padding: "4px",
+                      display: "flex",
+                      alignItems: "center",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) =>
+                      ((e.currentTarget as HTMLButtonElement).style.color = "#E87272")
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLButtonElement).style.color = "var(--grey)")
+                    }
+                  >
+                    <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
+                  </button>
+                )}
+
+                {/* Close button */}
+                <button
+                  onClick={() => {
+                    abortRef.current?.abort();
+                    setOpen(false);
+                  }}
+                  aria-label="Fermer"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "var(--grey)",
+                    cursor: "pointer",
+                    padding: "4px",
+                    display: "flex",
+                    alignItems: "center",
+                    transition: "color 0.2s ease",
+                  }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLButtonElement).style.color = "var(--white)")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLButtonElement).style.color = "var(--grey)")
+                  }
+                >
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
@@ -283,56 +341,71 @@ export default function ChatWidget() {
               {/* Welcome + suggestions */}
               {showSuggestions && (
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "13px",
-                      fontWeight: 300,
-                      color: "var(--grey)",
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    Bonjour, posez-moi vos questions sur le DIP, la loi Doubin
-                    et DIPpro.
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "6px",
-                    }}
-                  >
-                    {SUGGESTED_QUESTIONS.map((q) => (
-                      <button
-                        key={q}
-                        onClick={() => sendMessage(q)}
-                        style={{
-                          background: "var(--grey-light)",
-                          border: "1px solid var(--border-dim)",
-                          color: "var(--grey)",
-                          fontFamily: "'DM Sans', sans-serif",
-                          fontSize: "12px",
-                          fontWeight: 300,
-                          padding: "8px 12px",
-                          textAlign: "left",
-                          cursor: "pointer",
-                          transition: "border-color 0.2s ease, color 0.2s ease",
-                          borderRadius: "2px",
-                        }}
-                        onMouseEnter={(e) => {
-                          const el = e.currentTarget as HTMLButtonElement;
-                          el.style.borderColor = "var(--gold)";
-                          el.style.color = "var(--white)";
-                        }}
-                        onMouseLeave={(e) => {
-                          const el = e.currentTarget as HTMLButtonElement;
-                          el.style.borderColor = "var(--border-dim)";
-                          el.style.color = "var(--grey)";
-                        }}
-                      >
-                        {q}
-                      </button>
-                    ))}
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "16px",
+                        fontWeight: 300,
+                        color: "var(--white)",
+                        lineHeight: 1.4,
+                        marginBottom: "4px",
+                      }}
+                    >
+                      Bonjour. Je suis l&apos;assistant Iralink.
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: "12px",
+                        fontWeight: 300,
+                        color: "var(--grey)",
+                        lineHeight: 1.55,
+                        marginBottom: "16px",
+                      }}
+                    >
+                      Franchise, DIP, loi Doubin, produits Iralink — posez vos questions ou choisissez un sujet.
+                    </p>
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: "6px",
+                      }}
+                    >
+                      {TOPICS.map((t) => (
+                        <button
+                          key={t.label}
+                          onClick={() => sendMessage(t.q)}
+                          style={{
+                            background: "var(--grey-light)",
+                            border: "1px solid var(--border-dim)",
+                            color: "var(--grey)",
+                            fontFamily: "'DM Mono', monospace",
+                            fontSize: "9px",
+                            letterSpacing: "0.1em",
+                            textTransform: "uppercase",
+                            padding: "10px 10px",
+                            textAlign: "left",
+                            cursor: "pointer",
+                            transition: "border-color 0.2s ease, color 0.2s ease",
+                            lineHeight: 1.3,
+                          }}
+                          onMouseEnter={(e) => {
+                            const el = e.currentTarget as HTMLButtonElement;
+                            el.style.borderColor = "var(--gold)";
+                            el.style.color = "var(--gold)";
+                          }}
+                          onMouseLeave={(e) => {
+                            const el = e.currentTarget as HTMLButtonElement;
+                            el.style.borderColor = "var(--border-dim)";
+                            el.style.color = "var(--grey)";
+                          }}
+                        >
+                          {t.label}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -361,7 +434,7 @@ export default function ChatWidget() {
                         color: isUser ? "#3A3A3A" : "var(--gold)",
                       }}
                     >
-                      {isUser ? "Vous" : "DIPpro"}
+                      {isUser ? "Vous" : "Iralink"}
                     </span>
                     <div
                       style={{

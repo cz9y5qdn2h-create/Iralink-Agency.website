@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CustomCursor from "@/components/CustomCursor";
 import WaitlistForm from "@/components/WaitlistForm";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Liste d'attente DIPpro — Accès anticipé | DIPpro",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
   },
   alternates: {
-    canonical: "https://iralink-agency.com/waitlist",
+    canonical: `${SITE_URL}/waitlist`,
   },
 };
 

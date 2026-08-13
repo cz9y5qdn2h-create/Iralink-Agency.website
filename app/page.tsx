@@ -1,20 +1,38 @@
+import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import DIPproProduct from "@/components/DIPproProduct";
+import AgencyHero from "@/components/AgencyHero";
+import TrustBar from "@/components/TrustBar";
 import StatsBar from "@/components/StatsBar";
-import IntegrationsRow from "@/components/IntegrationsRow";
-import Problem from "@/components/Problem";
+import ProductsSection from "@/components/ProductsSection";
+import SimulateursSection from "@/components/SimulateursSection";
+import ConversionSection from "@/components/ConversionSection";
 import WhyNow from "@/components/WhyNow";
-import HowItWorks from "@/components/HowItWorks";
-import ProductShowcase from "@/components/ProductShowcase";
-import Features from "@/components/Features";
-import Pricing from "@/components/Pricing";
-import WhyUs from "@/components/WhyUs";
-import WaitlistSection from "@/components/WaitlistSection";
+import PricingSection from "@/components/PricingSection";
+import FAQSection from "@/components/FAQSection";
+import AgencyAbout from "@/components/AgencyAbout";
+import CTABanner from "@/components/CTABanner";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CustomCursor from "@/components/CustomCursor";
+import StickyCTA from "@/components/StickyCTA";
+
+export const metadata: Metadata = {
+  title: "Iralink Agency — L'agence spécialisée en conformité DIP franchise",
+  description:
+    "Iralink Agency automatise la conformité DIP (loi Doubin) des réseaux de franchise avec DIPpro. Surveillance continue, mises à jour IA, audit trail certifié. Audit gratuit sous 30 minutes.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Iralink Agency — L'agence spécialisée en conformité DIP franchise",
+    description:
+      "Automatisez la conformité DIP de votre réseau de franchise avec DIPpro. Surveillance continue, mises à jour IA, audit trail certifié.",
+    type: "website",
+    locale: "fr_FR",
+    url: "/",
+  },
+};
 
 export default function Home() {
   return (
@@ -23,21 +41,21 @@ export default function Home() {
       <ScrollReveal />
       <Nav />
       <main>
-        <Hero />
-        <DIPproProduct />
+        <AgencyHero />
+        <TrustBar />
         <StatsBar />
-        <IntegrationsRow />
-        <Problem />
+        <ProductsSection />
+        <SimulateursSection />
+        <ConversionSection />
         <WhyNow />
-        <HowItWorks />
-        <ProductShowcase />
-        <Features />
-        <Pricing />
-        <WhyUs />
-        <WaitlistSection />
+        <PricingSection />
+        <FAQSection />
+        <AgencyAbout />
+        <CTABanner />
         <Contact />
       </main>
       <Footer />
+      <StickyCTA />
     </>
   );
 }

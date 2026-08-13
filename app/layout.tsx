@@ -2,27 +2,44 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "DIPpro — Conformité DIP automatisée pour les franchiseurs",
+  metadataBase: new URL(SITE_URL),
+  title: "DIPpro — Automatisation de la conformité DIP pour réseaux de franchise",
   description:
-    "DIPpro surveille votre réseau et met à jour votre Document d'Information Précontractuelle automatiquement. Zéro risque juridique, zéro oubli.",
+    "DIPpro par Iralink Agency : l'agence spécialisée en conformité DIP qui automatise la mise à jour du Document d'Information Précontractuelle (loi Doubin) de votre réseau de franchise. Audit gratuit.",
   keywords: [
-    "DIPpro",
+    "agence conformité DIP",
     "DIP franchise",
-    "Document Information Précontractuelle",
-    "conformité franchise",
+    "Document d'Information Précontractuelle",
     "loi Doubin",
+    "article L.330-3",
+    "conformité franchise",
+    "audit DIP",
     "automatisation DIP",
     "réseau de franchise",
+    "DIPpro",
+    "Iralink Agency",
     "Théo Coutard",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "DIPpro — Votre DIP toujours conforme",
+    title: "DIPpro — Automatisation de la conformité DIP pour réseaux de franchise",
     description:
-      "Automatisez la conformité DIP de votre réseau. Surveillance continue, mises à jour automatiques, audit trail certifié.",
+      "L'agence spécialisée en conformité DIP. Automatisation loi Doubin en continu pour réseaux de franchise. Audit gratuit.",
     type: "website",
     locale: "fr_FR",
+    url: SITE_URL,
+    siteName: "DIPpro — Iralink Agency",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DIPpro — Automatisation de la conformité DIP pour réseaux de franchise",
+    description:
+      "L'agence spécialisée en conformité DIP. Automatisation loi Doubin en continu pour réseaux de franchise.",
   },
 };
 
@@ -30,27 +47,69 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#iralink`,
+      name: "Iralink Agency",
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon`,
+      description:
+        "Agence spécialisée dans l'automatisation de la conformité DIP (Document d'Information Précontractuelle) des réseaux de franchise en France, conformément à la loi Doubin.",
+      slogan: "L'agence spécialisée conformité DIP",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Paris",
+        addressCountry: "FR",
+      },
+      areaServed: "FR",
+      knowsAbout: [
+        "Document d'Information Précontractuelle",
+        "Loi Doubin",
+        "Conformité franchise",
+        "Droit de la franchise",
+      ],
+      founder: {
+        "@id": `${SITE_URL}/#theo-coutard`,
+      },
+      sameAs: ["https://www.linkedin.com/in/th%C3%A9o-coutard"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "DIPpro",
+      publisher: {
+        "@id": `${SITE_URL}/#iralink`,
+      },
+      inLanguage: "fr-FR",
+    },
+    {
       "@type": "Person",
-      "@id": "https://iralink-agency.com/#theo-coutard",
+      "@id": `${SITE_URL}/#theo-coutard`,
       name: "Théo Coutard",
       jobTitle: "Fondateur",
       email: "theo@iralink-agency.com",
-      url: "https://iralink-agency.com",
+      url: SITE_URL,
+      worksFor: {
+        "@id": `${SITE_URL}/#iralink`,
+      },
       sameAs: ["https://www.linkedin.com/in/th%C3%A9o-coutard"],
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://iralink-agency.com/#dippro",
+      "@id": `${SITE_URL}/#dippro`,
       name: "DIPpro",
       applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Conformité juridique franchise",
       operatingSystem: "Web",
       offers: {
         "@type": "Offer",
         availability: "https://schema.org/InStock",
+        price: "850",
         priceCurrency: "EUR",
+        description: "Abonnement mensuel. Installation initiale : 1 350 € (paiement unique).",
       },
       author: {
-        "@id": "https://iralink-agency.com/#theo-coutard",
+        "@id": `${SITE_URL}/#iralink`,
       },
       description:
         "Solution d'automatisation du Document d'Information Précontractuelle (DIP) pour les réseaux de franchise. Conformité loi Doubin en continu.",
