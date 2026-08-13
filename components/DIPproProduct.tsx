@@ -1,4 +1,6 @@
-const DIPPRO_URL = "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=product-card";
+import { getDipproUrl } from "@/lib/dippro";
+
+const DIPPRO_URL = getDipproUrl("product-card");
 
 const pipelineNodes = [
   {

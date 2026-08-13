@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
+import { DIPPRO_BASE_URL } from "@/lib/dippro";
 
 export const runtime = "nodejs";
 
@@ -50,7 +51,7 @@ const SYSTEM_PROMPT = `Tu es l'assistant juridique et commercial d'Iralink Agenc
 - Audit trail horodaté à valeur probante
 - Tableau de bord de conformité temps réel
 - Opérationnel en 48h · 850 €/mois · 1 350 € installation
-- URL : https://iralink-agency.dippro.business
+- URL : ${DIPPRO_BASE_URL}
 
 **Contact :** theo@iralink-agency.com (Théo Coutard, fondateur)
 

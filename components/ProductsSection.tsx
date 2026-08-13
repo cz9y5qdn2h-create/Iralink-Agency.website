@@ -1,4 +1,6 @@
-const DIPPRO_URL = "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=products-section";
+import { getDipproUrl } from "@/lib/dippro";
+
+const DIPPRO_URL = getDipproUrl("products-section");
 
 const DIPPRO_FEATURES = [
   "Surveillance hebdomadaire des obligations légales",

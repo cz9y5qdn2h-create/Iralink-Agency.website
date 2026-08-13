@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-const DIPPRO_URL =
-  "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=sticky-cta";
+import { getDipproUrl } from "@/lib/dippro";
+
+const DIPPRO_URL = getDipproUrl("sticky-cta");
 
 export default function StickyCTA() {
   const [visible, setVisible] = useState(false);

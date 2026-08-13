@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import WaitlistCount from "@/components/WaitlistCount";
+import { getDipproUrl } from "@/lib/dippro";
 
 const TRUST = [
   { icon: "✓", text: "Accès prioritaire à l'ouverture" },
@@ -13,16 +14,12 @@ export default function ConversionSection() {
   const [form, setForm] = useState({ nom: "", email: "", reseau: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const dippro_url = () => {
-    const params = new URLSearchParams({
+  const dippro_url = () =>
+    getDipproUrl("waitlist-registration", {
       email: form.email,
       nom: form.nom,
       reseau: form.reseau,
-      utm_source: "iralink-agency.com",
-      utm_medium: "waitlist-registration",
     });
-    return `https://iralink-agency.dippro.business?${params.toString()}`;
-  };
 
   const handle = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));

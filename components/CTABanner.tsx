@@ -1,5 +1,6 @@
-const DIPPRO_URL =
-  "https://iralink-agency.dippro.business?utm_source=iralink-agency.com&utm_medium=cta-banner";
+import { getDipproUrl } from "@/lib/dippro";
+
+const DIPPRO_URL = getDipproUrl("cta-banner");
 
 export default function CTABanner() {
   return (
