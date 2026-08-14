@@ -1,7 +1,7 @@
 const VOICES = [
   {
-    quote: "Le DIP est enfin devenu un outil de pilotage, pas une corvée juridique à chaque signature.",
-    role: "Directeur de réseau, restauration rapide",
+    quote: "En France, il y a environ 4 500 franchises qui ne sont pas conformes en ce moment.",
+    role: "Expert dans le secteur de la franchise",
   },
   {
     quote: "On a besoin qu'un partenaire comprenne notre métier avant de coder la moindre ligne. Ça change tout.",
