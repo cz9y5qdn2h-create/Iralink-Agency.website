@@ -25,7 +25,7 @@ export default function IntegrationsRow() {
         <div style={{ display: "flex", alignItems: "center", gap: "28px", flexWrap: "wrap" }}>
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "8px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -64,7 +64,7 @@ export default function IntegrationsRow() {
                 />
                 <span
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "11px",
                     color: "#3A3A3A",
                     fontWeight: 300,
@@ -84,7 +84,7 @@ export default function IntegrationsRow() {
             >
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   color: "#1E1E1E",
                   letterSpacing: "0.1em",

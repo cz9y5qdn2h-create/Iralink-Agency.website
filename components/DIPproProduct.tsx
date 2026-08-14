@@ -71,7 +71,7 @@ export default function DIPproProduct() {
               </span>
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
@@ -86,7 +86,7 @@ export default function DIPproProduct() {
 
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "16px",
                 fontWeight: 300,
                 color: "#A0A0A0",
@@ -123,7 +123,7 @@ export default function DIPproProduct() {
         >
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -146,7 +146,7 @@ export default function DIPproProduct() {
                 >
                   <span
                     style={{
-                      fontFamily: "'DM Mono', monospace",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "8px",
                       letterSpacing: "0.16em",
                       textTransform: "uppercase",
@@ -162,7 +162,7 @@ export default function DIPproProduct() {
                       key={item}
                       style={{
                         display: "block",
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: "11px",
                         fontWeight: 300,
                         color: "#3A3A3A",
@@ -226,7 +226,7 @@ export default function DIPproProduct() {
               </div>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "12px",
                   fontWeight: 300,
                   color: "#A0A0A0",

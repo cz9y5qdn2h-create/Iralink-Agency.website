@@ -80,7 +80,7 @@ export default function PricingSection() {
             <div
               style={{
                 display: "inline-block",
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
@@ -106,7 +106,7 @@ export default function PricingSection() {
             </p>
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "13px",
                 fontWeight: 300,
                 color: "var(--grey)",
@@ -137,7 +137,7 @@ export default function PricingSection() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "'DM Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "10px",
                     letterSpacing: "0.1em",
                     color: "var(--grey)",
@@ -149,7 +149,7 @@ export default function PricingSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "13px",
                   fontWeight: 300,
                   color: "var(--grey)",
@@ -175,7 +175,7 @@ export default function PricingSection() {
                   </svg>
                   <span
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "13px",
                       fontWeight: 300,
                       color: "#A0A0A0",
@@ -219,7 +219,7 @@ export default function PricingSection() {
             >
               <p
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
@@ -269,7 +269,7 @@ export default function PricingSection() {
                   <div>
                     <p
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: "13px",
                         fontWeight: 300,
                         color: "var(--white)",
@@ -280,7 +280,7 @@ export default function PricingSection() {
                     </p>
                     <p
                       style={{
-                        fontFamily: "'DM Mono', monospace",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: "9px",
                         letterSpacing: "0.08em",
                         color: "var(--grey)",
@@ -326,7 +326,7 @@ export default function PricingSection() {
               </p>
               <p
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -361,7 +361,7 @@ export default function PricingSection() {
               <div>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "13px",
                     fontWeight: 400,
                     color: "var(--white)",
@@ -372,7 +372,7 @@ export default function PricingSection() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "12px",
                     fontWeight: 300,
                     color: "var(--grey)",

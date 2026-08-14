@@ -66,7 +66,7 @@ function EcosystemCard() {
         >
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -80,7 +80,7 @@ function EcosystemCard() {
               display: "flex",
               alignItems: "center",
               gap: "6px",
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.12em",
               color: "#4CAF80",
@@ -113,7 +113,7 @@ function EcosystemCard() {
             <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   color: "#3A3A3A",
                 }}
@@ -137,7 +137,7 @@ function EcosystemCard() {
                 display: "flex",
                 alignItems: "center",
                 gap: "6px",
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.1em",
                 color: "#4CAF80",
@@ -158,7 +158,7 @@ function EcosystemCard() {
           </div>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "12px",
               fontWeight: 300,
               color: "#5A5A5A",
@@ -181,11 +181,11 @@ function EcosystemCard() {
               <span
                 key={tag}
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "8px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  border: "1px solid rgba(200,169,110,0.3)",
+                  border: "1px solid rgba(156, 138, 104,0.3)",
                   color: "var(--gold)",
                   padding: "3px 8px",
                 }}
@@ -217,7 +217,7 @@ function EcosystemCard() {
             <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   color: "#333",
                 }}
@@ -237,7 +237,7 @@ function EcosystemCard() {
             </div>
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.1em",
                 color: "#555",
@@ -248,7 +248,7 @@ function EcosystemCard() {
           </div>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "11px",
               color: "#444",
               paddingLeft: "24px",
@@ -277,7 +277,7 @@ function EcosystemCard() {
             <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   color: "#333",
                 }}
@@ -297,7 +297,7 @@ function EcosystemCard() {
             </div>
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.1em",
                 color: "#555",
@@ -308,7 +308,7 @@ function EcosystemCard() {
           </div>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "11px",
               color: "#444",
               paddingLeft: "24px",
@@ -329,7 +329,7 @@ function EcosystemCard() {
         >
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               color: "#2A2A2A",
               letterSpacing: "0.08em",
@@ -339,7 +339,7 @@ function EcosystemCard() {
           </span>
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               color: "#2A2A2A",
             }}
@@ -461,7 +461,7 @@ export default function AgencyHero() {
             />
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 fontWeight: 300,
                 color: "#5A5A5A",

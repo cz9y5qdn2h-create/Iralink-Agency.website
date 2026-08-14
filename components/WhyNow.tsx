@@ -50,7 +50,7 @@ export default function WhyNow() {
               />
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
@@ -78,7 +78,7 @@ export default function WhyNow() {
 
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "13px",
                 fontWeight: 300,
                 color: "#787878",
@@ -115,7 +115,7 @@ export default function WhyNow() {
             </div>
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "14px",
                 fontWeight: 300,
                 color: "var(--white)",
@@ -133,7 +133,7 @@ export default function WhyNow() {
             >
               <p
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "10px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",

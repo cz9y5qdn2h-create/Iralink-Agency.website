@@ -74,7 +74,7 @@ export default function BlogPage() {
           <div className="section-inner" style={{ position: "relative" }}>
             <div className="section-tag reveal">
               <span className="line" />
-              <span className="label">— Blog</span>
+              <span className="label">Blog</span>
             </div>
 
             <h1
@@ -176,7 +176,7 @@ export default function BlogPage() {
                       >
                         <span
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "'Inter', sans-serif",
                             fontSize: "12px",
                             fontWeight: 400,
                             color: "var(--white)",
@@ -186,7 +186,7 @@ export default function BlogPage() {
                         </span>
                         <span
                           style={{
-                            fontFamily: "'DM Mono', monospace",
+                            fontFamily: "'Inter', sans-serif",
                             fontSize: "10px",
                             letterSpacing: "0.08em",
                             color: "var(--grey)",
@@ -199,7 +199,7 @@ export default function BlogPage() {
 
                       <span
                         style={{
-                          fontFamily: "'DM Mono', monospace",
+                          fontFamily: "'Inter', sans-serif",
                           fontSize: "10px",
                           letterSpacing: "0.1em",
                           textTransform: "uppercase",

@@ -24,7 +24,7 @@ export default function CTABanner() {
         <div style={{ flex: 1, minWidth: "280px" }}>
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -68,7 +68,7 @@ export default function CTABanner() {
               display: "inline-block",
               background: "var(--black)",
               color: "var(--gold)",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "12px",
               fontWeight: 400,
               letterSpacing: "0.1em",
@@ -87,7 +87,7 @@ export default function CTABanner() {
             style={{
               display: "inline-block",
               textAlign: "center",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "11px",
               fontWeight: 400,
               letterSpacing: "0.08em",

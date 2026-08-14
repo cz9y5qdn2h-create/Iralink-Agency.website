@@ -60,7 +60,7 @@ export default function CalWidget() {
           "cal-brand-text":      "#080808",
           "cal-text":            "#F4F2EE",
           "cal-text-subtle":     "#5A5A5A",
-          "cal-border":          "rgba(200,169,110,0.18)",
+          "cal-border":          "rgba(156, 138, 104,0.18)",
           "cal-border-subtle":   "rgba(244,242,238,0.06)",
           "cal-bg":              "#080808",
           "cal-bg-subtle":       "#111111",

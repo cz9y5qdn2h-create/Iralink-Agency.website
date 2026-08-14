@@ -72,7 +72,7 @@ export default function ProductsSection() {
                 display: "flex",
                 alignItems: "center",
                 gap: "6px",
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
@@ -93,7 +93,7 @@ export default function ProductsSection() {
 
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
@@ -156,7 +156,7 @@ export default function ProductsSection() {
                   </span>
                   <span
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "13px",
                       fontWeight: 300,
                       color: "#787878",
@@ -180,7 +180,7 @@ export default function ProductsSection() {
               </a>
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "10px",
                   letterSpacing: "0.1em",
                   color: "var(--grey)",
@@ -205,7 +205,7 @@ export default function ProductsSection() {
           >
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
@@ -232,7 +232,7 @@ export default function ProductsSection() {
 
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "13px",
                 fontWeight: 300,
                 color: "#333",
@@ -264,7 +264,7 @@ export default function ProductsSection() {
               />
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
@@ -290,7 +290,7 @@ export default function ProductsSection() {
           >
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
@@ -317,7 +317,7 @@ export default function ProductsSection() {
 
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "13px",
                 fontWeight: 300,
                 color: "#282828",
@@ -349,7 +349,7 @@ export default function ProductsSection() {
               />
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",

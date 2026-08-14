@@ -43,7 +43,7 @@ export default function Contact() {
                 <li
                   key={item}
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "13px",
                     fontWeight: 300,
                     color: "var(--grey)",

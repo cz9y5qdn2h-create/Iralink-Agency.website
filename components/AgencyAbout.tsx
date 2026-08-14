@@ -62,7 +62,7 @@ export default function AgencyAbout() {
           <div style={{ gridColumn: "span 2" }} className="about-bio-col">
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
@@ -118,7 +118,7 @@ export default function AgencyAbout() {
               >
                 <span
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "13px",
                     fontWeight: 400,
                     color: "var(--white)",
@@ -130,7 +130,7 @@ export default function AgencyAbout() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "'DM Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "10px",
                     letterSpacing: "0.06em",
                     color: "#5A5A5A",
@@ -188,7 +188,7 @@ export default function AgencyAbout() {
           </p>
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.14em",
               color: "var(--gold)",

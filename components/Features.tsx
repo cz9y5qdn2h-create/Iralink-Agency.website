@@ -99,7 +99,7 @@ export default function Features() {
 
               <h3
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "14px",
                   fontWeight: 400,
                   color: "var(--white)",

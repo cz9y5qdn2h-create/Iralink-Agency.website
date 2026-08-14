@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getDipproUrl } from "@/lib/dippro";
+import { magnetMove, magnetLeave } from "@/lib/motion3d";
 
 const DIPPRO_URL = getDipproUrl("nav");
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -16,211 +17,162 @@ export default function Nav() {
     href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const onResize = () => setIsMobile(window.innerWidth < 860);
+    window.addEventListener("resize", onResize);
+    onResize();
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const links = [
-    { label: "Produits", href: "#produits" },
-    { label: "Simulateurs", href: "#simulateurs" },
-    { label: "À propos", href: "#a-propos" },
+    { label: "Accueil", href: "/" },
+    { label: "Étude de cas", href: "/etude-de-cas" },
+    { label: "Services", href: "/services" },
+    { label: "Tarifs", href: resolve("#tarifs") },
     { label: "Blog", href: "/blog" },
   ];
 
-  const navLinkStyle = {
-    fontFamily: "'DM Sans', sans-serif",
-    fontSize: "12px",
-    fontWeight: 400,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase" as const,
-    color: "var(--grey)",
-    textDecoration: "none",
-    transition: "color 0.3s ease",
-  };
-
-  const mobileLinkStyle = {
-    fontFamily: "'DM Sans', sans-serif",
-    fontSize: "12px",
-    letterSpacing: "0.1em",
-    textTransform: "uppercase" as const,
-    color: "var(--grey)",
-    textDecoration: "none",
-  };
+  const renderLink = (href: string) =>
+    href.startsWith("#") || href.startsWith("/#");
 
   return (
-    <header className={`nav-root ${scrolled ? "scrolled" : ""}`}>
-      {/* Logo */}
-      <a
+    <header className="nav-root">
+      <Link
         href="/"
-        style={{ textDecoration: "none" }}
+        className="nav-invert"
+        style={{ textDecoration: "none", display: "inline-flex", alignItems: "baseline" }}
+        onClick={() => setMenuOpen(false)}
       >
         <span className="logo">
-          <span className="logo-i">I</span>
-          <span className="logo-ralink">RALINK</span>
-          <span className="logo-agency">Agency</span>
+          <span className="logo-i">IRALINK</span>
+          <span className="logo-agency">agency</span>
         </span>
-      </a>
+      </Link>
 
-      {/* Desktop nav */}
-      <nav className="hidden md:flex items-center" style={{ gap: "32px" }}>
-        {links.map((link) =>
-          link.href.startsWith("#") ? (
-            <a
-              key={link.href}
-              href={resolve(link.href)}
-              style={navLinkStyle}
-              onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--white)")
-              }
-              onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--grey)")
-              }
-            >
-              {link.label}
-            </a>
-          ) : (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={navLinkStyle}
-              onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--white)")
-              }
-              onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--grey)")
-              }
-            >
-              {link.label}
-            </Link>
-          )
-        )}
-
-        <a
-          href={resolve("#contact")}
-          style={{
-            ...navLinkStyle,
-            color: "var(--gold)",
-          }}
-          onMouseEnter={(e) =>
-            ((e.target as HTMLElement).style.opacity = "0.7")
-          }
-          onMouseLeave={(e) =>
-            ((e.target as HTMLElement).style.opacity = "1")
-          }
-        >
-          Contact
-        </a>
-
-        <a
-          href={DIPPRO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary"
-        >
-          DIPpro →
-        </a>
-      </nav>
-
-      {/* Mobile burger */}
-      <button
-        className="md:hidden"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Menu"
-        style={{
-          background: "none",
-          border: "none",
-          color: "var(--grey)",
-          cursor: "pointer",
-        }}
-      >
-        {menuOpen ? (
-          <svg
-            width="20"
-            height="20"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={1.5}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            width="20"
-            height="20"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={1.5}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-            />
-          </svg>
-        )}
-      </button>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div
-          className="md:hidden absolute top-full left-0 right-0"
-          style={{
-            background: "rgba(8,8,8,0.96)",
-            backdropFilter: "blur(20px)",
-            borderBottom: "1px solid var(--border-dim)",
-            padding: "24px 28px 32px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-          }}
-        >
+      {!isMobile && (
+        <nav className="nav-invert" style={{ display: "flex", alignItems: "center", gap: "clamp(18px,3vw,40px)" }}>
           {links.map((link) =>
-            link.href.startsWith("#") ? (
+            renderLink(link.href) ? (
               <a
-                key={link.href}
-                href={resolve(link.href)}
-                onClick={() => setMenuOpen(false)}
-                style={mobileLinkStyle}
+                key={link.label}
+                href={link.href}
+                style={{ cursor: "pointer", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", textDecoration: "none", color: "inherit" }}
               >
                 {link.label}
               </a>
             ) : (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
-                style={mobileLinkStyle}
+                style={{ cursor: "pointer", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", textDecoration: "none", color: "inherit" }}
               >
                 {link.label}
               </Link>
             )
           )}
-
-          <a
-            href={resolve("#contact")}
-            onClick={() => setMenuOpen(false)}
-            style={{ ...mobileLinkStyle, color: "var(--gold)" }}
+          <Link
+            href="/contact"
+            style={{ cursor: "pointer", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", textDecoration: "none", color: "inherit" }}
           >
             Contact
+          </Link>
+          <a
+            href={DIPPRO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ cursor: "pointer", fontSize: "12px", fontWeight: 500, letterSpacing: "0.02em", textDecoration: "none", color: "inherit", opacity: 0.65 }}
+          >
+            DIPpro ↗
           </a>
+          <Link
+            href="/contact"
+            onMouseMove={magnetMove}
+            onMouseLeave={magnetLeave}
+            className="btn-primary"
+            style={{ transition: "transform .15s ease, background .2s ease" }}
+          >
+            Prendre RDV
+          </Link>
+        </nav>
+      )}
 
+      {isMobile && (
+        <button
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Menu"
+          aria-expanded={menuOpen}
+          className="nav-invert"
+          style={{ background: "none", border: "1px solid currentColor", borderRadius: "2px", width: "40px", height: "40px", fontSize: "18px", cursor: "pointer" }}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+      )}
+
+      {isMobile && menuOpen && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 49,
+            background: "var(--black)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "32px",
+            gap: "26px",
+          }}
+        >
+          {links.map((link) =>
+            renderLink(link.href) ? (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "32px", fontWeight: 600, color: "var(--white)", textDecoration: "none" }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "32px", fontWeight: 600, color: "var(--white)", textDecoration: "none" }}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+          <Link
+            href="/contact"
+            onClick={() => setMenuOpen(false)}
+            style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "32px", fontWeight: 600, color: "var(--white)", textDecoration: "none" }}
+          >
+            Contact
+          </Link>
           <a
             href={DIPPRO_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="btn-primary"
-            style={{ alignSelf: "flex-start" }}
+            style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gold-light)", textDecoration: "none" }}
           >
-            DIPpro →
+            Accéder à DIPpro →
           </a>
+          <Link
+            href="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="btn-primary"
+            style={{ marginTop: "14px", alignSelf: "flex-start" }}
+          >
+            Prendre RDV
+          </Link>
         </div>
       )}
     </header>

@@ -53,7 +53,7 @@ export default function WaitlistSection() {
                 <li
                   key={item}
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "14px",
                     fontWeight: 300,
                     color: "var(--grey)",
@@ -66,7 +66,7 @@ export default function WaitlistSection() {
                       position: "absolute",
                       left: 0,
                       color: "var(--gold)",
-                      fontFamily: "'DM Mono', monospace",
+                      fontFamily: "'Inter', sans-serif",
                     }}
                   >
                     —
@@ -89,7 +89,7 @@ export default function WaitlistSection() {
               >
                 <span
                   style={{
-                    fontFamily: "'DM Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "9px",
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",
@@ -128,7 +128,7 @@ export default function WaitlistSection() {
             >
               <p
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",

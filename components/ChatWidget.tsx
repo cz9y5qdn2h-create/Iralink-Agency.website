@@ -220,12 +220,12 @@ export default function ChatWidget() {
                     borderRadius: "50%",
                     background: "var(--gold)",
                     flexShrink: 0,
-                    boxShadow: "0 0 5px rgba(200,169,110,0.5)",
+                    boxShadow: "0 0 5px rgba(156, 138, 104,0.5)",
                   }}
                 />
                 <span
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "12px",
                     fontWeight: 500,
                     color: "var(--white)",
@@ -244,19 +244,19 @@ export default function ChatWidget() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    fontFamily: "'DM Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "8px",
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "var(--gold)",
                     textDecoration: "none",
-                    border: "1px solid rgba(200,169,110,0.3)",
+                    border: "1px solid rgba(156, 138, 104,0.3)",
                     padding: "3px 8px",
                     transition: "background 0.2s",
                     whiteSpace: "nowrap",
                   }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,169,110,0.06)")
+                    ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(156, 138, 104,0.06)")
                   }
                   onMouseLeave={(e) =>
                     ((e.currentTarget as HTMLAnchorElement).style.background = "transparent")
@@ -356,7 +356,7 @@ export default function ChatWidget() {
                     </p>
                     <p
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: "12px",
                         fontWeight: 300,
                         color: "var(--grey)",
@@ -381,7 +381,7 @@ export default function ChatWidget() {
                             background: "var(--grey-light)",
                             border: "1px solid var(--border-dim)",
                             color: "var(--grey)",
-                            fontFamily: "'DM Mono', monospace",
+                            fontFamily: "'Inter', sans-serif",
                             fontSize: "9px",
                             letterSpacing: "0.1em",
                             textTransform: "uppercase",
@@ -427,7 +427,7 @@ export default function ChatWidget() {
                   >
                     <span
                       style={{
-                        fontFamily: "'DM Mono', monospace",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: "9px",
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
@@ -450,7 +450,7 @@ export default function ChatWidget() {
                       ) : (
                         <p
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "'Inter', sans-serif",
                             fontSize: "13px",
                             fontWeight: 300,
                             color: "var(--white)",
@@ -508,7 +508,7 @@ export default function ChatWidget() {
                   background: "var(--grey-light)",
                   border: "1px solid var(--border-dim)",
                   color: "var(--white)",
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "13px",
                   fontWeight: 300,
                   padding: "10px 14px",
@@ -579,13 +579,13 @@ export default function ChatWidget() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "0 4px 24px rgba(200,169,110,0.18)",
+            boxShadow: "0 4px 24px rgba(156, 138, 104,0.18)",
             transition: "background 0.2s ease, transform 0.2s ease",
             flexShrink: 0,
           }}
           onMouseEnter={(e) => {
             const el = e.currentTarget as HTMLButtonElement;
-            el.style.background = "rgba(200,169,110,0.08)";
+            el.style.background = "rgba(156, 138, 104,0.08)";
             el.style.transform = "scale(1.06)";
           }}
           onMouseLeave={(e) => {

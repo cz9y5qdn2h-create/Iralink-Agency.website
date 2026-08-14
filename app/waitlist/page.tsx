@@ -102,8 +102,8 @@ export default function WaitlistPage() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "10px",
-                    background: "rgba(200,169,110,0.08)",
-                    border: "1px solid rgba(200,169,110,0.25)",
+                    background: "rgba(156, 138, 104,0.08)",
+                    border: "1px solid rgba(156, 138, 104,0.25)",
                     padding: "10px 18px",
                   }}
                 >
@@ -119,7 +119,7 @@ export default function WaitlistPage() {
                   />
                   <span
                     style={{
-                      fontFamily: "'DM Mono', monospace",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "10px",
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
@@ -339,7 +339,7 @@ export default function WaitlistPage() {
           display: block;
         }
         .dip-mockup-title {
-          font-family: 'DM Mono', monospace;
+          font-family: 'Inter', sans-serif;
           font-size: 9px;
           letter-spacing: 0.1em;
           text-transform: uppercase;
@@ -351,7 +351,7 @@ export default function WaitlistPage() {
           display: flex;
           align-items: center;
           gap: 6px;
-          font-family: 'DM Mono', monospace;
+          font-family: 'Inter', sans-serif;
           font-size: 9px;
           letter-spacing: 0.1em;
           text-transform: uppercase;
@@ -378,14 +378,14 @@ export default function WaitlistPage() {
           background: #0b0b0b;
         }
         .dip-label {
-          font-family: 'DM Mono', monospace;
+          font-family: 'Inter', sans-serif;
           font-size: 9px;
           letter-spacing: 0.1em;
           text-transform: uppercase;
           color: var(--grey);
         }
         .dip-value {
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           font-size: 11px;
           font-weight: 400;
           color: var(--white);
@@ -401,14 +401,14 @@ export default function WaitlistPage() {
         }
         .dip-section-row:hover { background: rgba(255,255,255,0.02); }
         .dip-section-label {
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           font-size: 11px;
           font-weight: 300;
           color: var(--white);
           flex: 1;
         }
         .dip-section-meta {
-          font-family: 'DM Mono', monospace;
+          font-family: 'Inter', sans-serif;
           font-size: 9px;
           letter-spacing: 0.06em;
           color: var(--grey);

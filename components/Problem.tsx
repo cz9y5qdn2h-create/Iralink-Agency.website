@@ -63,7 +63,7 @@ export default function Problem() {
               </p>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "11px",
                   fontWeight: 400,
                   letterSpacing: "0.08em",
@@ -89,7 +89,7 @@ export default function Problem() {
         >
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "14px",
               fontWeight: 400,
               color: "var(--white)",

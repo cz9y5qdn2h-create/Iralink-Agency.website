@@ -110,7 +110,7 @@ export default function Pricing() {
                     right: "40px",
                     background: "var(--gold)",
                     color: "var(--black)",
-                    fontFamily: "'DM Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "9px",
                     fontWeight: 400,
                     letterSpacing: "0.14em",
@@ -136,7 +136,7 @@ export default function Pricing() {
               </div>
               <span
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "11px",
                   fontWeight: 300,
                   color: "var(--grey)",
@@ -183,7 +183,7 @@ export default function Pricing() {
           className="reveal"
           style={{
             marginTop: "32px",
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "12px",
             fontWeight: 300,
             color: "var(--grey)",

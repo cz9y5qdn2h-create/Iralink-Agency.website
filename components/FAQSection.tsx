@@ -155,7 +155,7 @@ export default function FAQSection() {
                 <div style={{ paddingBottom: "24px", paddingRight: "40px" }}>
                   <p
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "14px",
                       fontWeight: 300,
                       color: "#787878",
@@ -199,7 +199,7 @@ export default function FAQSection() {
             </p>
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "13px",
                 fontWeight: 300,
                 color: "var(--grey)",

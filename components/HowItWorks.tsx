@@ -78,7 +78,7 @@ export default function HowItWorks() {
                 <span className="t-mono">{step.num}</span>
                 <span
                   style={{
-                    fontFamily: "'DM Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "9px",
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",

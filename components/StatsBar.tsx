@@ -30,7 +30,7 @@ export default function StatsBar() {
           >
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "10px",
                 fontWeight: 400,
                 letterSpacing: "0.18em",

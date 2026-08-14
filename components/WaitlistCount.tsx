@@ -33,7 +33,7 @@ export default function WaitlistCount() {
       />
       <span
         style={{
-          fontFamily: "'DM Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
           fontSize: "11px",
           letterSpacing: "0.1em",
           color: "#6EE7A0",

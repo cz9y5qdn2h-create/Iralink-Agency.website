@@ -24,7 +24,7 @@ export default function OpengraphImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(200,169,110,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.06) 1px, transparent 1px)",
+              "linear-gradient(rgba(156, 138, 104,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(156, 138, 104,0.06) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />

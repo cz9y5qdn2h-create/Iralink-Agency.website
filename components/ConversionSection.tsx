@@ -114,7 +114,7 @@ export default function ConversionSection() {
             </a>
             <p
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
@@ -154,7 +154,7 @@ export default function ConversionSection() {
                   background: var(--grey-light);
                   border: 1px solid var(--border-dim);
                   color: var(--white);
-                  font-family: 'DM Sans', sans-serif;
+                  font-family: 'Inter', sans-serif;
                   font-size: 14px;
                   font-weight: 300;
                   padding: 16px 18px;
@@ -205,7 +205,7 @@ export default function ConversionSection() {
               {status === "error" && (
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "12px",
                     color: "#E87272",
                   }}
@@ -254,7 +254,7 @@ export default function ConversionSection() {
                     display: "flex",
                     alignItems: "center",
                     gap: "8px",
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "12px",
                     fontWeight: 300,
                     color: "#5A5A5A",

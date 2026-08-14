@@ -62,7 +62,7 @@ export default function StickyCTA() {
         </span>
         <span
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "9px",
             letterSpacing: "0.14em",
             textTransform: "uppercase",
@@ -78,7 +78,7 @@ export default function StickyCTA() {
         <a
           href="#liste-attente"
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "11px",
             fontWeight: 400,
             letterSpacing: "0.1em",

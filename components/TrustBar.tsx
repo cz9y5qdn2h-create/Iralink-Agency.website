@@ -90,7 +90,7 @@ export default function TrustBar() {
             <div>
               <span
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "12px",
                   fontWeight: 400,
                   color: "var(--white)",
@@ -102,7 +102,7 @@ export default function TrustBar() {
               </span>
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",

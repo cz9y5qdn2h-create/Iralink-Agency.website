@@ -55,7 +55,7 @@ export default function WaitlistForm() {
       >
         <div
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "10px",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
@@ -92,7 +92,7 @@ export default function WaitlistForm() {
           background: var(--grey-light);
           border: 1px solid var(--border-dim);
           color: var(--white);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           font-size: 13px;
           font-weight: 300;
           padding: 14px 16px;
@@ -157,7 +157,7 @@ export default function WaitlistForm() {
       </div>
 
       {status === "error" && (
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#e05c5c" }}>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "12px", color: "#e05c5c" }}>
           Une erreur est survenue. Réessayez ou écrivez-nous à theo@iralink-agency.com.
         </p>
       )}
@@ -173,7 +173,7 @@ export default function WaitlistForm() {
 
       <p
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Inter', sans-serif",
           fontSize: "11px",
           fontWeight: 300,
           color: "var(--grey)",

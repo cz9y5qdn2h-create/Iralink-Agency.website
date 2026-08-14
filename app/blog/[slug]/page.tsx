@@ -155,7 +155,7 @@ function renderBlock(block: ContentBlock, index: number): React.ReactNode {
                 alignItems: "flex-start",
                 gap: "16px",
                 color: "var(--grey)",
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "14px",
                 fontWeight: 300,
                 lineHeight: 1.6,
@@ -163,7 +163,7 @@ function renderBlock(block: ContentBlock, index: number): React.ReactNode {
             >
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "10px",
                   letterSpacing: "0.1em",
                   color: "var(--gold)",
@@ -387,7 +387,7 @@ export default async function ArticlePage({
                 <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
                   <span
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "13px",
                       fontWeight: 400,
                       color: "var(--white)",
@@ -414,7 +414,7 @@ export default async function ArticlePage({
 
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "10px",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -434,7 +434,7 @@ export default async function ArticlePage({
 
               <span
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "10px",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -504,7 +504,7 @@ export default async function ArticlePage({
                 </Link>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "10px",
                     fontWeight: 300,
                     color: "var(--grey)",

@@ -7,21 +7,20 @@ import CalWidget from "@/components/CalWidget";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact — Théo Coutard | DIPpro",
+  title: "Contact — Iralink Agency",
   description:
-    "Contactez Théo Coutard, fondateur d'Iralink Agency et créateur de DIPpro. Audit gratuit de votre conformité DIP, conseil en automatisation pour réseaux de franchise. Paris, France.",
+    "Contactez Théo Coutard, fondateur d'Iralink Agency. Parlons du SaaS sur-mesure qu'il vous faut pour votre réseau de franchise — conformité DIP, pilotage de réseau, audit terrain. Paris, France.",
   keywords: [
     "Théo Coutard",
-    "contact DIPpro",
+    "contact Iralink Agency",
+    "SaaS franchise sur-mesure",
     "audit DIP gratuit",
-    "conformité franchise contact",
     "DIPpro",
     "Paris",
   ],
   openGraph: {
-    title: "Contact Théo Coutard — DIPpro",
-    description:
-      "Prenez contact avec Théo Coutard pour un audit gratuit de votre conformité DIP et une démonstration de DIPpro.",
+    title: "Contact — Iralink Agency",
+    description: "Parlons du SaaS sur-mesure qu'il vous faut pour votre réseau de franchise.",
     type: "website",
     locale: "fr_FR",
   },
@@ -52,21 +51,21 @@ export default function ContactPage() {
           <div className="section-inner" style={{ position: "relative" }}>
             <div className="section-tag reveal">
               <span className="line" />
-              <span className="label">— Contact</span>
+              <span className="label">Contact</span>
             </div>
             <h1
               className="t-h2 reveal reveal-delay-1"
               style={{ maxWidth: "640px", marginBottom: "24px" }}
             >
-              Parlons de votre réseau.
+              Parlons du SaaS de votre réseau.
             </h1>
             <p
               className="t-body reveal reveal-delay-2"
               style={{ maxWidth: "520px" }}
             >
-              En 30 minutes, on analyse votre DIP, identifie les risques de
-              non-conformité et vous montre comment DIPpro les résout.
-              Sans engagement, sans frais.
+              Décrivez-nous votre réseau et vos contraintes — conformité DIP,
+              pilotage multi-unités, audit terrain. On revient vers vous avec
+              un premier avis. Sans engagement, sans frais.
             </p>
           </div>
         </section>
@@ -104,7 +103,7 @@ export default function ContactPage() {
                       <a
                         href="mailto:theo@iralink-agency.com"
                         className="link-grey-gold"
-                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
+                        style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 300 }}
                       >
                         theo@iralink-agency.com
                       </a>
@@ -118,7 +117,7 @@ export default function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link-grey-gold"
-                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300 }}
+                        style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 300 }}
                       >
                         Théo Coutard
                       </a>
@@ -128,7 +127,7 @@ export default function ContactPage() {
                     label: "Localisation",
                     content: (
                       <span
-                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 300, color: "var(--grey)" }}
+                        style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 300, color: "var(--grey)" }}
                       >
                         Paris, France
                       </span>
@@ -143,7 +142,7 @@ export default function ContactPage() {
                     <div className={`reveal reveal-delay-${i + 1}`} style={{ marginBottom: "28px" }}>
                       <p
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Inter', sans-serif",
                           fontSize: "10px",
                           fontWeight: 400,
                           letterSpacing: "0.18em",
@@ -166,7 +165,7 @@ export default function ContactPage() {
                 <div className="reveal reveal-delay-4">
                   <p
                     style={{
-                      fontFamily: "'DM Mono', monospace",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "10px",
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",

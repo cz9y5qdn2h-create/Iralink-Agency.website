@@ -85,7 +85,7 @@ export default function LiveMonitor() {
       style={{
         background: "#0C0C0C",
         border: "1px solid #252525",
-        fontFamily: "'DM Mono', monospace",
+        fontFamily: "'Inter', sans-serif",
         width: "100%",
         maxWidth: "440px",
       }}

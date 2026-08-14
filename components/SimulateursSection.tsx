@@ -52,7 +52,7 @@ function RangeSlider({
       >
         <span
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "9px",
             letterSpacing: "0.15em",
             textTransform: "uppercase",
@@ -92,7 +92,7 @@ function RangeSlider({
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <span
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "10px",
             color: "#3A3A3A",
           }}
@@ -101,7 +101,7 @@ function RangeSlider({
         </span>
         <span
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "10px",
             color: "#3A3A3A",
           }}
@@ -155,7 +155,7 @@ function DIPSimulator() {
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -176,7 +176,7 @@ function DIPSimulator() {
                 padding: "10px 14px",
                 background:
                   frequency === f
-                    ? "rgba(200,169,110,0.05)"
+                    ? "rgba(156, 138, 104,0.05)"
                     : "transparent",
                 border: `1px solid ${
                   frequency === f ? "var(--gold)" : "var(--border-dim)"
@@ -200,7 +200,7 @@ function DIPSimulator() {
               />
               <span
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "13px",
                   fontWeight: 300,
                   color: frequency === f ? "var(--white)" : "var(--grey)",
@@ -228,7 +228,7 @@ function DIPSimulator() {
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -239,7 +239,7 @@ function DIPSimulator() {
           </span>
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
@@ -257,7 +257,7 @@ function DIPSimulator() {
         <div>
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -295,7 +295,7 @@ function DIPSimulator() {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 fontWeight: 300,
                 color: "var(--grey)",
@@ -305,7 +305,7 @@ function DIPSimulator() {
             </span>
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 fontWeight: 400,
                 color: riskColor,
@@ -317,7 +317,7 @@ function DIPSimulator() {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 fontWeight: 300,
                 color: "var(--grey)",
@@ -327,7 +327,7 @@ function DIPSimulator() {
             </span>
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 fontWeight: 400,
                 color: "#4CAF80",
@@ -349,7 +349,7 @@ function DIPSimulator() {
           >
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
@@ -385,7 +385,7 @@ function DIPSimulator() {
 
         <p
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "11px",
             color: "#2E2E2E",
             lineHeight: 1.55,
@@ -466,7 +466,7 @@ function ROISimulator() {
         <div>
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -490,7 +490,7 @@ function ROISimulator() {
           </div>
           <span
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "11px",
               color: "var(--grey)",
               marginTop: "4px",
@@ -514,7 +514,7 @@ function ROISimulator() {
           <div>
             <p
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
@@ -539,7 +539,7 @@ function ROISimulator() {
           <div>
             <p
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
@@ -566,14 +566,14 @@ function ROISimulator() {
         {/* Uplift */}
         <div
           style={{
-            background: "rgba(200,169,110,0.06)",
-            border: "1px solid rgba(200,169,110,0.2)",
+            background: "rgba(156, 138, 104,0.06)",
+            border: "1px solid rgba(156, 138, 104,0.2)",
             padding: "16px 20px",
           }}
         >
           <span
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "9px",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -597,7 +597,7 @@ function ROISimulator() {
           {growthPct > 0 && (
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 color: "#5A5A5A",
                 marginLeft: "12px",
@@ -654,11 +654,11 @@ export default function SimulateursSection() {
             border-radius: 50%;
             background: var(--gold);
             cursor: pointer;
-            box-shadow: 0 0 0 3px rgba(200,169,110,0.15);
+            box-shadow: 0 0 0 3px rgba(156, 138, 104,0.15);
             transition: box-shadow 0.2s ease;
           }
           .iralink-range::-webkit-slider-thumb:hover {
-            box-shadow: 0 0 0 6px rgba(200,169,110,0.2);
+            box-shadow: 0 0 0 6px rgba(156, 138, 104,0.2);
           }
           .iralink-range::-moz-range-thumb {
             width: 18px;
@@ -729,7 +729,7 @@ export default function SimulateursSection() {
                 borderBottom: `2px solid ${tab === t.key ? "var(--gold)" : "transparent"}`,
                 color: tab === t.key ? "var(--white)" : "var(--grey)",
                 cursor: "pointer",
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "12px",
                 fontWeight: 400,
                 letterSpacing: "0.1em",

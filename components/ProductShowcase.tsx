@@ -28,15 +28,15 @@ function DashboardTab() {
         }}
       >
         <div>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "5px" }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "5px" }}>
             Réseau actif
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "var(--white)", fontWeight: 300 }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--white)", fontWeight: 300 }}>
             Boulangerie Martin
           </p>
         </div>
         <div style={{ textAlign: "right" }}>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "4px" }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "4px" }}>
             Conformité
           </p>
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "32px", color: "#C8A96E", fontWeight: 300, lineHeight: 1 }}>
@@ -59,18 +59,18 @@ function DashboardTab() {
               transition: "background 0.3s",
             }}
           >
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#2A2A2A", minWidth: "22px", flexShrink: 0 }}>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#2A2A2A", minWidth: "22px", flexShrink: 0 }}>
               {s.id}
             </span>
-            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#5A5A5A", flex: 1, fontWeight: 300 }}>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "11px", color: "#5A5A5A", flex: 1, fontWeight: 300 }}>
               {s.label}
             </span>
             {s.ok ? (
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#4CAF80", letterSpacing: "0.06em", flexShrink: 0 }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#4CAF80", letterSpacing: "0.06em", flexShrink: 0 }}>
                 ✓ Conforme
               </span>
             ) : (
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#C8A96E", letterSpacing: "0.06em", flexShrink: 0 }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#C8A96E", letterSpacing: "0.06em", flexShrink: 0 }}>
                 ⚠ À mettre à jour
               </span>
             )}
@@ -79,10 +79,10 @@ function DashboardTab() {
       </div>
 
       <div style={{ paddingTop: "14px", borderTop: "1px solid #141414", display: "flex", justifyContent: "space-between" }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#252525", letterSpacing: "0.06em" }}>
+        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#252525", letterSpacing: "0.06em" }}>
           Analyse : il y a 47 min · Auto-hebdomadaire
         </span>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#252525", letterSpacing: "0.06em" }}>
+        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#252525", letterSpacing: "0.06em" }}>
           DIP v3.2.1 · 47 franchisés
         </span>
       </div>
@@ -116,7 +116,7 @@ function AlertesTab() {
 
   return (
     <div style={{ padding: "24px 28px" }}>
-      <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "16px" }}>
+      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "16px" }}>
         2 alertes actives — action requise
       </p>
 
@@ -131,19 +131,19 @@ function AlertesTab() {
             }}
           >
             <div style={{ display: "flex", alignItems: "baseline", gap: "10px", marginBottom: "8px" }}>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: a.color, letterSpacing: "0.16em" }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: a.color, letterSpacing: "0.16em" }}>
                 {a.level}
               </span>
-              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "var(--white)", fontWeight: 300 }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "13px", color: "var(--white)", fontWeight: 300 }}>
                 {a.section}
               </span>
             </div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#606060", marginBottom: "10px", fontWeight: 300 }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "12px", color: "#606060", marginBottom: "10px", fontWeight: 300 }}>
               {a.desc}
             </p>
             <div style={{ display: "flex", gap: "20px" }}>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#252525" }}>{a.when}</span>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#252525" }}>Source : {a.source}</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#252525" }}>{a.when}</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#252525" }}>Source : {a.source}</span>
             </div>
           </div>
         ))}
@@ -152,7 +152,7 @@ function AlertesTab() {
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <div
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "9px",
             letterSpacing: "0.1em",
             color: "var(--black)",
@@ -172,16 +172,16 @@ function RedactionTab() {
   return (
     <div style={{ padding: "24px 28px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
-        <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase" }}>
           §3 — Redevances et charges · Diff généré par IA
         </p>
         <div style={{ display: "flex", gap: "6px" }}>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "7px", color: "#3A3A3A", border: "1px solid #1E1E1E", padding: "3px 8px" }}>Avant</span>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "7px", color: "#7AB8FF", border: "1px solid #7AB8FF30", padding: "3px 8px", background: "#7AB8FF08" }}>IA · Claude API</span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "7px", color: "#3A3A3A", border: "1px solid #1E1E1E", padding: "3px 8px" }}>Avant</span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "7px", color: "#7AB8FF", border: "1px solid #7AB8FF30", padding: "3px 8px", background: "#7AB8FF08" }}>IA · Claude API</span>
         </div>
       </div>
 
-      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9, letterSpacing: "0.02em" }}>
+      <div style={{ fontFamily: "'Inter', sans-serif", fontSize: "10px", lineHeight: 1.9, letterSpacing: "0.02em" }}>
         <div style={{ background: "#E8727212", borderLeft: "3px solid #E87272", padding: "7px 14px", marginBottom: "2px" }}>
           <span style={{ color: "#E87272", marginRight: "12px" }}>−</span>
           <span style={{ color: "#4A4A4A" }}>L&apos;article 8.1 stipule que la redevance mensuelle est</span>
@@ -205,10 +205,10 @@ function RedactionTab() {
       </div>
 
       <div style={{ marginTop: "18px", paddingTop: "14px", borderTop: "1px solid #141414", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#7AB8FF", letterSpacing: "0.06em" }}>
+        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#7AB8FF", letterSpacing: "0.06em" }}>
           ● Conforme format loi Doubin · Art. L.330-3
         </span>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "var(--black)", background: "var(--gold)", padding: "6px 16px", letterSpacing: "0.1em", cursor: "pointer" }}>
+        <div style={{ fontFamily: "'Inter', sans-serif", fontSize: "9px", color: "var(--black)", background: "var(--gold)", padding: "6px 16px", letterSpacing: "0.1em", cursor: "pointer" }}>
           Valider →
         </div>
       </div>
@@ -243,7 +243,7 @@ function HistoriqueTab() {
 
   return (
     <div style={{ padding: "24px 28px" }}>
-      <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "16px" }}>
+      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#2E2E2E", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "16px" }}>
         Historique des versions · Horodatage certifié
       </p>
 
@@ -259,17 +259,17 @@ function HistoriqueTab() {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "7px" }}>
               <div style={{ display: "flex", gap: "14px", alignItems: "baseline" }}>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: e.latest ? "#C8A96E" : "#3A3A3A", letterSpacing: "0.06em" }}>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "11px", color: e.latest ? "#C8A96E" : "#3A3A3A", letterSpacing: "0.06em" }}>
                   {e.version}
                 </span>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#252525" }}>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#252525" }}>
                   {e.count} section{e.count > 1 ? "s" : ""} mise{e.count > 1 ? "s" : ""} à jour
                 </span>
               </div>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#252525" }}>{e.date}</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#252525" }}>{e.date}</span>
             </div>
             {e.changes.map((c, j) => (
-              <p key={j} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#404040", fontWeight: 300 }}>
+              <p key={j} style={{ fontFamily: "'Inter', sans-serif", fontSize: "11px", color: "#404040", fontWeight: 300 }}>
                 — {c}
               </p>
             ))}
@@ -278,7 +278,7 @@ function HistoriqueTab() {
       </div>
 
       <div style={{ marginTop: "16px", paddingTop: "14px", borderTop: "1px solid #141414" }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#1E1E1E", letterSpacing: "0.08em" }}>
+        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#1E1E1E", letterSpacing: "0.08em" }}>
           12 mises à jour · Validé par T.C. · Archivé + distribué automatiquement
         </span>
       </div>
@@ -352,7 +352,7 @@ export default function ProductShowcase() {
             <span
               style={{
                 marginLeft: "14px",
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "9px",
                 color: "#2A2A2A",
                 letterSpacing: "0.12em",
@@ -370,7 +370,7 @@ export default function ProductShowcase() {
                   animation: "showcasePulse 2.2s ease-in-out infinite",
                 }}
               />
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#4CAF80", letterSpacing: "0.12em" }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "8px", color: "#4CAF80", letterSpacing: "0.12em" }}>
                 ACTIF
               </span>
             </div>
@@ -391,7 +391,7 @@ export default function ProductShowcase() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "9px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
