@@ -322,7 +322,7 @@ export default function PricingSection() {
                   lineHeight: 1.4,
                 }}
               >
-                &laquo;&nbsp;La Cour de cassation (26 juin 2024) : une omission mineure suffit à invalider l&apos;ensemble du contrat.&nbsp;&raquo;
+                &laquo;&nbsp;Un DIP obsolète ou incomplet reste, en cas de contentieux, l&apos;un des terrains les plus favorables aux demandes de nullité de contrat de franchise.&nbsp;&raquo;
               </p>
               <p
                 style={{
@@ -333,7 +333,7 @@ export default function PricingSection() {
                   color: "var(--grey)",
                 }}
               >
-                Jurisprudence récente — Arrêt n° 22-18.786
+                Jurisprudence constante — Cour de cassation, chambre commerciale
               </p>
             </div>
 

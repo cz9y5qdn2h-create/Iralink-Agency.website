@@ -57,7 +57,7 @@ export default function WhyNow() {
                   color: "#E87272",
                 }}
               >
-                Cour de cassation — 26 juin 2024
+                Jurisprudence constante — Cour de cassation
               </span>
             </div>
 
@@ -72,8 +72,8 @@ export default function WhyNow() {
                 maxWidth: "560px",
               }}
             >
-              Un franchiseur dont le DIP ne mentionnait pas la date de création de l&apos;enseigne
-              voit son contrat annulé. Toutes les redevances perçues doivent être remboursées.
+              Un DIP incomplet ou obsolète peut suffire à faire annuler un contrat de franchise
+              et à devoir rembourser l&apos;ensemble des redevances perçues.
             </p>
 
             <p
@@ -85,8 +85,9 @@ export default function WhyNow() {
                 lineHeight: 1.65,
               }}
             >
-              La Cour confirme sa jurisprudence : une omission dans le DIP — même mineure —
-              suffit à invalider l&apos;ensemble du contrat de franchise.
+              La nullité n&apos;est pas automatique : elle suppose que le franchisé prouve que
+              cette carence a vicié son consentement. Mais un DIP mal tenu à jour offre un
+              boulevard à toute demande de nullité — c&apos;est un risque réel, pas une clause de style.
             </p>
           </div>
 

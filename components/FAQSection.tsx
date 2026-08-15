@@ -5,11 +5,11 @@ import { useState } from "react";
 const FAQS = [
   {
     q: "Qu'est-ce que le DIP et pourquoi est-il obligatoire ?",
-    a: "Le Document d'Information Précontractuelle (DIP) est imposé par la loi Doubin (art. L.330-3 du Code de commerce). Tout franchiseur doit le remettre à chaque candidat franchisé au moins 20 jours avant la signature d'un contrat. Il doit contenir des informations précises et actualisées sur le réseau, le marché et le franchiseur. Son inexactitude — même mineure — peut entraîner la nullité du contrat et l'obligation de rembourser toutes les redevances perçues.",
+    a: "Le Document d'Information Précontractuelle (DIP) est imposé par la loi Doubin (art. L.330-3 du Code de commerce). Tout franchiseur doit le remettre à chaque candidat franchisé au moins 20 jours avant la signature d'un contrat. Il doit contenir des informations précises et actualisées sur le réseau, le marché et le franchiseur. Une inexactitude peut, si le franchisé prouve qu'elle a vicié son consentement, entraîner la nullité du contrat et l'obligation de rembourser les redevances perçues.",
   },
   {
     q: "Mon DIP actuel est-il vraiment non conforme ?",
-    a: "Probablement. 80 % des franchiseurs mettent leur DIP à jour une seule fois par an. Or la loi exige une mise à jour à chaque changement significatif : nouveau franchisé, litige, fermeture d'un point de vente, changement de dirigeant, évolution du marché... La Cour de cassation (arrêt du 26 juin 2024) l'a encore confirmé : une omission même mineure suffit à invalider l'ensemble du contrat.",
+    a: "Probablement. 80 % des franchiseurs mettent leur DIP à jour une seule fois par an. Or la loi exige une mise à jour à chaque changement significatif : nouveau franchisé, litige, fermeture d'un point de vente, changement de dirigeant, évolution du marché... La jurisprudence est constante sur ce point : un DIP mal tenu à jour fragilise fortement la position du franchiseur en cas de contentieux.",
   },
   {
     q: "Que fait DIPpro concrètement ?",

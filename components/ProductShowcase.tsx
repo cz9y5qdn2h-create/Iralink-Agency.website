@@ -236,7 +236,7 @@ function HistoriqueTab() {
       version: "v3.0.0",
       date: "18 oct. 2024",
       count: 4,
-      changes: ["Mise à jour majeure — Arrêt Cour de cassation 26 juin 2024"],
+      changes: ["Mise à jour majeure — refonte des sections juridiques"],
       latest: false,
     },
   ];
