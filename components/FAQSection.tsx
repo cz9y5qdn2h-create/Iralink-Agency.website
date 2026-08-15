@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: "DIPpro est-il conforme au RGPD ?",
-    a: "Oui. Les données de votre réseau sont hébergées en Europe, chiffrées au repos et en transit. Nous n'utilisons jamais vos données pour entraîner des modèles IA. Un DPA (Data Processing Agreement) est disponible sur demande. Notre sous-traitant IA (Anthropic) dispose de certifications SOC 2 Type II.",
+    a: "Nous appliquons les principes du RGPD : vous conservez la maîtrise de vos données, nous n'utilisons jamais vos données pour entraîner des modèles d'IA, et vous pouvez exercer vos droits d'accès, de rectification et de suppression à tout moment. Détails complets dans notre politique de confidentialité, disponible en bas de page.",
   },
   {
     q: "Puis-je arrêter à tout moment ?",

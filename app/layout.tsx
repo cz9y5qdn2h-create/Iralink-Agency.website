@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
+import CookieConsent from "@/components/CookieConsent";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -143,12 +143,7 @@ export default function RootLayout({
       <body>
         {children}
         <ChatWidget />
-        <Script
-          src="https://taap.it/scripts/tracker.js"
-          data-project="pk_f636d7ac7232d2f7a5e64df3b44b9e5d"
-          data-track-outbound="true"
-          strategy="afterInteractive"
-        />
+        <CookieConsent />
       </body>
     </html>
   );

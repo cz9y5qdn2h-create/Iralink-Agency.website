@@ -54,14 +54,32 @@ export default function Footer() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <span style={{ fontSize: "11px", fontWeight: 800, letterSpacing: "0.08em", color: "var(--ink-grey)", marginBottom: "4px" }}>CONTACT</span>
-            <a href="mailto:contact@iralink.agency" style={{ fontSize: "13.5px", color: "var(--ink)" }}>contact@iralink.agency</a>
+            <a href="mailto:theo@iralink-agency.com" style={{ fontSize: "13.5px", color: "var(--ink)" }}>theo@iralink-agency.com</a>
             <Link href="/contact" className="footer-ink-link" style={{ fontSize: "13.5px", color: "var(--ink)", textDecoration: "none" }}>Prendre RDV</Link>
           </div>
         </div>
       </div>
 
-      <div style={{ maxWidth: "1320px", margin: "40px auto 0", paddingTop: "24px", borderTop: "1px solid var(--ink-border)", fontSize: "12px", color: "var(--ink-grey-dim)" }}>
-        © {new Date().getFullYear()} Iralink Agency. Tous droits réservés.
+      <div
+        style={{
+          maxWidth: "1320px",
+          margin: "40px auto 0",
+          paddingTop: "24px",
+          borderTop: "1px solid var(--ink-border)",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          gap: "12px",
+          fontSize: "12px",
+          color: "var(--ink-grey-dim)",
+        }}
+      >
+        <span>© {new Date().getFullYear()} Iralink Agency. Tous droits réservés.</span>
+        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+          <Link href="/mentions-legales" className="footer-ink-link" style={{ color: "var(--ink-grey-dim)", textDecoration: "none" }}>Mentions légales</Link>
+          <Link href="/cgv" className="footer-ink-link" style={{ color: "var(--ink-grey-dim)", textDecoration: "none" }}>CGV</Link>
+          <Link href="/politique-de-confidentialite" className="footer-ink-link" style={{ color: "var(--ink-grey-dim)", textDecoration: "none" }}>Confidentialité</Link>
+        </div>
       </div>
 
       <style>{`
