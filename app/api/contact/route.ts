@@ -51,8 +51,8 @@ export async function POST(req: Request) {
     const eFranchises = escapeHtml(franchises);
 
     const { error } = await resend.emails.send({
-      from: "DIPpro <onboarding@resend.dev>",
-      to: ["consultin@iralink-agency.com"],
+      from: "DIPpro <theo@iralink-agency.com>",
+      to: ["theo@iralink-agency.com"],
       replyTo: email,
       subject: `[DIPpro] Demande d'audit — ${nom} — ${reseau}`,
       text: [
