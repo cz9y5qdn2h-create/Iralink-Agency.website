@@ -35,6 +35,13 @@ const SERVICE_GROUPS = [
   },
 ];
 
+// photoUrl stays undefined until a real photo file is provided — see /public/team.
+// Drop the file in and set photoUrl (e.g. "/team/theo-coutard.jpg") to swap the avatar.
+const TEAM: { name: string; role: string; initial: string; photoUrl?: string }[] = [
+  { name: "Théo Coutard", role: "Co-fondateur & CTO", initial: "T" },
+  { name: "Hassane Conde", role: "Co-fondateur & Head of Sales", initial: "H" },
+];
+
 const OFFERS = [
   { title: "Sprint découverte", body: "Cadrage rapide du besoin, faisabilité et premières maquettes.", price: "Sur devis", featured: false },
   { title: "Développement sur-mesure", body: "Conception et développement complet de votre SaaS, du design au déploiement.", price: "Sur devis", featured: true },
@@ -115,24 +122,34 @@ export default function ServicesPage() {
               L&apos;équipe
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: "24px" }}>
-              <div className="reveal" style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    width: "120px",
-                    height: "120px",
-                    margin: "0 auto 18px",
-                    borderRadius: "50%",
-                    background: "var(--ink)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "42px", fontWeight: 600, color: "var(--gold-light)" }}>T</span>
+              {TEAM.map((person) => (
+                <div key={person.name} className="reveal" style={{ textAlign: "center" }}>
+                  <div
+                    style={{
+                      width: "120px",
+                      height: "120px",
+                      margin: "0 auto 18px",
+                      borderRadius: "50%",
+                      background: "var(--ink)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {person.photoUrl ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={person.photoUrl} alt={person.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    ) : (
+                      <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "42px", fontWeight: 600, color: "var(--gold-light)" }}>
+                        {person.initial}
+                      </span>
+                    )}
+                  </div>
+                  <h4 style={{ fontSize: "15.5px", fontWeight: 700, margin: "0 0 4px", color: "var(--ink)" }}>{person.name}</h4>
+                  <span style={{ fontSize: "12.5px", color: "var(--ink-grey)" }}>{person.role}</span>
                 </div>
-                <h4 style={{ fontSize: "15.5px", fontWeight: 700, margin: "0 0 4px", color: "var(--ink)" }}>Théo Coutard</h4>
-                <span style={{ fontSize: "12.5px", color: "var(--ink-grey)" }}>Fondation &amp; Produit</span>
-              </div>
+              ))}
             </div>
           </div>
         </section>

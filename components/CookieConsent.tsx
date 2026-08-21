@@ -1,16 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import Link from "next/link";
 
 const STORAGE_KEY = "iralink-cookie-consent";
+// Other fixed-to-bottom UI (StickyCTA, the configurator's mobile recap bar)
+// reads this to offset itself above the banner instead of being covered by it.
+const HEIGHT_VAR = "--cookie-banner-h";
 
 type Consent = "accepted" | "declined" | null;
 
 export default function CookieConsent() {
   const [consent, setConsent] = useState<Consent>(null);
   const [ready, setReady] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -19,6 +23,19 @@ export default function CookieConsent() {
     }
     setReady(true);
   }, []);
+
+  useEffect(() => {
+    const setHeightVar = () => {
+      const h = bannerRef.current?.offsetHeight ?? 0;
+      document.documentElement.style.setProperty(HEIGHT_VAR, `${h}px`);
+    };
+    setHeightVar();
+    window.addEventListener("resize", setHeightVar);
+    return () => {
+      window.removeEventListener("resize", setHeightVar);
+      document.documentElement.style.setProperty(HEIGHT_VAR, "0px");
+    };
+  }, [ready, consent]);
 
   const choose = (value: "accepted" | "declined") => {
     window.localStorage.setItem(STORAGE_KEY, value);
@@ -38,6 +55,7 @@ export default function CookieConsent() {
 
       {ready && consent === null && (
         <div
+          ref={bannerRef}
           role="dialog"
           aria-label="Consentement cookies"
           style={{

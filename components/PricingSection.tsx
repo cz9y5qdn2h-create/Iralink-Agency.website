@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getDipproUrl } from "@/lib/dippro";
 
 const DIPPRO_URL = getDipproUrl("pricing");
@@ -189,21 +190,21 @@ export default function PricingSection() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <Link
+                href="/configurateur"
+                className="btn-primary"
+                style={{ textAlign: "center" }}
+              >
+                Configurer mon offre →
+              </Link>
               <a
                 href={DIPPRO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ textAlign: "center" }}
-              >
-                Accéder à DIPpro →
-              </a>
-              <a
-                href="#liste-attente"
                 className="btn-outline"
                 style={{ textAlign: "center" }}
               >
-                Rejoindre la liste d&apos;attente
+                Voir DIPpro en ligne ↗
               </a>
             </div>
           </div>

@@ -1,10 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-import { getDipproUrl } from "@/lib/dippro";
-
-const DIPPRO_URL = getDipproUrl("sticky-cta");
+import Link from "next/link";
 
 export default function StickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -22,7 +19,7 @@ export default function StickyCTA() {
     <div
       style={{
         position: "fixed",
-        bottom: 0,
+        bottom: "var(--cookie-banner-h, 0px)",
         left: 0,
         right: 0,
         zIndex: 9970,
@@ -98,15 +95,13 @@ export default function StickyCTA() {
           Liste d&apos;attente
         </a>
 
-        <a
-          href={DIPPRO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/configurateur"
           className="btn-primary"
           style={{ fontSize: "11px", padding: "12px 24px" }}
         >
-          Accéder à DIPpro →
-        </a>
+          Configurer mon offre →
+        </Link>
 
         <button
           onClick={() => setDismissed(true)}

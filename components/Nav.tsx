@@ -80,7 +80,7 @@ export default function Nav() {
             href="/contact"
             style={{ cursor: "pointer", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", textDecoration: "none", color: "inherit" }}
           >
-            Contact
+            Prendre RDV
           </Link>
           <a
             href={DIPPRO_URL}
@@ -91,13 +91,13 @@ export default function Nav() {
             DIPpro ↗
           </a>
           <Link
-            href="/contact"
+            href="/configurateur"
             onMouseMove={magnetMove}
             onMouseLeave={magnetLeave}
             className="btn-primary"
             style={{ transition: "transform .15s ease, background .2s ease" }}
           >
-            Prendre RDV
+            Configurer mon offre
           </Link>
         </nav>
       )}
@@ -166,12 +166,12 @@ export default function Nav() {
             Accéder à DIPpro →
           </a>
           <Link
-            href="/contact"
+            href="/configurateur"
             onClick={() => setMenuOpen(false)}
             className="btn-primary"
             style={{ marginTop: "14px", alignSelf: "flex-start" }}
           >
-            Prendre RDV
+            Configurer mon offre
           </Link>
         </div>
       )}

@@ -20,6 +20,9 @@
   --ink-grey-dim: #7a7469;
   --ink-border: rgba(17, 17, 16, 0.15);
   --nav-h: 80px;
+  /* Set at runtime by CookieConsent while its banner is visible, so other
+     fixed-to-bottom bars can stack above it instead of being covered. */
+  --cookie-banner-h: 0px;
 }
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }

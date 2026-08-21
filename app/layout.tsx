@@ -86,7 +86,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${SITE_URL}/#theo-coutard`,
       name: "Théo Coutard",
-      jobTitle: "Fondateur",
+      jobTitle: "Co-fondateur & CTO",
       email: "theo@iralink-agency.com",
       url: SITE_URL,
       worksFor: {

@@ -92,7 +92,7 @@ export default function ContactPage() {
                     Théo Coutard
                   </h2>
                   <span className="t-mono-sm" style={{ display: "block" }}>
-                    Fondateur, Iralink Agency
+                    Co-fondateur &amp; CTO, Iralink Agency
                   </span>
                 </div>
 

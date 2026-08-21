@@ -71,7 +71,7 @@ export default function AgencyAbout() {
                 marginBottom: "16px",
               }}
             >
-              Fondateur
+              Co-fondateur &amp; CTO
             </span>
             <h3
               style={{
@@ -196,7 +196,7 @@ export default function AgencyAbout() {
               textTransform: "uppercase",
             }}
           >
-            — Théo Coutard, Fondateur d&apos;Iralink Agency
+            — Théo Coutard, Co-fondateur &amp; CTO d&apos;Iralink Agency
           </p>
         </div>
       </div>
