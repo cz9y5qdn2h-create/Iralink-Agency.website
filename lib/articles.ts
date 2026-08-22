@@ -19,6 +19,67 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "outil-redaction-dip-avocats-droit-franchise",
+    category: "Conformité DIP",
+    title: "Outil de rédaction DIP pour avocats : ce que DIPpro change dans votre pratique",
+    description:
+      "Comment un outil de rédaction assisté par IA aide les avocats en droit de la franchise à sécuriser la conformité Doubin du DIP de leurs clients franchiseurs, sans remplacer leur jugement juridique.",
+    date: "2026-08-24",
+    readTime: "6 min",
+    author: "Théo Coutard",
+    content: [
+      {
+        type: "p",
+        text: "Les avocats qui conseillent des réseaux de franchise passent une part disproportionnée de leur temps sur une tâche répétitive : vérifier, section par section, qu'un Document d'Information Précontractuelle (DIP) reste conforme à l'article L.330-3 du Code de commerce. Un outil de rédaction dédié ne remplace pas ce travail de conseil — il en supprime la partie mécanique.",
+      },
+      {
+        type: "h2",
+        text: "Ce qu'on entend par « outil de rédaction » ici",
+      },
+      {
+        type: "p",
+        text: "DIPpro n'est pas un générateur de DIP à partir de rien. C'est un outil de rédaction assistée : il compare le DIP existant du client aux exigences légales et à la jurisprudence, identifie les sections devenues inexactes (données financières, état du réseau, dirigeants), et propose une reformulation conforme en langage juridique pour chacune. L'avocat relit, corrige si nécessaire, et valide — la rédaction finale reste sous son contrôle et sous sa responsabilité professionnelle.",
+      },
+      {
+        type: "h2",
+        text: "Pourquoi la conformité Doubin est un chantier permanent, pas ponctuel",
+      },
+      {
+        type: "p",
+        text: "La loi Doubin (n°89-1008 du 31 décembre 1989) impose la remise d'un DIP exact au moins 20 jours avant la signature. Le problème n'est pas la rédaction initiale — c'est le maintien à jour face à un réseau qui bouge en permanence : nouveaux franchisés, sorties, clôtures d'exercice, contentieux, changement de dirigeant. Chacun de ces événements peut rendre une section du DIP obsolète du jour au lendemain.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Détection automatique des sections impactées par un changement de réseau",
+          "Reformulation proposée en langage juridique, avec citation précise de l'article concerné (L.330-3, R.330-1)",
+          "Historique horodaté de chaque version — utile en cas de contestation sur la date ou le contenu de la remise",
+          "Validation humaine obligatoire avant toute diffusion aux franchisés",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Ce que ça change concrètement pour un cabinet",
+      },
+      {
+        type: "p",
+        text: "Pour un avocat suivant plusieurs réseaux de franchise en parallèle, le temps gagné n'est pas sur la décision juridique — il est sur la détection de ce qui a changé et sur le premier jet de reformulation. DIPpro sert de première passe : il signale les écarts et rédige une proposition, l'avocat arbitre. C'est un outil de rédaction et de veille, pas un substitut au conseil juridique personnalisé.",
+      },
+      {
+        type: "blockquote",
+        text: "Un outil de rédaction DIP n'a de valeur que s'il laisse la décision finale à l'avocat. DIPpro est conçu pour proposer, jamais pour trancher à sa place.",
+      },
+      {
+        type: "h2",
+        text: "Pour qui",
+      },
+      {
+        type: "p",
+        text: "DIPpro s'adresse autant aux avocats en droit de la franchise qui accompagnent plusieurs enseignes qu'aux directions juridiques internes des réseaux franchiseurs. Dans les deux cas, l'usage est le même : surveiller, rédiger, faire valider, archiver.",
+      },
+    ],
+  },
+  {
     slug: "dip-franchise-obligations-legales",
     category: "Conformité DIP",
     title: "DIP franchise : ce que la loi Doubin impose vraiment",

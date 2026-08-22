@@ -43,6 +43,14 @@ const FAQS = [
     q: "Que se passe-t-il si mon réseau évolue après l'installation ?",
     a: "C'est précisément pour ça que DIPpro existe. Chaque ajout de franchisé, chaque modification de réseau déclenche automatiquement une vérification de conformité. DIPpro vous alerte et propose les mises à jour DIP correspondantes. Votre conformité est maintenue en continu, sans effort de votre part.",
   },
+  {
+    q: "Comment assurer la conformité Doubin de mon réseau de franchise ?",
+    a: "La conformité Doubin (loi n°89-1008 du 31 décembre 1989, codifiée à l'art. L.330-3 du Code de commerce) exige un DIP exact et à jour, remis au moins 20 jours avant la signature. En pratique, ça suppose de suivre en continu les événements qui rendent une section obsolète : nouveau franchisé, clôture d'exercice, contentieux, changement de dirigeant. DIPpro automatise cette veille et signale chaque écart avant qu'il ne devienne un motif de contentieux.",
+  },
+  {
+    q: "DIPpro est-il un outil de rédaction pour avocats spécialisés en droit de la franchise ?",
+    a: "Oui. Les avocats qui accompagnent des réseaux de franchise utilisent DIPpro comme outil de rédaction et de vérification du DIP : l'IA propose des reformulations conformes en langage juridique pour chaque section non conforme, cite précisément les articles concernés (L.330-3, R.330-1), et conserve un audit trail horodaté de chaque version. L'avocat garde la main : chaque proposition de rédaction est soumise à sa validation avant diffusion.",
+  },
 ];
 
 const faqJsonLd = {

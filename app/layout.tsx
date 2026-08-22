@@ -6,10 +6,13 @@ import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "DIPpro — Automatisation de la conformité DIP pour réseaux de franchise",
+  title: "DIPpro — Conformité Doubin & outil de rédaction DIP pour avocats et franchiseurs",
   description:
-    "DIPpro par Iralink Agency : l'agence spécialisée en conformité DIP qui automatise la mise à jour du Document d'Information Précontractuelle (loi Doubin) de votre réseau de franchise. Audit gratuit.",
+    "DIPpro par Iralink Agency : l'outil de référence pour la conformité Doubin des réseaux de franchise, et l'outil de rédaction DIP utilisé par les avocats en droit de la franchise. Analyse IA, citations légales, audit trail. Audit gratuit.",
   keywords: [
+    "conformité Doubin",
+    "outil de rédaction avocat",
+    "outil de rédaction DIP",
     "agence conformité DIP",
     "DIP franchise",
     "Document d'Information Précontractuelle",
@@ -19,6 +22,7 @@ export const metadata: Metadata = {
     "audit DIP",
     "automatisation DIP",
     "réseau de franchise",
+    "avocat droit de la franchise",
     "DIPpro",
     "Iralink Agency",
     "Théo Coutard",
